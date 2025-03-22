@@ -10,5 +10,6 @@ Welcome to Example's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   some-feature.md
-   another-feature.md
+   deep_learning.md
+   machinelearning.md
+   llm.md

@@ -7,10 +7,10 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Example'
-copyright = 'workshop participant'
-author = 'workshop participant'
+copyright = 'Yousra Arroui'
+author = 'Yousra Arroui'
 release = '0.1'
-
+version = '0.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
