@@ -13,3 +13,4 @@ Welcome to Example's documentation!
    deep_learning.md
    machinelearning.md
    llm.md
+   ai_models_catalog.md
