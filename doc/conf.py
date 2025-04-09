@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Example'
-copyright = 'Yousra Arroui'
-author = 'Yousra Arroui'
+project = 'Ian Vulgarisateur'
+copyright = 'Ronan Sicre'
+author = 'L3 Informatique'
 release = '0.1'
 version = '0.1'
 
@@ -24,5 +24,5 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_nefertiti'
 html_static_path = ['_static']
