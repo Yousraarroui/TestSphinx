@@ -26,3 +26,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'sphinx_nefertiti'
 html_static_path = ['_static']
+html_logo = "images/logo-transparent.png"
+html_favicon = "images/favicon-32x32.png"
+
