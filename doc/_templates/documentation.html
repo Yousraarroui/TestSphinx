@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="documentation-container">
+    <div class="sidebar">
+        <nav class="doc-nav">
+            <ul>
+                {% for section in sections %}
+                <li>
+                    <a href="#{{ section.id }}">{{ section.title }}</a>
+                    {% if section.subsections %}
+                    <ul>
+                        {% for subsection in section.subsections %}
+                        <li><a href="#{{ subsection.id }}">{{ subsection.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="main-content">
+        {% for section in sections %}
+        <section id="{{ section.id }}" class="doc-section">
+            <h2>{{ section.title }}</h2>
+            {{ section.content|safe }}
+            
+            {% if section.subsections %}
+            {% for subsection in section.subsections %}
+            <section id="{{ subsection.id }}" class="doc-subsection">
+                <h3>{{ subsection.title }}</h3>
+                {{ subsection.content|safe }}
+            </section>
+            {% endfor %}
+            {% endif %}
+        </section>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} 
