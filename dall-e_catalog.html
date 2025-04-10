@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <meta name="docsearch:name" content="Ian Vulgarisateur" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1" />
+    <meta name="docsearch:version" content="0.1" />
+    
+      <title>🎨 DALL-E &mdash; Découvrez tout sur les modèles d&#39;IA</title>
+    
+    <link rel="canonical" href="dall-e_catalog" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-default.min.css?v=84f2ec69" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=ce93212b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/red-hat-mono/stylesheet.css?v=4eee5046" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=589f9147" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=1620426e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="Découvrez tout sur les modèles d&#39;IA" href="#" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-xl-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2 pe-lg-4"
+          ><span class="brand-text">Ian Vulgarisateur</span></a>
+        
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-text">Ian Vulgarisateur</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+              
+              
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-block">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ai_models_catalog.html">🚀 Catalogue des Modèles d’IA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theoric-content.html">Contenu Théorique du Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theoric-content.html#deep-learning-de-base">Deep Learning de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theoric-content.html#modeles-generales">Modèles générales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theoric-content.html#modeles-generatifs-liste-pas-definitive">Modèles génératifs (liste pas définitive)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theoric-content.html#introduction-to-machine-learning-and-deep-learning-in-generative-ai">Introduction to Machine Learning and Deep Learning in Generative AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theoric-content.html#general-models-used-in-deep-learning">General Models Used in Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theoric-content.html#popular-cnn-architectures">Popular CNN Architectures:</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+    <li class="breadcrumb-item active" aria-current="page">🎨 DALL-E</li>
+  </ol>
+</nav>
+    <section id="dall-e">
+<h1>🎨 DALL-E<a class="headerlink" href="#dall-e" title="Link to this heading">¶</a></h1>
+<section id="i-informations-generales">
+<h2>ℹ️ Informations Générales<a class="headerlink" href="#i-informations-generales" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Nom du Modèle</strong>: DALL-E</p></li>
+<li><p><strong>Date de Création/Publication</strong>: Janvier 2021</p></li>
+<li><p><strong>Développeur/Organisation</strong>: OpenAI</p></li>
+<li><p><strong>Version Actuelle</strong>: DALL-E 3 (Septembre 2023)</p></li>
+</ul>
+</section>
+<section id="caracteristiques-techniques">
+<h2>🔧 Caractéristiques Techniques<a class="headerlink" href="#caracteristiques-techniques" title="Link to this heading">¶</a></h2>
+<section id="input-output">
+<h3>🔄 Input/Output<a class="headerlink" href="#input-output" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Type d’Entrée</strong>: Texte (prompts descriptifs)</p></li>
+<li><p><strong>Type de Sortie</strong>: Images générées</p></li>
+<li><p><strong>Format de Sortie</strong>:</p>
+<ul>
+<li><p>DALL-E 2: 1024x1024 pixels</p></li>
+<li><p>DALL-E 3: 1024x1024 pixels avec amélioration de la qualité</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="architecture">
+<h3>🏗️ Architecture<a class="headerlink" href="#architecture" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Type de Modèle</strong>: Modèle de diffusion</p></li>
+<li><p><strong>Architecture Base</strong>: CLIP + Diffusion</p></li>
+<li><p><strong>Taille du Modèle</strong>: Non divulguée publiquement</p></li>
+</ul>
+</section>
+</section>
+<section id="acces-et-licence">
+<h2>🔑 Accès et Licence<a class="headerlink" href="#acces-et-licence" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Type de Licence</strong>: Propriétaire</p></li>
+<li><p><strong>Coût</strong>:</p>
+<ul>
+<li><p>DALL-E 2: Pay-as-you-go via API</p></li>
+<li><p>DALL-E 3: Disponible via ChatGPT Plus</p></li>
+</ul>
+</li>
+<li><p><strong>Open Source</strong>: Non</p></li>
+<li><p><strong>Lien vers l’API</strong>: <a class="reference external" href="https://platform.openai.com/docs/guides/images">Documentation API DALL-E</a></p></li>
+<li><p><strong>API Disponible</strong>: Oui</p></li>
+</ul>
+</section>
+<section id="description">
+<h2>📝 Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
+<p>DALL-E est un modèle de génération d’images basé sur l’IA qui crée des images réalistes et artistiques à partir de descriptions textuelles. Il peut générer des images dans différents styles artistiques et est capable de comprendre des concepts complexes.</p>
+<section id="cas-d-utilisation">
+<h3>💡 Cas d’Utilisation<a class="headerlink" href="#cas-d-utilisation" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Création d’illustrations</p></li>
+<li><p>Design graphique</p></li>
+<li><p>Prototypage visuel</p></li>
+<li><p>Création de contenu marketing</p></li>
+<li><p>Génération d’images pour les médias sociaux</p></li>
+</ul>
+</section>
+</section>
+<section id="avantages-et-inconvenients">
+<h2>⚖️ Avantages et Inconvénients<a class="headerlink" href="#avantages-et-inconvenients" title="Link to this heading">¶</a></h2>
+<section id="avantages">
+<h3>✅ Avantages<a class="headerlink" href="#avantages" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Qualité d’image élevée</p></li>
+<li><p>Grande variété de styles artistiques</p></li>
+<li><p>Compréhension avancée des prompts</p></li>
+<li><p>Intégration avec ChatGPT</p></li>
+<li><p>API bien documentée</p></li>
+</ul>
+</section>
+<section id="inconvenients">
+<h3>❌ Inconvénients<a class="headerlink" href="#inconvenients" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Coût significatif pour l’utilisation intensive</p></li>
+<li><p>Limites sur le nombre d’images générées</p></li>
+<li><p>Temps de génération variable</p></li>
+<li><p>Restrictions sur certains types de contenu</p></li>
+<li><p>Biais potentiels dans les générations</p></li>
+</ul>
+</section>
+</section>
+<section id="ressources-et-exemples">
+<h2>📚 Ressources et Exemples<a class="headerlink" href="#ressources-et-exemples" title="Link to this heading">¶</a></h2>
+<section id="documentation">
+<h3>📖 Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://platform.openai.com/docs/guides/images">Documentation API DALL-E</a></p></li>
+<li><p><a class="reference external" href="https://platform.openai.com/docs/guides/images/best-practices">Guide des Bonnes Pratiques</a></p></li>
+</ul>
+</section>
+<section id="code-d-exemple">
+<h3>💻 Code d’Exemple<a class="headerlink" href="#code-d-exemple" title="Link to this heading">¶</a></h3>
+</section>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link link-dark p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">🎨 DALL-E</a><ul>
+<li><a class="reference internal" href="#i-informations-generales">ℹ️ Informations Générales</a></li>
+<li><a class="reference internal" href="#caracteristiques-techniques">🔧 Caractéristiques Techniques</a><ul>
+<li><a class="reference internal" href="#input-output">🔄 Input/Output</a></li>
+<li><a class="reference internal" href="#architecture">🏗️ Architecture</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#acces-et-licence">🔑 Accès et Licence</a></li>
+<li><a class="reference internal" href="#description">📝 Description</a><ul>
+<li><a class="reference internal" href="#cas-d-utilisation">💡 Cas d’Utilisation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#avantages-et-inconvenients">⚖️ Avantages et Inconvénients</a><ul>
+<li><a class="reference internal" href="#avantages">✅ Avantages</a></li>
+<li><a class="reference internal" href="#inconvenients">❌ Inconvénients</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ressources-et-exemples">📚 Ressources et Exemples</a><ul>
+<li><a class="reference internal" href="#documentation">📖 Documentation</a></li>
+<li><a class="reference internal" href="#code-d-exemple">💻 Code d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      
+<nav id="paginator"></nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">Ian Vulgarisateur</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>Ronan Sicre</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.7.5</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=de1d41e1"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=ff4e7878"></script>
+  </body>
+</html>
