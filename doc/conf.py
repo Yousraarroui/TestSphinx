@@ -12,9 +12,6 @@ author = 'L3 Informatique'
 release = '0.1'
 version = '0.1'
 
-# Titre personnalisé pour la documentation
-html_title = 'Découvrez tout sur les modèles d\'IA'
-
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
