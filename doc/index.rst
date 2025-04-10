@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Example's documentation!
+Bienvenue sur Ian Vulgarisateur
 ===================================
 
 .. toctree::
@@ -15,4 +15,9 @@ Welcome to Example's documentation!
    llm.md
    ai_models_catalog.md
    index.md
-   
+
+<form action="https://duckduckgo.com/" method="get">
+    <input type="text" name="q" class="search-input" placeholder="Rechercher...">
+    <input type="submit" value="Search">
+</form>
+

@@ -29,18 +29,13 @@ html_static_path = ['_static']
 html_logo = "images/ian.png"
 html_favicon = "images/favicon-32x32.png"
 
-# Custom CSS and JavaScript
-html_css_files = [
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
-    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap',
-    'custom.css',
-]
-
-# Theme options
+# Force Furo theme
+html_theme_path = ['_themes']
+html_style = None
 html_theme_options = {
     "light_css_variables": {
-        "color-brand-primary": "#3498db",
-        "color-brand-content": "#2980b9",
+        "color-brand-primary": "#7d3cff",
+        "color-brand-content": "#5e2cc3",
         "color-api-background": "#f8f9fa",
         "color-api-name": "#e74c3c",
         "color-api-pre-name": "#e74c3c",
@@ -49,8 +44,8 @@ html_theme_options = {
         "font-stack--monospace": "'Montserrat', 'SFMono-Regular', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace",
     },
     "dark_css_variables": {
-        "color-brand-primary": "#3498db",
-        "color-brand-content": "#2980b9",
+        "color-brand-primary": "#7d3cff",
+        "color-brand-content": "#5e2cc3",
         "color-api-background": "#2d2d2d",
         "color-api-name": "#e74c3c",
         "color-api-pre-name": "#e74c3c",
@@ -59,4 +54,16 @@ html_theme_options = {
         "font-stack--monospace": "'Montserrat', 'SFMono-Regular', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace",
     },
 }
+
+# Custom CSS and JavaScript
+html_css_files = [
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap',
+    'custom.css',
+]
+
+# Additional theme options
+html_show_sourcelink = False
+html_show_sphinx = False
+html_show_copyright = True
 
