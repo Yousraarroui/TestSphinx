@@ -33,12 +33,14 @@ html_additional_pages = {
 
 html_theme = 'furo'
 html_static_path = ['_static']
-<<<<<<< HEAD
+
+# Configuration des fichiers CSS
 html_css_files = [
     'custom.css',
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css",
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap',
 ]
 
 # Configuration du logo
@@ -53,9 +55,8 @@ html_theme_options = {
         "color-background-secondary": "#f8f9fa",
         "color-foreground-primary": "#000000",
         "color-foreground-secondary": "#5a5c63",
-        "font-stack": "Arial, sans-serif",
-        "font-stack--monospace": "Courier, monospace",
-        "font-stack--headings": "Georgia, serif",
+        "font-stack": "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "font-stack--monospace": "'Montserrat', 'SFMono-Regular', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace",
     },
     "dark_css_variables": {
         "color-brand-primary": "#17A2B8",  # Même vert turquoise pour la cohérence
@@ -95,39 +96,5 @@ html_theme_options = {
 # Configuration du style des blocs de code
 pygments_style = "friendly"
 pygments_dark_style = "native"
-=======
-html_logo = "images/ian.png"
+
 html_favicon = "images/favicon-32x32.png"
-
-# Custom CSS and JavaScript
-html_css_files = [
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
-    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap',
-    'custom.css',
-]
-
-# Theme options
-html_theme_options = {
-    "light_css_variables": {
-        "color-brand-primary": "#3498db",
-        "color-brand-content": "#2980b9",
-        "color-api-background": "#f8f9fa",
-        "color-api-name": "#e74c3c",
-        "color-api-pre-name": "#e74c3c",
-        "color-api-keyword": "#9b59b6",
-        "font-stack": "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
-        "font-stack--monospace": "'Montserrat', 'SFMono-Regular', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace",
-    },
-    "dark_css_variables": {
-        "color-brand-primary": "#3498db",
-        "color-brand-content": "#2980b9",
-        "color-api-background": "#2d2d2d",
-        "color-api-name": "#e74c3c",
-        "color-api-pre-name": "#e74c3c",
-        "color-api-keyword": "#9b59b6",
-        "font-stack": "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
-        "font-stack--monospace": "'Montserrat', 'SFMono-Regular', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace",
-    },
-}
-
->>>>>>> main
