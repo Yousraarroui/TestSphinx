@@ -24,8 +24,33 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_nefertiti'
+html_theme = 'furo'
 html_static_path = ['_static']
 html_logo = "images/logo-transparent.png"
 html_favicon = "images/favicon-32x32.png"
+
+# Custom CSS
+html_css_files = [
+    'custom.css',
+]
+
+# Theme options
+html_theme_options = {
+    "light_css_variables": {
+        "color-brand-primary": "#3498db",
+        "color-brand-content": "#2980b9",
+        "color-api-background": "#f8f9fa",
+        "color-api-name": "#e74c3c",
+        "color-api-pre-name": "#e74c3c",
+        "color-api-keyword": "#9b59b6",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#3498db",
+        "color-brand-content": "#2980b9",
+        "color-api-background": "#2d2d2d",
+        "color-api-name": "#e74c3c",
+        "color-api-pre-name": "#e74c3c",
+        "color-api-keyword": "#9b59b6",
+    },
+}
 
