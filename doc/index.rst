@@ -14,3 +14,5 @@ Welcome to Example's documentation!
    machinelearning.md
    llm.md
    ai_models_catalog.md
+   index.md
+   

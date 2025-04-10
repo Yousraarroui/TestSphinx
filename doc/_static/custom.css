@@ -40,14 +40,86 @@ body {
     line-height: 1.6;
 }
 
-/* Sidebar customization */
+h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--color-brand-primary);
+}
+
+/* Logo centering */
 .sidebar-brand {
+    text-align: center;
     padding: 1.5rem;
 }
 
-.sidebar-brand-text {
-    font-size: 1.5rem;
-    font-weight: 600;
+.sidebar-brand img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+}
+
+/* Quick access section */
+.quick-access {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.quick-access-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-background-secondary);
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.quick-access-item:hover {
+    transform: translateY(-5px);
+}
+
+.quick-access-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-brand-primary);
+}
+
+/* Bottom navigation */
+.bottom-nav {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-background-border);
+}
+
+.bottom-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.bottom-nav-section h4 {
+    margin-bottom: 1rem;
+    color: var(--color-foreground-primary);
+}
+
+.bottom-nav-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-nav-section li {
+    margin-bottom: 0.5rem;
+}
+
+.bottom-nav-section a {
+    color: var(--color-foreground-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bottom-nav-section a:hover {
+    color: var(--color-brand-primary);
 }
 
 /* Content area */
@@ -128,5 +200,13 @@ th {
     
     .sidebar {
         width: 100%;
+    }
+
+    .quick-access {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-nav-grid {
+        grid-template-columns: 1fr;
     }
 } 

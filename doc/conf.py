@@ -26,11 +26,13 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'furo'
 html_static_path = ['_static']
-html_logo = "images/logo-transparent.png"
+html_logo = "images/ian.png"
 html_favicon = "images/favicon-32x32.png"
 
-# Custom CSS
+# Custom CSS and JavaScript
 html_css_files = [
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap',
     'custom.css',
 ]
 
@@ -43,6 +45,8 @@ html_theme_options = {
         "color-api-name": "#e74c3c",
         "color-api-pre-name": "#e74c3c",
         "color-api-keyword": "#9b59b6",
+        "font-stack": "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "font-stack--monospace": "'Montserrat', 'SFMono-Regular', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace",
     },
     "dark_css_variables": {
         "color-brand-primary": "#3498db",
@@ -51,6 +55,8 @@ html_theme_options = {
         "color-api-name": "#e74c3c",
         "color-api-pre-name": "#e74c3c",
         "color-api-keyword": "#9b59b6",
+        "font-stack": "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "font-stack--monospace": "'Montserrat', 'SFMono-Regular', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace",
     },
 }
 
