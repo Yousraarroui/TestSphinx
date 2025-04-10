@@ -15,8 +15,6 @@ des explications claires et accessibles.
    :maxdepth: 2
    :caption: Contents:
 
-   deep_learning.md  
-   machinelearning.md
    llm.md
    ai_models_catalog.md
    theoric-content.md
