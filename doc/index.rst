@@ -15,6 +15,5 @@ des explications claires et accessibles.
    :maxdepth: 2
    :caption: Contents:
 
-   llm.md
    ai_models_catalog.md
    theoric-content.md
