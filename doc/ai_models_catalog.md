@@ -1,40 +1,7 @@
 # 🚀 Catalogue des Modèles d'IA
 
-<div class="grid cards" markdown>
-
--   :fontawesome-solid-robot:{ .lg .middle } __ChatGPT__
-    
-    ---
-    
-    - **Type**: LLM
-    - **Développeur**: OpenAI
-    - **Licence**: Propriétaire
-    - **Open Source**: ❌
-    - **API**: ✅
-    
-    [En savoir plus](#chatgpt)
-
--   :fontawesome-solid-brain:{ .lg .middle } __LLaMA 2__
-    
-    ---
-    
-    - **Type**: LLM
-    - **Développeur**: Meta
-    - **Licence**: Open Source
-    - **Open Source**: ✅
-    - **API**: ✅
-    
-    [En savoir plus](#llama-2)
-
-</div>
-
----
-
 ## ChatGPT {#chatgpt}
 
-<div class="grid" markdown>
-
-<div markdown class="card">
 
 ### 🏷️ Informations Générales
 - **Nom**: ChatGPT
@@ -43,9 +10,7 @@
 - **Développeur**: OpenAI
 - **Site Web**: [openai.com](https://openai.com)
 
-</div>
 
-<div markdown class="card">
 
 ### 🛠️ Caractéristiques Techniques
 - **Architecture**: Transformer
@@ -56,9 +21,6 @@
 - **Entrée**: Texte
 - **Sortie**: Texte
 
-</div>
-
-<div markdown class="card">
 
 ### 💰 Accès et Coûts
 - **Version Gratuite**: ✅
@@ -67,9 +29,6 @@
 - **Licence**: Propriétaire
 - **Open Source**: ❌
 
-</div>
-
-</div>
 
 ### 📝 Description
 
@@ -84,10 +43,6 @@ ChatGPT est un modèle de langage conversationnel avancé capable de comprendre 
 
 ### ⚖️ Avantages et Inconvénients
 
-<div class="grid" markdown>
-
-<div markdown class="card">
-
 #### ✅ Avantages
 - Interface conversationnelle intuitive
 - Excellente compréhension du contexte
@@ -95,9 +50,7 @@ ChatGPT est un modèle de langage conversationnel avancé capable de comprendre 
 - Mises à jour régulières
 - API bien documentée
 
-</div>
 
-<div markdown class="card">
 
 #### ❌ Inconvénients
 - Peut générer des informations incorrectes
@@ -106,9 +59,7 @@ ChatGPT est un modèle de langage conversationnel avancé capable de comprendre 
 - Pas de connexion internet en temps réel
 - Biais potentiels dans les réponses
 
-</div>
 
-</div>
 
 ### 🔧 Intégration
 
@@ -141,9 +92,6 @@ print(response.choices[0].message.content)
 
 ### 📋 Exemples
 
-<div class="grid" markdown>
-
-<div markdown class="card">
 
 #### Exemple 1 - Explication de Concept
 ```python
@@ -154,9 +102,6 @@ plus simples. C'est comme une mise en abyme, où chaque appel résout une partie
 petite du problème jusqu'à atteindre un cas de base.
 ```
 
-</div>
-
-<div markdown class="card">
 
 #### Exemple 2 - Traduction
 ```python
@@ -164,9 +109,6 @@ Input: Traduis cette phrase en anglais : "Le chat dort sur le canapé"
 Output: The cat is sleeping on the couch
 ```
 
-</div>
-
-</div>
 
 ### 📌 Notes
 - Les performances varient selon la version du modèle
@@ -178,9 +120,6 @@ Output: The cat is sleeping on the couch
 
 ## LLaMA 2 {#llama-2}
 
-<div class="grid" markdown>
-
-<div markdown class="card">
 
 ### 🏷️ Informations Générales
 - **Nom**: LLaMA 2
@@ -189,10 +128,6 @@ Output: The cat is sleeping on the couch
 - **Développeur**: Meta
 - **Site Web**: [ai.meta.com/llama](https://ai.meta.com/llama)
 
-</div>
-
-<div markdown class="card">
-
 ### 🛠️ Caractéristiques Techniques
 - **Architecture**: Transformer
 - **Type**: LLM (Large Language Model)
@@ -200,9 +135,7 @@ Output: The cat is sleeping on the couch
 - **Entrée**: Texte
 - **Sortie**: Texte
 
-</div>
 
-<div markdown class="card">
 
 ### 💰 Accès et Coûts
 - **Version Gratuite**: ✅
@@ -210,9 +143,6 @@ Output: The cat is sleeping on the couch
 - **Open Source**: ✅
 - **API**: ✅
 
-</div>
-
-</div>
 
 ### 📝 Description
 
@@ -227,9 +157,7 @@ LLaMA 2 est une famille de modèles de langage open source développée par Meta
 
 ### ⚖️ Avantages et Inconvénients
 
-<div class="grid" markdown>
 
-<div markdown class="card">
 
 #### ✅ Avantages
 - Open Source
@@ -238,9 +166,6 @@ LLaMA 2 est une famille de modèles de langage open source développée par Meta
 - Optimisé pour le dialogue
 - Facile à déployer localement
 
-</div>
-
-<div markdown class="card">
 
 #### ❌ Inconvénients
 - Nécessite des ressources importantes
@@ -248,9 +173,6 @@ LLaMA 2 est une famille de modèles de langage open source développée par Meta
 - Formation requise pour l'optimisation
 - Documentation technique complexe
 
-</div>
-
-</div>
 
 ### 🔧 Intégration
 
@@ -279,9 +201,6 @@ print(tokenizer.decode(outputs[0]))
 
 ### 📋 Exemples
 
-<div class="grid" markdown>
-
-<div markdown class="card">
 
 #### Exemple 1 - Génération de Texte
 ```python
@@ -293,9 +212,6 @@ l'environnement, l'IA apporte des solutions innovantes aux défis complexes
 de notre époque.
 ```
 
-</div>
-
-<div markdown class="card">
 
 #### Exemple 2 - Réponse à une Question
 ```python
@@ -305,10 +221,6 @@ permet aux systèmes d'apprendre et de s'améliorer à partir de l'expérience,
 sans être explicitement programmés. Il utilise des algorithmes pour analyser 
 des données, identifier des patterns et prendre des décisions.
 ```
-
-</div>
-
-</div>
 
 ### 📌 Notes
 - Disponible en différentes tailles
