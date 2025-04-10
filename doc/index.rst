@@ -8,7 +8,9 @@ Ian Vulgarisateur
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contenu théorique:
+   :caption: Sommaire:
 
-   ai_models_catalog.md
    ContenuThéoriqueduSite.md
+   ai_models_catalog.md
+   dall-e_catalog.md
+   chat-gpt_catalog.md

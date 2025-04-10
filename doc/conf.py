@@ -12,6 +12,9 @@ author = 'L3 Informatique'
 release = '0.1'
 version = '0.1'
 
+# Titre personnalisé pour la documentation
+html_title = 'Découvrez tout sur les modèles d\'IA'
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -23,18 +26,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # Configuration de la page d'accueil personnalisée
 html_additional_pages = {
     "index": "custom-landing-page.html"
-}
-
-# Configuration de la barre latérale
-html_sidebars = {
-    "**": [
-        "sidebar/scroll-start.html",
-        "sidebar/brand.html",
-        "sidebar/search.html",
-        "sidebar/navigation.html",
-        "sidebar/ethical-ads.html",
-        "sidebar/scroll-end.html",
-    ]
 }
 
 # -- Options for HTML output -------------------------------------------------
@@ -49,11 +40,14 @@ html_css_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css",
 ]
 
+# Configuration du logo
+html_logo = "_static/logo.png"
+
 # Configuration des couleurs du thème
 html_theme_options = {
     "light_css_variables": {
-        "color-brand-primary": "#2C3E50",
-        "color-brand-content": "#2C3E50",
+        "color-brand-primary": "#17A2B8",  # Vert turquoise du logo
+        "color-brand-content": "#17A2B8",
         "color-background-primary": "#ffffff",
         "color-background-secondary": "#f8f9fa",
         "color-foreground-primary": "#000000",
@@ -61,23 +55,16 @@ html_theme_options = {
         "font-stack": "Arial, sans-serif",
         "font-stack--monospace": "Courier, monospace",
         "font-stack--headings": "Georgia, serif",
-        "color-sidebar-brand-text": "#2C3E50",
-        "color-sidebar-background": "#f8f9fa",
-        "color-sidebar-background-border": "#e9ecef",
     },
     "dark_css_variables": {
-        "color-brand-primary": "#34495E",
-        "color-brand-content": "#34495E",
+        "color-brand-primary": "#17A2B8",  # Même vert turquoise pour la cohérence
+        "color-brand-content": "#17A2B8",
         "color-background-primary": "#111111",
         "color-background-secondary": "#1c1c1c",
         "color-foreground-primary": "#ffffff",
         "color-foreground-secondary": "#a3a3a3",
-        "color-sidebar-brand-text": "#ffffff",
-        "color-sidebar-background": "#1c1c1c",
-        "color-sidebar-background-border": "#2c2c2c",
     },
     # Options de personnalisation supplémentaires
-    "sidebar_hide_name": False,  # Afficher le nom du projet dans la barre latérale
     "navigation_with_keys": True,  # Activer la navigation au clavier
     "top_of_page_buttons": ["view", "edit"],  # Boutons en haut de page
     "announcement": "Bienvenue sur le catalogue des modèles d'IA !",  # Bannière d'annonce
@@ -105,5 +92,5 @@ html_theme_options = {
 }
 
 # Configuration du style des blocs de code
-pygments_style = "sphinx"
-pygments_dark_style = "monokai"
+pygments_style = "friendly"
+pygments_dark_style = "native"
