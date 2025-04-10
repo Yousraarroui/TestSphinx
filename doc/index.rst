@@ -11,6 +11,7 @@ Ian Vulgarisateur
    :caption: Sommaire:
 
    ContenuThéoriqueduSite.md
+   libraries.md
    ai_models_catalog.md
    dall-e_catalog.md
    chat-gpt_catalog.md

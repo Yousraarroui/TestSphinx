@@ -87,7 +87,7 @@ et est utilisé pour remplacer la page d'accueil par défaut de Sphinx.
         }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin: 4rem 0;
         }
@@ -130,6 +130,11 @@ et est utilisé pour remplacer la page d'accueil par défaut de Sphinx.
                        inset 0 0 20px rgba(255, 108, 55, 0.2);
         }
         .feature-card:nth-child(3) .feature-icon {
+            color: #17A2B8;
+            box-shadow: 0 0 30px rgba(23, 162, 184, 0.4),
+                       inset 0 0 20px rgba(23, 162, 184, 0.2);
+        }
+        .feature-card:nth-child(4) .feature-icon {
             color: #17A2B8;
             box-shadow: 0 0 30px rgba(23, 162, 184, 0.4),
                        inset 0 0 20px rgba(23, 162, 184, 0.2);
@@ -224,6 +229,11 @@ et est utilisé pour remplacer la page d'accueil par défaut de Sphinx.
                 <i class="fa-solid fa-lightbulb feature-icon"></i>
                 <h2>Exemples</h2>
                 <p>Découvrez des exemples d'utilisation et des cas pratiques</p>
+            </a>
+            <a href="libraries.html" class="feature-card">
+                <i class="fa-solid fa-code feature-icon"></i>
+                <h2>Librairies</h2>
+                <p>Explorez les frameworks ML (PyTorch, TensorFlow, JAX) et outils essentiels</p>
             </a>
         </div>
 
