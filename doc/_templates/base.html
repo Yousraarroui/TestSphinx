@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title|e }} - {{ docstitle|e }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ pathto('_static/custom.css', 1) }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="content-container">
+        <nav class="glass-card">
+            <a href="{{ pathto('index') }}" class="nav-logo">
+                <img src="{{ pathto('_static/logo.png', 1) }}" alt="Logo" style="height: 40px; margin-right: 1rem;">
+                {{ docstitle|e }}
+            </a>
+            <div class="nav-links">
+                <a href="{{ pathto('ai_models_catalog') }}" class="button">
+                    <i class="fas fa-robot"></i> Modèles d'IA
+                </a>
+                <a href="{{ pathto('ContenuThéoriqueduSite') }}" class="button">
+                    <i class="fas fa-book"></i> Documentation
+                </a>
+                <a href="{{ pathto('examples') }}" class="button">
+                    <i class="fas fa-lightbulb"></i> Exemples
+                </a>
+            </div>
+        </nav>
+
+        <main class="glass-card">
+            <h1>{{ title }}</h1>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="glass-card">
+            <div class="footer-content">
+                <p class="copyright">&copy; {{ copyright }}</p>
+                <div class="footer-icons">
+                    <a href="https://github.com/yourusername/your-repo" class="footer-icon" title="GitHub" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://your-docs-url" class="footer-icon" title="Documentation" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-book fa-2x"></i>
+                    </a>
+                    <a href="https://discord.gg/your-invite" class="footer-icon" title="Discord" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-discord fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 
