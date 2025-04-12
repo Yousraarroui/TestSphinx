@@ -1,5 +1,3 @@
-# Contenu Théorique du Site
-
 # Deep Learning de base
 
 1. Représentation des données en DL (données (non)structurées)   
@@ -185,8 +183,6 @@ To assess the performance of regression models, we’ll explore the following me
 
 * **R² (R-Squared)**
 
-### 
-
 ### Mean Squared Error (MSE)
 
 **Mean Squared Error (MSE)** is a metric used to measure the average squared difference between predicted values and actual values.
@@ -281,7 +277,7 @@ The **F1 score** is a metric that combines **precision** and **recall** into a s
 
 ![][image13]
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [Evaluation Metrics in Machine Learning](https://youtu.be/LbX4X71-TFI?si=IHg5r7VopAAvQy4C)  
 * [Performance Metrics in Machine Learning](https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide)  
@@ -289,7 +285,7 @@ The **F1 score** is a metric that combines **precision** and **recall** into a s
 * [Precision, Recall and F1 Score Intuitively Explained](https://youtu.be/8d3JbbSj-I8?si=9UDXCQZsfCVDyD7U)  
 * [Accuracy vs Precision vs Recall in Machine Learning: What is the difference?](https://www.evidentlyai.com/classification-metrics/accuracy-precision-recall)
 
-## **Bibliography**
+#### **Bibliography**
 
 * Naidu, G., Zuva, T. and Sibanda, E.M., 2023, April. A review of evaluation metrics in machine learning algorithms. In *Computer science on-line conference* (pp. 15-25). Cham: Springer International Publishing.  
 * Tatachar, A.V., 2021\. Comparative assessment of regression models based on model evaluation metrics. *International Research Journal of Engineering and Technology (IRJET)*, *8*(09), pp.2395-0056.  
@@ -314,13 +310,13 @@ During training, the perceptron updates its weights using a learning rule that r
 
 While a single-layer perceptron works well for **linearly separable** problems, it cannot solve more complex, non-linear tasks. For that, we use **multi-layer perceptrons** and **deep learning models**.
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [Math Behind Perceptrons](https://medium.com/@iamask09/math-behind-perceptrons-7241d5dadbfc)  
 * [Perceptron (Youtube)](https://youtu.be/4Gac5I64LM4?si=uVnzWhM34Z-k__Ae)  
 * [Perceptrons w3Schools](https://www.w3schools.com/ai/ai_perceptrons.asp)
 
-## **Bibliography**
+#### **Bibliography**
 
 * Islam, M.N., 2023\. *Introduction to the Perceptron and Its Applications* (Doctoral dissertation, Jahangirnagar University).  
 * Kim, E.H. and Kim, H.S., 2021\. Perceptron: Basic Principles of Deep Neural Networks. *Cardiovascular Prevention and Pharmacotherapy*, *3*(3), pp.64-72.  
@@ -337,11 +333,11 @@ Figure taken from [https://www.tpointtech.com/gradient-descent-in-machine-learni
 Here is the general formula of one iteration:  
 ![][image16]
 
-## **Batch Gradient Descent**
+### **Batch Gradient Descent**
 
 **Batch Gradient Descent** computes the gradient using the **entire training dataset**. It performs a single update per iteration based on the average gradient over all data points.
 
-### **Key Features:**
+#### **Key Features:**
 
 * **Computation**: Uses all the training data to compute the gradient.
 
@@ -377,12 +373,12 @@ SGD offers faster computation, especially for large datasets. Additionally, it c
 
 * **Convergence**: Provides more stable convergence than SGD while being faster than batch gradient descent.
 
-### This algorithm is more computationally efficient than batch gradient descent. Furthermore, it is less noisy than SGD, leading to more stable updates. It can also take advantage of parallelism in hardware like GPUs. On the other hand, Mini-Batch Gradient Descent still requires careful tuning of the batch size and learning rate. 
+#### This algorithm is more computationally efficient than batch gradient descent. Furthermore, it is less noisy than SGD, leading to more stable updates. It can also take advantage of parallelism in hardware like GPUs. On the other hand, Mini-Batch Gradient Descent still requires careful tuning of the batch size and learning rate. 
 
 ![][image17]  
 Figure taken from [https://alwaysai.co/blog/what-is-gradient-descent](https://alwaysai.co/blog/what-is-gradient-descent)
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [What is Gradient Descent Algorithm](https://www.analyticsvidhya.com/blog/2020/10/how-does-the-gradient-descent-algorithm-work-in-machine-learning/)  
 * [Stochastic Gradient Descent Explained in Real Life](https://medium.com/data-science/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32)  
@@ -391,7 +387,7 @@ Figure taken from [https://alwaysai.co/blog/what-is-gradient-descent](https://al
 * [Gradient Descent | How Neural Networks Learn](https://youtu.be/IHZwWFHWa-w?si=GRQcHPtTETczyqgK)  
 * [Batch GD vs Mini-Batch GD vs SGD](https://youtu.be/1xMs6A3DLYw?si=oh-ao1JDFh8W8sfX) 
 
-## **Bibliography**
+#### **Bibliography**
 
 * Ruder, S., 2016\. An overview of gradient descent optimization algorithms. *arXiv preprint arXiv:1609.04747*.  
 * Ketkar, N., 2017\. Stochastic gradient descent. In *Deep learning with Python: A hands-on introduction* (pp. 113-132). Berkeley, CA: Apress.  
@@ -413,7 +409,7 @@ These advanced techniques help navigate the loss surface more efficiently by adj
 
 * **Adaptive Learning Rates**: Unlike regular gradient descent, **RMSProp** and **Adam** change the learning rate during training, making the process more efficient and reducing the need for manual tuning.
 
-## **Gradient Descent with Momentum**
+### **Gradient Descent with Momentum**
 
 **Gradient Descent with Momentum** is an enhancement of basic gradient descent. It helps the optimization process by **accelerating gradient descent** in the relevant direction and dampening oscillations. Essentially, it introduces a "momentum" term that takes into account previous gradients to smooth the updates.
 
@@ -421,13 +417,13 @@ Here is the update formula of Gradient Descent with Momentum:
 
 ![][image18]
 
-### **Benefits:**
+#### **Benefits:**
 
 * Reduces oscillations and helps converge faster, especially in regions where the gradients keep changing direction.
 
 * Helps escape shallow local minima by maintaining momentum in the relevant direction.
 
-### **Drawbacks:**
+#### **Drawbacks:**
 
 * Still requires tuning of the learning rate and momentum factor.
 
@@ -480,7 +476,7 @@ The update rule is:
 * Requires tuning of hyperparameters like β1​, β2​, and α.  
 * Can sometimes converge to suboptimal solutions if not tuned properly.
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [Gradient Descent Extensions to Your Deep Learning Models](https://towardsdatascience.com/gradient-descent-extensions-to-your-deep-learning-models-32045ccfa644/)  
 * [A visual Explanation of Gradient Descent Methods](https://medium.com/data-science/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c)  
@@ -489,7 +485,7 @@ The update rule is:
 * [Deep Dive into Optimizers for Machine Learning](https://youtu.be/MD2fYip6QsQ?si=J5oi0bHBq0pHAIkl)  
 * [Demystifying the Adam Optimizer in Machine Learning](https://medium.com/@weidagang/demystifying-the-adam-optimizer-in-machine-learning-4401d162cb9e)
 
-## **Bibliography**
+#### **Bibliography**
 
 * Choi, D., Shallue, C.J., Nado, Z., Lee, J., Maddison, C.J. and Dahl, G.E., 2019\. On empirical comparisons of optimizers for deep learning. *arXiv preprint arXiv:1910.05446*.  
 * Nakerst, G., Brennan, J. and Haque, M., 2020\. Gradient descent with momentum---to accelerate or to super-accelerate?. *arXiv preprint arXiv:2001.06472*.  
@@ -498,7 +494,7 @@ The update rule is:
 
 8. # Dense Neural Networks (DNN)
 
-## **Introduction**
+### **Introduction**
 
 As machine learning problems have grown more complex—especially in areas like image recognition, speech processing, and natural language understanding—traditional algorithms often fall short. **Dense Neural Networks (DNNs)** are powerful models designed to capture high-level patterns in data by stacking multiple layers of neurons. Each layer learns increasingly abstract features, allowing DNNs to solve problems that shallow models cannot.
 
@@ -548,7 +544,7 @@ Here’s how it works step-by-step:
 
 This process is repeated for many iterations (epochs) until the network learns to minimize the loss function. 
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [Neural Network Animated](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.00428&showTestData=false&discretize=false&percTrainData=50&x=false&y=true&xTimesY=true&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)  
 * [What is a deep neural network?](https://botpress.com/blog/deep-neural-network)  
@@ -559,7 +555,7 @@ This process is repeated for many iterations (epochs) until the network learns t
 * [Backpropagation](https://youtu.be/dB-u77Y5a6A?si=gL9hKbcl2fF-j1WY)  
 * [How to Evaluate a Neural Network’s Performance](https://youtu.be/NE1iCyqUMRI?si=ar9R7zh8EyYlkTsV)
 
-## **Bibliography**
+#### **Bibliography**
 
 * Bishop, C.M., 1994\. Neural networks and their applications. *Review of scientific instruments*, *65*(6), pp.1803-1832.  
 * Zou, J., Han, Y. and So, S.S., 2009\. Overview of artificial neural networks. *Artificial neural networks: methods and applications*, pp.14-22.  
@@ -570,7 +566,7 @@ This process is repeated for many iterations (epochs) until the network learns t
 
 9. # Convolutional Neural Networks (CNN)
 
-## **Why Do We Need CNNs?**
+### **Why Do We Need CNNs?**
 
 **Dense neural networks** treat all input pixels equally and do not consider the spatial structure of the image. This leads to two problems:
 
@@ -584,7 +580,7 @@ CNNs solve these problems by:
 
 * Preserving spatial relationships, which helps the model learn features like shapes and textures effectively.
 
-## **The Convolution Operation**
+### **The Convolution Operation**
 
 The core of CNNs lies in the **convolution operation**, which extracts features from input data (usually images). Instead of connecting every neuron to all inputs like in dense networks, CNNs use small filters called **kernels** that slide over the image and perform element-wise multiplication followed by summation.
 
@@ -602,7 +598,7 @@ In order to calculate the convolution, the central pixel of the kernel is placed
 
 The result of the convolution is called a **feature map** (or activation map), which highlights the presence of specific patterns detected by the kernel.
 
-## **Image Dimension Changes**
+### **Image Dimension Changes**
 
 The size of the output feature map after a convolution depends on four factors:
 
@@ -624,7 +620,7 @@ The formula for the output dimension (assuming a square input and kernel) is:
 
 This makes it possible to control the depth and resolution of the network at different stages.
 
-## **Feature Hierarchies**
+### **Feature Hierarchies**
 
 CNNs learn a **hierarchy of features**:
 
@@ -638,7 +634,7 @@ This progressive abstraction is one of the main reasons CNNs perform so well in 
 
 There are a huge number of known CNN architectures which have revolutionized the field of computer vision such as AlexNet, VGG, LeNet, etc. They will be discussed in later chapters.
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [What are Convolutional Neural Networks?](https://youtu.be/QzY57FaENXg?si=FfpNZf7dx6hMMgHS)  
 * [CNNs Explained](https://youtu.be/YRhxdVk_sIs?si=WaFmOMZ_OpG4dbr7)  
@@ -646,7 +642,7 @@ There are a huge number of known CNN architectures which have revolutionized the
 * [An Introduction to Convolutional Neural Networks](https://www.datacamp.com/tutorial/introduction-to-convolutional-neural-networks-cnns)  
 * [Convolutional Neural Networks MIT](https://youtu.be/2xqkSUhmmXU?si=US_y4Fvbdkk8Vvn-)
 
-## **Bibliography**
+#### **Bibliography**
 
 * O'shea, K. and Nash, R., 2015\. An introduction to convolutional neural networks. *arXiv preprint arXiv:1511.08458*.  
 * Ajit, A., Acharya, K. and Samanta, A., 2020, February. A review of convolutional neural networks. In *2020 international conference on emerging trends in information technology and engineering (ic-ETITE)* (pp. 1-5). IEEE.  
@@ -700,7 +696,7 @@ The Tanh function is similar to the sigmoid activation function and also has an 
 Here is the formula of the tanh function:  
 ![][image32]
 
-## **Advantages of the Tanh Activation Function**
+### **Advantages of the Tanh Activation Function**
 
 * The output of the Tanh function is **zero-centered**, making it easier to interpret values as strongly negative, neutral, or strongly positive.
 
@@ -713,14 +709,14 @@ Here is the mathematical formula of the softmax function:
 
 Figures taken from [https://www.v7labs.com/blog/neural-networks-activation-functions](https://www.v7labs.com/blog/neural-networks-activation-functions)
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [Activation Functions in Neural Networks](https://www.v7labs.com/blog/neural-networks-activation-functions)  
 * [Activation Functions Explained](https://youtu.be/s-V7gKrsels?si=8cBf9LJCHZQ_2L2T)  
 * [Which Activation Function Should I Use?](https://youtu.be/-7scQpJT7uo?si=iKxFBwYjWZl6n_aa)  
 * [Activation Functions: all you need to know\!](https://medium.com/analytics-vidhya/activation-functions-all-you-need-to-know-355a850d025e)
 
-## **Bibliography**
+#### **Bibliography**
 
 * Sharma, S., Sharma, S. and Athaiya, A., 2017\. Activation functions in neural networks. *Towards Data Sci*, *6*(12), pp.310-316.  
 * Dubey, S.R., Singh, S.K. and Chaudhuri, B.B., 2022\. Activation functions in deep learning: A comprehensive survey and benchmark. *Neurocomputing*, *503*, pp.92-108.  
@@ -765,7 +761,7 @@ Figure taken from: [https://kharshit.github.io/blog/2018/12/28/why-batch-normali
 
 * **Improves generalization**
 
-## **External Links (Youtube, Medium, etc):**
+#### **External Links (Youtube, Medium, etc):**
 
 * [Overfitting in a Neural Network Explained](https://youtu.be/DEMmkFC6IGM?si=rK-YZiAmT3jKdyMj)  
 * [Understanding Dropout in Deep Learning](https://medium.com/@piyushkashyap045/understanding-dropout-in-deep-learning-a-guide-to-reducing-overfitting-26cbb68d5575)  
@@ -773,7 +769,7 @@ Figure taken from: [https://kharshit.github.io/blog/2018/12/28/why-batch-normali
 * [Why Batch Normalization?](https://kharshit.github.io/blog/2018/12/28/why-batch-normalization)  
 * [Batch Norm Explained Visually](https://towardsdatascience.com/batch-norm-explained-visually-how-it-works-and-why-neural-networks-need-it-b18919692739/)
 
-## **Bibliography**
+#### **Bibliography**
 
 * Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R., 2014\. Dropout: a simple way to prevent neural networks from overfitting. *The journal of machine learning research*, *15*(1), pp.1929-1958.  
 * Bjorck, N., Gomes, C.P., Selman, B. and Weinberger, K.Q., 2018\. Understanding batch normalization. *Advances in neural information processing systems*, *31*.  
