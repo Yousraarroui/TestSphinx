@@ -33,12 +33,12 @@ Generative Artificial Intelligence (AI) is a rapidly evolving field that enables
 
 **Deep learning**, a subset of machine learning, is particularly powerful in handling unstructured data. It uses artificial neural networks with multiple layers to extract complex features and generate high-quality outputs. This capability makes deep learning the backbone of generative AI, enabling models like Generative Adversarial Networks (GANs) and Transformers to produce realistic text, images, and audio.
 
-#### **External Links (Youtube, Medium, etc):**
+## **External Links (Youtube, Medium, etc):**
 
 * [AI, Machine Learning, Deep Learning and Generative AI Explained](https://www.youtube.com/watch?v=qYNweeDHiyU)  
 * [https://medium.com/@darshanaweerasooriya11/introduction-to-artificial-intelligence-machine-learning-deep-learning-81b6b29d98d7](https://medium.com/@darshanaweerasooriya11/introduction-to-artificial-intelligence-machine-learning-deep-learning-81b6b29d98d7)
 
-#### **Bibliography:**
+## **Bibliography:**
 
 * Feuerriegel, S., Hartmann, J., Janiesch, C. and Zschech, P., 2024\. Generative ai. *Business & Information Systems Engineering*, *66*(1), pp.111-126. [https://arxiv.org/abs/2309.07930](https://arxiv.org/abs/2309.07930)
 
@@ -60,12 +60,12 @@ Figure taken from ‘Generative Deep learning’ by D. Foster
 
 Deep learning can be used with structured data, but its true strength—especially in generative modeling—lies in handling unstructured data. This is because, in most cases, the goal is to generate unstructured outputs like new images or unique text sequences.
 
-#### **External Links (Youtube, Medium, etc):**
+## **External Links (Youtube, Medium, etc):**
 
 * [Structured vs Unstructured Data Explained](https://youtu.be/5M2okstYF3A?si=PS0Oi3yGy5lEI_DG)  
 * [What is the difference: Structured vs Unstructured data](https://medium.com/@gurkanc/whats-the-difference-structured-vs-unstructured-data-1bfe09077be6)
 
-#### **Bibliography:**
+## **Bibliography:**
 
 * D. Foster, Generative Deep Learning, 2nd ed. Sebastopol, CA, USA: O'Reilly Media, Inc., 2023\.  
 * Eberendu, A.C., 2016\. Unstructured Data: an overview of the data of Big Data. *International Journal of Computer Trends and Technology*, *38*(1), pp.46-50.
@@ -94,7 +94,7 @@ There are 4 major types of unsupervised learning: clustering, dimensionality red
 
 **Association Rule Learning** focuses on discovering relationships or co-occurrence patterns among variables. Algorithms such as Apriori and FP-Growth are commonly used in applications like market basket analysis.
 
-#### **External Links (Youtube, Medium, etc):**
+## **External Links (Youtube, Medium, etc):**
 
 * [Supervised vs Unsupervised Learning](https://youtu.be/W01tIRP_Rqs?si=zWHlVXArWMHSiwNr)  
 * [Classification and Regression in Machine Learning](https://youtu.be/TJveOYsK6MY?si=NF8-i3sXMPIRqs6W)  
@@ -103,7 +103,7 @@ There are 4 major types of unsupervised learning: clustering, dimensionality red
 * [Dimensionality Reduction](https://youtu.be/3uxOyk-SczU?si=4Kb8ccBMid2IZ_h2)  
 * [What is Association Rule Learning?](https://medium.com/@ainsupriyofficial/what-is-association-rule-learning-a6ef399fdc01)
 
-#### **Bibliography**
+## **Bibliography**
 
 * A. Géron, Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd ed. Sebastopol, CA, USA: O'Reilly Media, Inc., 2019\.  
 * Rajoub, B. (2020). *Supervised and unsupervised learning*. In W. Zgallai (ed.) *Biomedical Signal Processing and Artificial Intelligence in Healthcare*. Developments in Biomedical Engineering and Bioelectronics. Academic Press, pp. 51–89.   
@@ -113,7 +113,7 @@ There are 4 major types of unsupervised learning: clustering, dimensionality red
 
 3. # Overfitting and Underfitting
 
-#### **1\. Overfitting in Machine Learning**
+## **1\. Overfitting in Machine Learning**
 
 Overfitting occurs when a model becomes too focused on the training data, learning not only the important patterns but also irrelevant details like noise or outliers.
 
@@ -127,7 +127,7 @@ Overfitting models are similar to students who memorize answers without grasping
 * The training dataset is too small.  
 * The model learns unnecessary details rather than general patterns.
 
-#### **2\. Underfitting in Machine Learning**
+## **2\. Underfitting in Machine Learning**
 
 Underfitting is the opposite of overfitting—it happens when a model is too simplistic to capture the underlying structure of the data.
 
@@ -146,12 +146,12 @@ Underfitting models are like students who don’t study enough—they struggle i
 ![][image2]  
 Figure taken from [https://www.kevindegila.com/blog/underfitting-and-overfitting-explained/](https://www.kevindegila.com/blog/underfitting-and-overfitting-explained/)
 
-#### **External Links (Youtube, Medium, etc):**
+## **External Links (Youtube, Medium, etc):**
 
 * [Underfitting & Overfitting \- Explained](https://youtu.be/o3DztvnfAJg?si=QZ8OOZPniYrtkqnY)  
 * [Overfitting vs. Underfitting: How to Balance Your Model](https://medium.com/@jimcanary/overfitting-vs-underfitting-how-to-balance-your-model-b2c19d5e23b6#:~:text=Level%201%3A%20Overfitting%20means%20your,models%20overfit%20\(high%20variance\).)
 
-#### **Bibliography**
+## **Bibliography**
 
 * Jabbar, H. and Khan, R.Z., 2015\. Methods to avoid over-fitting and under-fitting in supervised machine learning (comparative study). *Computer science, communication and instrumentation devices*, *70*(10.3850), pp.978-981.  
 * Pothuganti, S., 2018\. Review on over-fitting and under-fitting problems in Machine Learning and solutions. *Int. J. Adv. Res. Electr. Electron. Instrum. Eng*, *7*(9), pp.3692-3695.  
@@ -182,8 +182,6 @@ To assess the performance of regression models, we’ll explore the following me
 * **Root Mean Squared Error (RMSE)**
 
 * **R² (R-Squared)**
-
-### 
 
 ### Mean Squared Error (MSE)
 
