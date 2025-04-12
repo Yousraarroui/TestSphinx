@@ -11,9 +11,12 @@ Bienvenue sur notre plateforme de vulgarisation de l'intelligence artificielle.
 Découvrez les concepts clés, les modèles d'IA et leurs applications à travers 
 des explications claires et accessibles.
 
+Qu'est-ce que l'IA générative ? L'IA générative ou l'intelligence artificielle générative fait référence à l'utilisation de l'IA pour créer de nouveaux contenus, comme du texte, des images, de la musique, de l'audio et des vidéos.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   ai_models_catalog.md
-   theoric-content.md
+   catalogue.rst
+   intro-generative-ai.rst
+   
