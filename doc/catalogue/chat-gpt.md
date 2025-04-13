@@ -67,12 +67,6 @@ ChatGPT est un modèle de langage conversationnel avancé capable de comprendre 
 
 ### 💻 Code d'Exemple
 
-:::{code-block}
-:class: myclass1 myclass2
-:name: a-tip-reference
-Let's give readers a helpful hint!
-:::
-
 ```python
 import openai
 
