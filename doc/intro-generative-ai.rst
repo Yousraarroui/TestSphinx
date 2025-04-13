@@ -9,4 +9,4 @@ N'oubliez pas de consulter la FAQ pour répondre à vos questions
    :maxdepth: 2
    :caption: Contenu Théorique
 
-   theorie/deep-learning
+   theorie/deep-learning.md
