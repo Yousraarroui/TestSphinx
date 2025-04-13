@@ -1,4 +1,4 @@
-# ChatGPT {#chatgpt}
+ # ChatGPT {#chatgpt}
 
 
 ## 🏷️ Informations Générales
@@ -66,6 +66,13 @@ ChatGPT est un modèle de langage conversationnel avancé capable de comprendre 
 - [Guide des Bonnes Pratiques](https://platform.openai.com/docs/guides/gpt-best-practices)
 
 ### 💻 Code d'Exemple
+
+:::{code-block}
+:class: myclass1 myclass2
+:name: a-tip-reference
+Let's give readers a helpful hint!
+:::
+
 ```python
 import openai
 

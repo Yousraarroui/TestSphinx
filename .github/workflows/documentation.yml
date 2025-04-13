@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
       - name: Install dependencies
         run: |
-          pip install sphinx sphinx-nefertiti sphinxemoji myst_parser
+          pip install sphinx sphinx-nefertiti sphinx-design sphinx-copybutton sphinxemoji myst_parser
       - name: Sphinx build
         run: |
           sphinx-build doc _build

@@ -15,7 +15,7 @@ version = '0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['myst_parser', 'sphinx_nefertiti', 'sphinxemoji.sphinxemoji']
+extensions = ['myst_parser', 'sphinx_nefertiti', 'sphinx_design','sphinx_copybutton', 'sphinxemoji.sphinxemoji']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -23,8 +23,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+master_doc = 'contents'
 html_theme = 'sphinx_nefertiti'
-html_static_path = ['static']
 html_theme_options = {
     "header_links": [
         {
