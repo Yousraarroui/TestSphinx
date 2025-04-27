@@ -1,5 +1,25 @@
- # ChatGPT {#chatgpt}
+(chat-gpt)=
+# ChatGPT
 
+ChatGPT est un modèle de langage développé par OpenAI, basé sur l'architecture GPT (Generative Pre-trained Transformer). Il est capable de comprendre et de générer du texte de manière naturelle, ce qui en fait un outil puissant pour diverses applications.
+
+## Fonctionnalités principales
+
+- Génération de texte
+- Réponses aux questions
+- Aide à la rédaction
+- Traduction
+- Résumé de textes
+
+## Utilisation
+
+ChatGPT peut être utilisé via l'interface web d'OpenAI ou via l'API pour l'intégration dans d'autres applications.
+
+## Limites
+
+- Connaissance limitée aux données d'entraînement
+- Possibilité d'hallucinations
+- Nécessite une vérification humaine pour les informations critiques
 
 ## 🏷️ Informations Générales
 - **Nom**: ChatGPT

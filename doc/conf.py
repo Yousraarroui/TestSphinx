@@ -23,7 +23,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-master_doc = 'contents'
+master_doc = 'contents'  # Changed from 'index' to 'contents' to show the sidebar
+
 html_theme = 'sphinx_nefertiti'
 html_theme_options = {
     "header_links": [

@@ -1,80 +1,91 @@
-.. Example documentation master file, created by
-   sphinx-quickstart on Sat Sep 23 20:35:12 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Les Meilleurs Outils d'IA Générative
+====================================
 
+Découvrez les outils d'IA générative les plus utilisés dans le monde. Ces outils sont à la pointe de la technologie et vous permettent de libérer votre créativité et d'optimiser vos tâches.
 
-Ian un Vulgarisateur pour l'IA
-==============================
-
-.. admonition:: Ian Vulgarisateur
-   :class: note
-
-   Bienvenue sur notre plateforme de vulgarisation de l'intelligence artificielle. 
-   Découvrez les concepts clés, les modèles d'IA et leurs applications à travers 
-   des explications claires et accessibles.
-
-   Qu'est-ce que l'IA générative ? L'IA générative ou l'intelligence artificielle générative fait référence à l'utilisation de l'IA pour créer de nouveaux contenus, comme du texte, des images, de la musique, de l'audio et des vidéos.
-
-.. admonition:: Important
-   :class: important
-
-   **Ne confondez pas IA générative et IA générale !** 
-
-   *L'IA générative* se concentre sur la création de nouveaux contenus, tandis que *l'IA générale* (AGI) fait référence à une intelligence artificielle capable d'accomplir n'importe quelle tâche intellectuelle humaine. L'IA générative est une sous-catégorie spécifique de l'IA, alors que l'AGI reste un objectif théorique non encore atteint.
-
-🔥 À la une
------------
-
-.. grid:: 2
-   :gutter: 2
-   :margin: 0
-
-   .. grid-item-card::
-      :link: catalogue/chat-gpt.md
-      :link-type: doc
-
-      **GPT-4**  
-      Un des plus puissants modèles de génération de texte.
-
-   .. grid-item-card::
-      :link: catalogue/stable_diffusion
-      :link-type: doc
-
-      **Stable Diffusion**  
-      Génération d'images réalistes à partir de texte.
-
-📂 Explorer par catégorie
--------------------------
-
-.. grid:: 3
-   :class-container: custom-grid
+.. grid:: 4
    :gutter: 3
 
-   .. grid-item-card::
-      :link: free_tools
-      :link-type: doc
+   .. grid-item-card:: **🌟 ChatGPT**
+      :link: catalogue/chat-gpt.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
 
-      🆓 **Outils Gratuits**  
-      Liste des IA totalement gratuites à utiliser.
+      **★ Assistant conversationnel**
 
-   .. grid-item-card::
-      :link: freemium_tools
-      :link-type: doc
+      `Lien vers ChatGPT <catalogue/chat-gpt.md>`_
 
-      💸 **Freemium**  
-      Des outils avec une offre gratuite limitée.
+   .. grid-item-card:: **🎨 DALL-E**
+      :link: catalogue/dall-e.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
 
-   .. grid-item-card::
-      :link: paid_tools
-      :link-type: doc
+      **★ Génération d'images**
 
-      💰 **Payants**  
-      Solutions avancées nécessitant un abonnement.
+      `Lien vers DALL-E <catalogue/dall-e.md>`_
 
-📌 Ressources utiles
---------------------
+   .. grid-item-card:: **🖌️ Midjourney**
+      :link: catalogue/midjourney.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
 
-.. seealso::
-   - `Document PDF du projet <https://docs.google.com/document/...>`_
-   - `Code source sur GitHub <https://github.com/Yousraarroui/TestSphinx>`_
+      **★ Création artistique**
+
+      `Lien vers Midjourney <catalogue/midjourney.md>`_
+
+   .. grid-item-card:: **🎥 Synthesia**
+      :link: catalogue/synthesia.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
+
+      **★ Vidéos avec avatars**
+
+      `Lien vers Synthesia <catalogue/synthesia.md>`_
+
+   .. grid-item-card:: **🖼️ Adobe Firefly**
+      :link: catalogue/adobe-firefly.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
+
+      **★ Outils créatifs**
+
+      `Lien vers Adobe Firefly <catalogue/adobe-firefly.md>`_
+
+   .. grid-item-card:: **📝 Microsoft Copilot**
+      :link: catalogue/copilot.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
+
+      **★ Assistant IA**
+
+      `Lien vers Copilot <catalogue/copilot.md>`_
+
+   .. grid-item-card:: **🔍 DeepSeek**
+      :link: catalogue/deepseek.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
+
+      **★ Modèle open source**
+
+      `Lien vers DeepSeek <catalogue/deepseek.md>`_
+
+   .. grid-item-card:: **🤖 Grok**
+      :link: catalogue/grok.html
+      :class-card: sd-border-3 border-primary
+      :class-header: bg-primary text-white
+
+      **★ Chatbot connecté**
+
+      `Lien vers Grok <catalogue/grok.md>`_
+
+.. grid:: 1
+   :gutter: 3
+
+   .. grid-item-card:: **VOIR LA LISTE COMPLÈTE DES IA**
+      :link: big-liste-ia.html
+      :class-card: sd-border-3 sd-rounded sd-p-2
+      :class-header: bg-primary text-white
+
+      **★ Liste Complète des IA**
+
+      `Lien vers la liste complète <big-liste-ia.html>`_
