@@ -11,6 +11,5 @@ Votre guide simplifié pour explorer le monde fascinant de l'intelligence artifi
    :titlesonly:
 
    index.rst
-   catalogue.rst
    intro-generative-ai.rst
    big-list-ia.rst

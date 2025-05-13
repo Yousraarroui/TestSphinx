@@ -4,8 +4,7 @@ Les meilleurs outils d'IA générative
 .. grid:: 2
    :gutter: 3
 
-   .. grid-item-card:: 🌟 ChatGPT
-      :img-top: images/particle_background.jpg
+   .. grid-item-card:: 🌟 ChatGPT 
       :img-alt:
       :link: https://openai.com/chatgpt
       :link-type: url
@@ -16,7 +15,6 @@ Les meilleurs outils d'IA générative
       Modèle de langage d'OpenAI
 
    .. grid-item-card:: 🎨 DALL-E
-      :img-top: images/particle_background.jpg
       :img-alt:
       :link: https://openai.com/dall-e
       :link-type: url
@@ -27,7 +25,6 @@ Les meilleurs outils d'IA générative
       Génération d'images par IA d'OpenAI
 
    .. grid-item-card:: 🖌️ Midjourney
-      :img-top: images/particle_background.jpg
       :img-alt:
       :link: https://www.midjourney.com
       :link-type: url
@@ -38,7 +35,6 @@ Les meilleurs outils d'IA générative
       Générateur d'images créatif
 
    .. grid-item-card:: 🎥 Synthesia
-      :img-top: images/particle_background.jpg
       :img-alt:
       :link: https://www.synthesia.io
       :link-type: url
@@ -49,7 +45,6 @@ Les meilleurs outils d'IA générative
       Création de vidéos par IA
 
    .. grid-item-card:: 🖼️ Adobe Firefly
-      :img-top: images/particle_background.jpg
       :img-alt:
       :link: https://www.adobe.com/firefly
       :link-type: url
@@ -60,7 +55,6 @@ Les meilleurs outils d'IA générative
       Outil de création graphique par IA
 
    .. grid-item-card:: 📝 Microsoft Copilot
-      :img-top: images/particle_background.jpg
       :img-alt:
       :link: https://copilot.microsoft.com
       :link-type: url
@@ -71,7 +65,6 @@ Les meilleurs outils d'IA générative
       Assistant de programmation par IA
 
    .. grid-item-card:: 🔍 DeepSeek
-      :img-top: images/particle_background.jpg
       :img-alt:
       :link: https://www.deepseek.com
       :link-type: url
@@ -82,7 +75,6 @@ Les meilleurs outils d'IA générative
       Outil de recherche avancée par IA
 
    .. grid-item-card:: 🤖 Grok
-      :img-top: images/particle_background.jpg
       :img-alt:
       :link: https://www.grok.com
       :link-type: url

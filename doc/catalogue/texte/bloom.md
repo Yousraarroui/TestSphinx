@@ -1,4 +1,4 @@
-# 🧠 Fiche explicative – BLOOM
+# BLOOM
 
 ## 🔹 Nom du modèle
 BLOOM (BigScience Large Open-science Open-access Multilingual Language Model)

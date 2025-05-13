@@ -1,4 +1,4 @@
-# 🧠 Fiche explicative – Claude
+# Claude
 
 ## 🔹 Nom du modèle
 Claude (versions : Claude 1, Claude 2, Claude 3)
