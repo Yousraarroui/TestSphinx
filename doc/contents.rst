@@ -1,9 +1,16 @@
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-   index.rst   
+Bienvenue sur IAn Vulgarisateur
+===============================
+
+Votre guide simplifié pour explorer le monde fascinant de l'intelligence artificielle.
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+   :titlesonly:
+
+   index.rst
    catalogue.rst
    intro-generative-ai.rst
-   toctree.rst
-   
+   big-list-ia.rst

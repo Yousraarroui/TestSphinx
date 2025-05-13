@@ -1,91 +1,94 @@
-Les Meilleurs Outils d'IA Générative
+Les meilleurs outils d'IA générative
 ====================================
 
-Découvrez les outils d'IA générative les plus utilisés dans le monde. Ces outils sont à la pointe de la technologie et vous permettent de libérer votre créativité et d'optimiser vos tâches.
-
-.. grid:: 4
+.. grid:: 2
    :gutter: 3
 
-   .. grid-item-card:: **🌟 ChatGPT**
-      :link: catalogue/chat-gpt.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
+   .. grid-item-card:: 🌟 ChatGPT
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://openai.com/chatgpt
+      :link-type: url
+      :class-card: bg-light-blue
 
-      **★ Assistant conversationnel**
+      ChatGPT
+      ^^^
+      Modèle de langage d'OpenAI
 
-      `Lien vers ChatGPT <catalogue/chat-gpt.md>`_
+   .. grid-item-card:: 🎨 DALL-E
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://openai.com/dall-e
+      :link-type: url
+      :class-card: bg-light-green
 
-   .. grid-item-card:: **🎨 DALL-E**
-      :link: catalogue/dall-e.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
+      DALL-E
+      ^^^
+      Génération d'images par IA d'OpenAI
 
-      **★ Génération d'images**
+   .. grid-item-card:: 🖌️ Midjourney
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://www.midjourney.com
+      :link-type: url
+      :class-card: bg-light-yellow
 
-      `Lien vers DALL-E <catalogue/dall-e.md>`_
+      Midjourney
+      ^^^
+      Générateur d'images créatif
 
-   .. grid-item-card:: **🖌️ Midjourney**
-      :link: catalogue/midjourney.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
+   .. grid-item-card:: 🎥 Synthesia
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://www.synthesia.io
+      :link-type: url
+      :class-card: bg-light-red
 
-      **★ Création artistique**
+      Synthesia
+      ^^^
+      Création de vidéos par IA
 
-      `Lien vers Midjourney <catalogue/midjourney.md>`_
+   .. grid-item-card:: 🖼️ Adobe Firefly
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://www.adobe.com/firefly
+      :link-type: url
+      :class-card: bg-light-purple
 
-   .. grid-item-card:: **🎥 Synthesia**
-      :link: catalogue/synthesia.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
+      Adobe Firefly
+      ^^^
+      Outil de création graphique par IA
 
-      **★ Vidéos avec avatars**
+   .. grid-item-card:: 📝 Microsoft Copilot
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://copilot.microsoft.com
+      :link-type: url
+      :class-card: bg-light-orange
 
-      `Lien vers Synthesia <catalogue/synthesia.md>`_
+      Microsoft Copilot
+      ^^^
+      Assistant de programmation par IA
 
-   .. grid-item-card:: **🖼️ Adobe Firefly**
-      :link: catalogue/adobe-firefly.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
+   .. grid-item-card:: 🔍 DeepSeek
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://www.deepseek.com
+      :link-type: url
+      :class-card: bg-light-pink
 
-      **★ Outils créatifs**
+      DeepSeek
+      ^^^
+      Outil de recherche avancée par IA
 
-      `Lien vers Adobe Firefly <catalogue/adobe-firefly.md>`_
+   .. grid-item-card:: 🤖 Grok
+      :img-top: images/particle_background.jpg
+      :img-alt:
+      :link: https://www.grok.com
+      :link-type: url
+      :class-card: bg-light-gray
 
-   .. grid-item-card:: **📝 Microsoft Copilot**
-      :link: catalogue/copilot.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
+      Grok
+      ^^^
+      Assistant IA pour l'analyse de données
 
-      **★ Assistant IA**
-
-      `Lien vers Copilot <catalogue/copilot.md>`_
-
-   .. grid-item-card:: **🔍 DeepSeek**
-      :link: catalogue/deepseek.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
-
-      **★ Modèle open source**
-
-      `Lien vers DeepSeek <catalogue/deepseek.md>`_
-
-   .. grid-item-card:: **🤖 Grok**
-      :link: catalogue/grok.html
-      :class-card: sd-border-3 border-primary
-      :class-header: bg-primary text-white
-
-      **★ Chatbot connecté**
-
-      `Lien vers Grok <catalogue/grok.md>`_
-
-.. grid:: 1
-   :gutter: 3
-
-   .. grid-item-card:: **VOIR LA LISTE COMPLÈTE DES IA**
-      :link: big-liste-ia.html
-      :class-card: sd-border-3 sd-rounded sd-p-2
-      :class-header: bg-primary text-white
-
-      **★ Liste Complète des IA**
-
-      `Lien vers la liste complète <big-liste-ia.html>`_
