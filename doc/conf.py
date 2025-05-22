@@ -6,11 +6,11 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-master_doc = 'contents'  # Changed from 'index' to 'contents' to show the sidebar
-project = 'IAn Vulgarisateur'
-copyright = 'Ronan Sicre'
+master_doc = 'index'  # Changed from 'index' to 'contents' to show the sidebar
+project = 'IAn'
+copyright = 'ARROUI Yousra'
 
-author = 'L3 Informatique'
+author = 'ARROUI Yousra'
 release = '0.1'
 version = '0.1'
 
@@ -53,6 +53,8 @@ html_theme = 'sphinx_nefertiti'
 
 
 html_theme_options = {
+    "repository_url": "https://github.com/Yousraarroui/TestSphinx.git",
+    "repository_name": "TestSphinx",
     "header_links": [],
     "footer_links":[
         {

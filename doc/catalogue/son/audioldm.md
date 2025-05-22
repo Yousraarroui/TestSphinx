@@ -1,59 +1,88 @@
-# AudioLDM
+# [AudioLDM](https://github.com/haoheliu/AudioLDM)
 
-## Description
-AudioLDM est un modèle de génération audio développé par l'University of Surrey, capable de créer des sons et des ambiances à partir de descriptions textuelles. Il utilise une approche basée sur les modèles de diffusion latente, similaire à celle utilisée dans Stable Diffusion pour les images.
-
-## Caractéristiques techniques
-- **Type** : Modèle de diffusion latent pour audio
-- **Développeur** : University of Surrey
+- **Nom de l'outil** : AudioLDM
+- **Catégorie** : Audio (Text-to-Audio)
+- **Développeur** : University of Surrey (équipe de recherche)
 - **Date de sortie** : Février 2023
-- **Framework** : PyTorch
-- **Vocodeur** : HiFi-GAN
-- **Encodage texte/audio** : CLAP model
-- **Résolution audio** : 16kHz
 
-## Fonctionnement
-Le modèle fonctionne en 4 étapes :
-1. **Entrée** : Texte descriptif (ex: "sons d'oiseaux dans une forêt tropicale")
-2. **Encodage** : Transformation du texte en représentation latente
-3. **Génération** : Diffusion latente pour produire un spectrogramme
-4. **Reconstruction** : Conversion du spectrogramme en audio .wav via le vocodeur
+## Objectif
+Générer des sons réalistes (ambiances, bruitages, textures musicales) à partir de descriptions textuelles simples.
 
-## Techniques utilisées
-- Latent Diffusion Models (LDM) adaptés à l'audio
-- CLAP (Contrastive Language-Audio Pretraining) pour l'alignement texte-son
-- HiFi-GAN comme vocodeur
+## Fonctionnement résumé
+| Étape | Description |
+|-------|-------------|
+| Entrée | Prompt texte (ex: "Pluie tropicale la nuit") |
+| Traitement | Encodage CLAP + Diffusion latente via LDM |
+| Sortie | Fichier audio .wav (16kHz) |
 
-## Applications
-- Génération de bruitages pour films, jeux vidéo, VR
-- Création d'ambiances sonores thématiques
-- Design sonore assisté par IA
-- Exploration musicale de nouvelles textures sonores
+## Fonctions principales
+- ✅ Génération audio à partir de texte
+- ✅ Support des ambiances complexes (nature, urbain, SF)
+- ✅ Intégration HiFi-GAN pour qualité audio
+- ✅ Démo Colab gratuite
+- ✅ Architecture inspirée de Stable Diffusion
+- ❌ Pas de génération musicale structurée
 
-## Exemples d'utilisation
+## Exemples d'usage concrets
 | Domaine | Exemple |
 |---------|---------|
-| Films/Documentaires | Génération d'ambiances réalistes (jungle, ville futuriste) |
-| Jeux vidéo | Production de bruitages dynamiques adaptés aux actions |
-| Musique expérimentale | Création de textures sonores conceptuelles |
+| Cinéma | Bruitages pour scènes d'action |
+| Jeux vidéo | Ambiances dynamiques selon l'environnement |
+| Musique | Expérimentation de textures sonores |
+| Accessibilité | Création d'audio pour contenus visuels |
 
-## Avantages
-- Génération de sons complexes à partir de texte simple
-- Grande variété sonore possible
-- Démo Colab facile à utiliser
-- Basé sur des techniques modernes de diffusion
+## Détails techniques
+| Caractéristique | Valeur |
+|-----------------|---------|
+| Architecture | Latent Diffusion Model (LDM) |
+| Framework | PyTorch |
+| Input | Texte (max 200 caractères) |
+| Output | Audio 16kHz (5-10s par défaut) |
+| Licence | Recherche/académique |
 
-## Inconvénients
-- Limité à de courtes durées (quelques secondes)
-- Sons parfois flous ou bruités avec des prompts vagues
-- Pas optimisé pour les musiques longues et structurées
-- Nécessite GPU pour des temps de génération rapides
+## Pricing
+- Gratuit (code open-source) • GPU requis pour usage local
+
+## Releases clés
+- [v1.0](https://github.com/haoheliu/AudioLDM/releases/tag/v1.0) : Version initiale (2023)
+- [v2.0](https://github.com/haoheliu/AudioLDM/releases/tag/v2.0) : Amélioration qualité via CLAP
+
+## Alternatives connues
+- [AudioCraft (Meta)](https://ai.meta.com/audiocraft)
+- [Riffusion](https://www.riffusion.com)
+- [Google's AudioLM](https://google-research.github.io/seanet/audiolm/examples/)
 
 ## Ressources utiles
-- [Publication scientifique](https://arxiv.org/abs/2301.12503)
-- [Code source GitHub](https://github.com/haoheliu/AudioLDM)
-- [Démo Colab](https://colab.research.google.com/drive/1G-G2CXCJD6yGFHAxcmcSu8aioU18TMiZ)
-- [Documentation CLAP](https://github.com/LAION-AI/CLAP)
+- [Publication arXiv](https://arxiv.org/abs/2301.12503)
+- [Colab Officiel](https://colab.research.google.com/drive/1HhqGGzV-q1kGnTp3mK5JbpMYxkXQz2G4)
+- [GitHub](https://github.com/haoheliu/AudioLDM)
+
+## Exemple d'appel API
+```python
+from audioldm_pipeline import AudioLDMPipeline
+
+pipe = AudioLDMPipeline.from_pretrained("audioldm")
+audio = pipe("Vagues océaniques calmes")
+```
+
+## Input/Output
+- Input : "Feu de camp crépitant dans une forêt"
+- Output : 🔄 Écouter l'extrait (8s, 16kHz)
+
+## Avantages/Limites
+| ✅ Avantages | ❌ Inconvénients |
+|-------------|-----------------|
+| Qualité réaliste | Durée limitée (10s max) |
+| Customisation facile | GPU nécessaire pour la vitesse |
+| Open-source | Dataset anglophone dominant |
+
+## Confidentialité
+- Aucune donnée utilisateur stockée (en mode local)
+- Modèle entraîné sur datasets publics (AudioCaps/Freesound)
+
+## Statistiques
+- 4.3/5 sur GitHub (1.2k stars)
+- Utilisé dans 200+ projets académiques
 
 ## Dataset d'entraînement
 - AudioCaps

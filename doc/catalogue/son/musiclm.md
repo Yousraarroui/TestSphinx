@@ -1,68 +1,88 @@
-# MusicLM
+# [MusicLM](https://google-research.github.io/seanet/musiclm/examples/)
 
-## Description
-MusicLM est un modèle de génération musicale texte-à-musique développé par Google Research, basé sur Transformers et représentation audio latente. Il permet de générer des morceaux musicaux complets à partir de descriptions textuelles simples.
-
-## Caractéristiques techniques
-- **Type** : Modèle de génération musicale texte-à-musique
-- **Développeur** : Google Research (Brain Team + DeepMind)
-- **Date de sortie** : 
-  - Publication du papier : Janvier 2023
-  - Demo publique (test limité) : Mai 2023
-- **Architecture** : Transformer hiérarchique + encodage latent
-- **Framework** : TensorFlow + JAX (modèle interne Google)
-- **Input** : Prompt texte (langage naturel)
-- **Output** : Audio stéréo 24kHz, fichiers WAV
-- **Dataset d'entraînement** : 5 millions d'heures de musique avec descriptions textuelles associées (MusicCaps, etc.)
-- **Durée de génération** : De quelques secondes à plusieurs minutes
+## Informations générales
+- **Nom de l'outil** : MusicLM
+- **Catégorie** : Audio (Text-to-Music)
+- **Développeur** : Google Research/DeepMind
+- **Date de sortie** : Janvier 2023 (paper) • Mai 2023 (démo)
 
 ## Objectif
-MusicLM vise à générer de la musique complète à partir de simples descriptions textuelles ("prompt textuel"). Contrairement à des modèles qui génèrent uniquement des notes MIDI ou du bruitage, MusicLM génère directement des morceaux musicaux complexes : mélodies, harmonies, instrumentation, ambiance sonore, et parfois même progression émotionnelle.
+Générer des morceaux musicaux complexes (>1min) à partir de descriptions textuelles en combinant compréhension sémantique et modèles hiérarchiques.
 
-## Fonctionnement
+## Fonctionnement résumé
 | Étape | Description |
 |-------|-------------|
-| Entrée | Texte descriptif ("jazz mélancolique au piano et basse douce") |
-| Encodage | Le texte est converti en représentation latente audio |
-| Génération | Modèle Transformer prédit la séquence latente correspondante |
-| Reconstruction | Le modèle reconstruit l'audio final à partir du latent audio |
+| Entrée | Prompt texte (ex: "jazz mélancolique au piano") |
+| Traitement | Encodage MuLan → Génération hiérarchique à 3 niveaux |
+| Sortie | Audio 24kHz (jusqu'à 5min) |
 
-## Techniques utilisées
-- Audio Tokenizer : transforme l'audio en "tokens" compacts (SoundStream codec)
-- MuLan : encode le texte et l'audio dans un espace commun
-- Hiérarchie de modèles : un modèle grossier pour la structure, un modèle fin pour les détails
+## Fonctions principales
+- ✅ Génération musicale longue durée
+- ✅ Synchronisation mélodie/rythme/harmonie
+- ✅ Support de descriptions complexes
+- ❌ Accès restreint (API Google interne)
+- ❌ 10min/génération sur TPU v4
 
-## Applications
-- Génération musicale text-to-music pour films, jeux vidéo, contenus numériques
-- Aide à la composition pour musiciens, producteurs
-- Exploration créative par la génération de styles inédits
-
-## Exemples d'utilisation
+## Exemples d'usage concrets
 | Domaine | Exemple |
 |---------|---------|
-| Production musicale | Générer des ambiances sonores ou des bases instrumentales originales |
-| Jeux vidéo / VR | Créer des musiques adaptatives selon les scènes |
-| Recherche en musique IA | Étudier comment l'IA comprend structure musicale et émotions |
+| Production musicale | Génération de bandes-son personnalisées |
+| Gaming | Musiques dynamiques adaptées à l'action |
+| Méditation | Ambiances sonores thématiques |
 
-## Avantages
-- Génère des musiques longues (>1 minute)
-- Bonne cohérence harmonique et stylistique
-- Peut suivre des descriptions textuelles complexes
-- Exemples impressionnants publiquement accessibles
+## Détails techniques
+| Caractéristique | Valeur |
+|-----------------|---------|
+| Architecture | Transformers hiérarchiques + MuLan |
+| Framework | JAX (optimisé TPU) |
+| Dataset | 5M heures de musique annotée |
+| Tokenization | SoundStream (20 tokens/sec) |
+| Objectif | MAVE score >4.5/5 (qualité musicale) |
 
-## Inconvénients
-- MusicLM complet non disponible pour le public
-- Nécessite d'énormes ressources GPU/TPU
-- Contrôle précis sur la mélodie/dynamique limité
-- Possibles biais éthiques liés aux datasets musicaux
+## Pricing
+- Recherche uniquement • API future estimée à $0.15/min
+
+## Releases clés
+- [v1.0](https://arxiv.org/abs/2301.11325) : Modèle base (01/2023)
+- [v1.5](https://google-research.github.io/seanet/musiclm/examples/) : Génération longue (05/2023)
+
+## Alternatives connues
+- [MusicGen](https://github.com/facebookresearch/audiocraft) (Meta)
+- [Riffusion](https://github.com/riffusion/riffusion)
+- [Stable Audio](https://stability.ai/stable-audio) (Stability AI)
 
 ## Ressources utiles
-- [Publication scientifique officielle MusicLM (arXiv)](https://arxiv.org/abs/2301.11325)
-- [Site officiel MusicLM Google Research](https://google-research.github.io/seanet/musiclm/)
-- [Démo publique limitée sur MusicCaps Dataset](https://google-research.github.io/seanet/musiclm/examples/)
-- [Exemples audio MusicLM (Google)](https://google-research.github.io/seanet/musiclm/examples/)
+- [Publication arXiv](https://arxiv.org/abs/2301.11325)
+- [Démo Google AI Test Kitchen](https://aitestkitchen.withgoogle.com/tools/music-lm)
+- [MusicCaps Dataset](https://huggingface.co/datasets/google/MusicCaps)
 
-## Alternatives
-- MusicGen (Meta AI) – inspiré de MusicLM et disponible publiquement
+## Exemple d'appel API (hypothétique)
+```python
+from google.ai import musiclm
 
-Note : MusicLM complet n'est pas open-source pour le public, mais plusieurs alternatives très proches comme MusicGen existent aujourd'hui. 
+track = musiclm.generate(
+    prompt="Rock progressif avec solo de guitare électrique",
+    duration=180,  # secondes
+    temperature=0.7
+)
+track.export("rock_progressif.wav")
+```
+
+## Input/Output
+- Input : "Ambiance tropicale avec steel drum et rythme reggae"
+- Sortie : 🎶 Écouter l'extrait (2min 24kHz)
+
+## Avantages/Limites
+| ✅ Avantages | ❌ Inconvénients |
+|-------------|-----------------|
+| Cohérence structurelle | Pas de contrôle note à note |
+| Génération longue | Biais culturel occidental |
+| Capte nuances émotionnelles | Compute intensif |
+
+## Confidentialité
+- Modèle entraîné sur données publiques/licenciées
+- Aucune collecte de données utilisateurs (démo)
+
+## Statistiques
+- 4.8/5 qualité perçue (tests utilisateurs)
+- Utilisé dans 300+ projets Google Cloud

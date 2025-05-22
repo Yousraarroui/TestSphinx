@@ -1,86 +1,111 @@
+Bienvenue sur IAn
+=================
+
+Bienvenue sur IAn, votre guide ultime pour explorer et découvrir les meilleurs outils d'IA générative. Laissez notre avatar, IAn, vous accompagner dans cette aventure technologique.
+
+.. raw:: html
+
+   <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/urRUEOBvMaA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
+
+
+.. raw:: html
+
+   <div style="text-align: center;">
+      Laissez l'IA vous aider à résoudre vos problèmes
+   </div>
+
 Les meilleurs outils d'IA générative
 ====================================
-
 .. grid:: 2
    :gutter: 3
 
-   .. grid-item-card:: 🌟 ChatGPT 
+   .. grid-item-card:: 🦙 premium
       :img-alt:
-      :link: https://openai.com/chatgpt
-      :link-type: url
+      :link: catalogue/texte/llama
+      :link-type: doc
       :class-card: bg-light-blue
 
-      ChatGPT
+      Llama
       ^^^
-      Modèle de langage d'OpenAI
+      Modèle de langage de Meta
 
-   .. grid-item-card:: 🎨 DALL-E
+   .. grid-item-card:: 🤖 freemium
       :img-alt:
-      :link: https://openai.com/dall-e
-      :link-type: url
+      :link: catalogue/texte/claude
+      :link-type: doc
       :class-card: bg-light-green
 
-      DALL-E
+      Claude
       ^^^
-      Génération d'images par IA d'OpenAI
+      Générateur de texte par IA
 
-   .. grid-item-card:: 🖌️ Midjourney
+   .. grid-item-card:: 🎥 payant
       :img-alt:
-      :link: https://www.midjourney.com
-      :link-type: url
+      :link: catalogue/video/vidu
+      :link-type: doc
       :class-card: bg-light-yellow
 
-      Midjourney
+      Vidu
       ^^^
-      Générateur d'images créatif
+      Génération de vidéos par IA
 
-   .. grid-item-card:: 🎥 Synthesia
+   .. grid-item-card:: 📹 freemium
       :img-alt:
-      :link: https://www.synthesia.io
-      :link-type: url
+      :link: catalogue/video/sora
+      :link-type: doc
       :class-card: bg-light-red
 
-      Synthesia
+      Sora
       ^^^
       Création de vidéos par IA
 
-   .. grid-item-card:: 🖼️ Adobe Firefly
+   .. grid-item-card:: 🎵 premium
       :img-alt:
-      :link: https://www.adobe.com/firefly
-      :link-type: url
+      :link: catalogue/son/wavenet
+      :link-type: doc
       :class-card: bg-light-purple
 
-      Adobe Firefly
+      WaveNet
       ^^^
-      Outil de création graphique par IA
+      Synthèse audio par IA
 
-   .. grid-item-card:: 📝 Microsoft Copilot
+   .. grid-item-card:: 🎶 gratuit
       :img-alt:
-      :link: https://copilot.microsoft.com
-      :link-type: url
+      :link: catalogue/son/jukebox
+      :link-type: doc
       :class-card: bg-light-orange
 
-      Microsoft Copilot
+      Jukebox
       ^^^
-      Assistant de programmation par IA
+      Génération musicale par IA
 
-   .. grid-item-card:: 🔍 DeepSeek
+   .. grid-item-card:: 🖼️ payantes
       :img-alt:
-      :link: https://www.deepseek.com
-      :link-type: url
+      :link: catalogue/image/dall-e
+      :link-type: doc
       :class-card: bg-light-pink
 
-      DeepSeek
+      DALL-E
       ^^^
-      Outil de recherche avancée par IA
+      Génération d'images par IA
 
-   .. grid-item-card:: 🤖 Grok
+   .. grid-item-card:: 🌌 gratuit
       :img-alt:
-      :link: https://www.grok.com
-      :link-type: url
-      :class-card: bg-light-gray
+      :link: catalogue/image/stable-diffusion
+      :link-type: doc
+      :class-card: bg-light-teal
 
-      Grok
+      Stable Diffusion
       ^^^
-      Assistant IA pour l'analyse de données
+      Génération d'images par IA
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+   :titlesonly:
+
+   indexcontenu.rst
+   big-list-ia.rst

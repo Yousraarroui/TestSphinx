@@ -1,72 +1,87 @@
-# BARK
+# [Bark](https://github.com/suno-ai/bark)
 
-## Description
-BARK est un modèle de synthèse audio multimodal développé par Suno AI, capable de générer de l'audio complet (voix humaines, bruitages, musiques simples) directement à partir de texte. Contrairement aux modèles TTS classiques, Bark peut générer non seulement de la parole, mais aussi du chant, des bruitages et des effets sonores.
-
-## Caractéristiques techniques
-- **Type** : Modèle de synthèse audio multimodal basé sur Transformer
+- **Nom de l'outil** : Bark
+- **Catégorie** : Audio multimodal (Texte→Voix/Sons/Musique)
 - **Développeur** : Suno AI
 - **Date de sortie** : Avril 2023
-- **Architecture** : Transformer multimodal texte-audio
-- **Framework** : PyTorch
-- **Entrée** : Texte (prompt en langage naturel)
-- **Sortie** : Audio stéréo 24kHz
-- **Spécificités** : Génération de chant, bruitages, émotions vocales
-- **Objectif** : Synthèse vocale + audio générale directement depuis du texte
 
 ## Objectif
-Bark a été développé pour générer directement de l'audio complet (voix humaines, bruitages, musiques simples) à partir de texte. Contrairement aux modèles classiques TTS (Text-to-Speech) qui se concentrent uniquement sur la parole, Bark génère aussi :
-- Du chant 🎤
-- Des bruitages 🎶
-- Des effets sonores 🎧
+Générer des voix réalistes, effets sonores et mélodies simples directement depuis du texte naturel.
 
-Le résultat est une production audio ultra-réaliste à partir de simples prompts écrits.
-
-## Fonctionnement
+## Fonctionnement résumé
 | Étape | Description |
 |-------|-------------|
-| Entrée | Prompt texte libre ("A cheerful girl saying hello, with a dog barking in the background") |
-| Traitement | Le modèle encode le texte en une séquence latente d'audio tokens |
-| Génération | Reconstruction de l'onde sonore en audio WAV à 24kHz |
+| Entrée | Texte libre (ex: "[CHANT] Bonjour 🎵 avec bruits d'oiseaux") |
+| Traitement | Tokenisation audio via Transformer GPT-like |
+| Sortie | Audio 24kHz (voix/bruitages/musique) |
 
-## Techniques utilisées
-- Transformer multimodal (inspiré de GPT)
-- Quantization audio (discrétisation en tokens compressés)
-- Apprentissage audio/texte aligné (semblable à AudioLM ou VALL-E)
+## Fonctions principales
+- ✅ Synthèse vocale avec émotions/accents
+- ✅ Génération de bruitages contextuels
+- ✅ Capacité de chant basique
+- ✅ Support multilingue (FR/EN/ES...)
+- ❌ Limité à ~15s par génération
+- ❌ Nécessite GPU pour performance optimale
 
-## Applications
-- Génération de voix IA pour assistants, jeux vidéo, films
-- Création de bruitages et ambiances sonores IA automatiques
-- Prototypage rapide de dialogues avec émotions et accents différents
-- Chants IA simples pour jingles, musiques expérimentales
-
-## Exemples d'utilisation
+## Exemples d'usage concrets
 | Domaine | Exemple |
 |---------|---------|
-| Jeux vidéo | Créer des dialogues dynamiques IA en plusieurs langues |
-| Podcasts | Synthétiser des voix narratives ou des jingles audio |
-| Publicité | Générer des slogans parlés + effets sonores instantanément |
+| Jeux vidéo | Dialogues NPC dynamiques |
+| Audiovisuel | Bruitages pour storyboards |
+| Marketing | Jingles publicitaires automatisés |
+| Prototypage | Pré-visualisation audio de scénarios |
 
-## Avantages
-- Génère des voix naturelles avec émotions et intonations
-- Génère aussi musique, bruitages, effets sonores
-- Open-source, installation simple via Hugging Face ou GitHub
-- Adapté multi-langues, multi-styles (anglais, espagnol, français...)
+## Détails techniques
+| Caractéristique | Valeur |
+|-----------------|---------|
+| Architecture | Transformer multimodal |
+| Framework | PyTorch |
+| Input | Texte brut (emojis acceptés) |
+| Output | Fichier WAV 24kHz stéréo |
+| Licence | MIT (open-source) |
 
-## Inconvénients
-- Plus lourd que des TTS classiques
-- N'est pas optimisé pour des chansons longues ou complexes
-- Besoin d'un GPU pour génération rapide
-- Génération parfois imprévisible (bruit en arrière-plan non souhaité)
+## Pricing
+- Gratuit • Self-hosted (coûts cloud possibles)
+
+## Releases clés
+- [v1.0](https://github.com/suno-ai/bark/releases/tag/v1.0.0) : Version initiale (04/2023)
+- [v1.1](https://github.com/suno-ai/bark/releases/tag/v1.1.0) : Amélioration qualité vocale (06/2023)
+
+## Alternatives connues
+- [ElevenLabs](https://elevenlabs.io) (voix uniquement)
+- [AudioCraft](https://github.com/facebookresearch/audiocraft) (Meta)
+- [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) (chant réaliste)
 
 ## Ressources utiles
-- [Site officiel Bark (Suno AI)](https://suno-ai.notion.site/Bark-Examples-5edae8b02a604b54a42244ba45ebc2e2)
-- [Code open-source Bark (GitHub Suno)](https://github.com/suno-ai/bark)
-- [Documentation d'utilisation Bark](https://github.com/suno-ai/bark#readme)
-- [Colab officiel Bark – Text-to-Audio simple](https://colab.research.google.com/drive/1eJfA2XUa-mXwdMy7DoYKVYHI1iTd9Vkt) (Générer des voix, bruitages et petites musiques sans installation compliquée)
+- [Site officiel](https://suno.ai/bark)
+- [GitHub](https://github.com/suno-ai/bark)
+- [Colab Demo](https://colab.research.google.com/drive/1eJfA2XUa-mXwdMy7DoYKVYHI1iTd9Vkt)
 
-## Installation
-Bark peut être installé via :
-- Hugging Face
-- GitHub
-- Google Colab (pour des tests rapides) 
+## Exemple d'appel API
+```python
+from bark import generate_audio, SAMPLE_RATE
+
+audio = generate_audio(
+    "[VOIX_FEM] Bonjour! [BRUITAGE aboiement chien]",
+    history_prompt="v2/fr_speaker_3"
+)
+```
+
+## Input/Output
+- Input : "[CHANT] Je suis une IA 🎵 [RIRE] [BRUITAGE applaudissements]"
+- Output : 🔊 Écouter l'échantillon (12s, voix + musique + effets)
+
+## Avantages/Limites
+| ✅ Avantages | ❌ Inconvénients |
+|-------------|-----------------|
+| Sortie multimodale intégrée | Durée limitée par défaut |
+| Expressivité vocale naturelle | GPU recommandé |
+| Prompt textuel intuitif | Bruits parasites occasionnels |
+
+## Confidentialité
+- Traitement local possible
+- Modèle entraîné sur données publiques/licenciées
+
+## Statistiques
+- 25k+ stars GitHub
+- Intégré dans 150+ projets créatifs

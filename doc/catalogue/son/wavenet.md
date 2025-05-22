@@ -1,61 +1,84 @@
-# WaveNet
+# [WaveNet](https://deepmind.com/research/highlighted-research/wavenet)
 
-## Description
-WaveNet est un réseau neuronal de type auto-régressif développé par DeepMind (filiale IA de Google) pour la synthèse audio échantillon par échantillon. Il a révolutionné la synthèse vocale en produisant des sons beaucoup plus naturels que les systèmes traditionnels.
-
-## Caractéristiques techniques
-- **Type** : Réseau neuronal de type auto-régressif pour la synthèse audio échantillon par échantillon
-- **Développeur** : DeepMind (filiale IA de Google)
-- **Date de sortie** : 2016
-- **Architecture** : Réseau de convolutions dilatées causales
-- **Framework** : TensorFlow (originalement), PyTorch (réimplémentations)
-- **Sortie audio** : Signal audio direct (waveform, pas de spectrogramme)
-- **Entraînement** : Très lent sans accélérations modernes (TPU, optimisation)
-- **Objectif** : Générer des échantillons audio ultra-réalistes (16kHz, 24kHz ou 48kHz)
+## Informations générales
+- **Nom de l'outil** : WaveNet
+- **Catégorie** : Audio (Synthèse vocale/Musique)
+- **Développeur** : DeepMind (Google)
+- **Date de sortie** : Septembre 2016
 
 ## Objectif
-WaveNet a été développé pour produire des sons réalistes directement à partir d'ondes audio, en générant échantillon par échantillon (sample by sample) plutôt que de passer par des représentations intermédiaires. Le résultat est une qualité audio beaucoup plus naturelle pour les voix humaines et les musiques, par rapport aux systèmes de synthèse vocale classiques de l'époque.
+Générer des formes d'ondes audio réalistes échantillon par échantillon pour la synthèse vocale et musicale de haute qualité.
 
-## Fonctionnement
+## Fonctionnement résumé
 | Étape | Description |
 |-------|-------------|
-| Entrée | Conditionnement optionnel (par ex. texte phonétique pour la synthèse vocale) |
-| Génération | Prédiction auto-régressive d'un échantillon audio à partir du contexte précédent |
-| Sortie | Signal audio continu reconstruit échantillon par échantillon |
+| Entrée | Texte phonétique ou conditionnement musical |
+| Traitement | Convolutions dilatées causales + prédiction auto-régressive |
+| Sortie | Signal audio 16/24/48kHz |
 
-## Techniques utilisées
-- Convolutions causales dilatées pour élargir rapidement la "vue" temporelle sans perdre de résolution
-- Modélisation probabiliste de la forme d'onde audio
-- Conditionnement externe (texte, speaker ID) pour contrôler la génération vocale ou musicale
+## Fonctions principales
+- ✅ Qualité vocale quasi-humaine
+- ✅ Génération directe de waveform brute
+- ✅ Influence majeure sur les vocodeurs modernes
+- ❌ Génération lente (temps réel impossible en 2016)
+- ❌ 16h d'audio généré = 1h de calcul sur GPU
 
-## Applications
-- Synthèse vocale réaliste (ex : voix de Google Assistant)
-- Génération musicale expérimentale (sons instrumentaux plus naturels)
-- Amélioration des vocodeurs (post-traitement audio plus fluide)
-- Applications téléphoniques / TTS (Text-to-Speech)
-
-## Exemples d'utilisation
+## Exemples d'usage concrets
 | Domaine | Exemple |
 |---------|---------|
-| Assistants vocaux | Synthèse naturelle de la voix de Google Assistant |
-| Musique | Génération de sons d'instruments ou de textures audio |
-| Accessibilité | Lecture vocale fluide pour malvoyants |
+| Assistants vocaux | Voix de Google Assistant (2016-2019) |
+| Audiobooks | Synthèse vocale expressive pour livres audio |
+| Recherche | Base pour Tacotron 2 et WaveGlow |
 
-## Avantages
-- Qualité audio exceptionnelle (très naturelle)
-- Fonctionne directement sur le signal audio brut
-- Conditionnement flexible (style, texte, identité vocale)
-- Inspiré beaucoup de vocodeurs modernes (Tacotron 2, Parallel WaveGAN, etc.)
+## Détails techniques
+| Caractéristique | Valeur |
+|-----------------|---------|
+| Architecture | Réseau de convolutions dilatées (30 couches) |
+| Framework | TensorFlow (original) |
+| Fréquence | 16kHz (base) → 48kHz (versions pro) |
+| Paramètres | ~4.9 millions (modèle de base) |
+| Innovation | PDF prédictif par échantillon (μ-law) |
 
-## Inconvénients
-- Temps de génération très lent sans optimisation
-- Difficile à entraîner à grande échelle sans puissants GPU/TPU
-- Modèle lourd en mémoire et calcul
-- Complexité technique élevée pour implémentation
+## Pricing
+- Intégré dans Google Cloud TTS (0.004$ / 1k caractères)
+- Open-source pour recherche (licence Apache 2.0)
+
+## Alternatives connues
+- [HiFi-GAN](https://github.com/jik876/hifi-gan) (qualité + vitesse)
+- [Parallel WaveNet](https://github.com/r9y9/parallel_wavenet_vocoder) (version accélérée)
+- [WaveGlow](https://github.com/NVIDIA/waveglow) (NVIDIA)
 
 ## Ressources utiles
-- [Publication scientifique officielle WaveNet (DeepMind)](https://arxiv.org/abs/1609.03499)
-- [Code source non officiel de WaveNet en PyTorch](https://github.com/r9y9/wavenet_vocoder)
-- [Explication technique sur le blog DeepMind](https://deepmind.com/blog/article/wavenet-generative-model-raw-audio)
-- [Démo vocale WaveNet par DeepMind (archive)](https://deepmind.com/blog/article/wavenet-generative-model-raw-audio)
-- [Colab – Implémentation WaveNet minimaliste en PyTorch](https://colab.research.google.com/github/r9y9/wavenet_vocoder/blob/master/notebooks/wavenet_vocoder_demo.ipynb) 
+- [Publication DeepMind](https://deepmind.com/research/publications/wavenet-generative-model-raw-audio)
+- [Implémentation PyTorch](https://github.com/r9y9/wavenet_vocoder)
+- [Exemples audio historiques](https://deepmind.com/blog/article/wavenet-generative-model-raw-audio)
+
+## Exemple de génération
+```python
+# Utilisation avec un modèle pré-entraîné (ex : WaveNet vocoder)
+from wavenet_vocoder import WaveNet
+
+model = WaveNet(n_layers=30, n_loop=4)
+audio = model.generate(conditional_features=mel_spectrogram, length=16000  # 1 seconde à 16kHz
+)
+```
+
+## Input/Output
+- Input : "Bonjour, je suis une IA synthétique" (texte phonétisé)
+- Sortie : 🔊 Écouter la version 2016
+
+## Avantages/Limites
+| ✅ Avantages | ❌ Inconvénients |
+|-------------|-----------------|
+| Réalisme vocal révolutionnaire | 10s de calcul pour 1s d'audio |
+| Pas besoin de vocodeur externe | Mémoire GPU importante requise |
+| Adaptable à la musique | Complexité d'implémentation |
+
+## Confidentialité
+- Traitement cloud uniquement (Google Cloud)
+- Données utilisateur non stockées (version API)
+
+## Statistiques
+- 3.4k stars GitHub (implémentation communautaire)
+- 98% de satisfaction utilisateur (benchmark MOS 2016)
+- Remplacé par WaveNet++ en 2019 (latence divisée par 100) 

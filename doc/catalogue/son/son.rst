@@ -5,15 +5,14 @@ Générateurs de sons par IA
    :maxdepth: 1
    :caption: Générateurs de sons par IA
 
-   aiva
    audioldm
    bark
    coversong
-   dance-diffusion
-   descript
+   dancediffusion
    gansynth
-   murf-ai
+   jen1
+   jukebox
+   melgan
    musiclm
-   resemble-ai
    riffusion
    wavenet

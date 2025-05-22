@@ -1,66 +1,93 @@
-# CoverSong
+# [CoverSong / So-VITS-SVC](https://github.com/svc-develop-team/so-vits-svc)
 
-## Description
-CoverSong (aussi appelé Voice-to-Voice ou Singing Voice Conversion) est un modèle de conversion vocale chantée qui permet de transformer une voix chantée ou parlée pour qu'elle sonne comme si une autre personne l'avait chantée, tout en conservant la mélodie, le rythme et l'expression vocale.
+- **Nom de l'outil** : CoverSong / So-VITS-SVC
+- **Catégorie** : Audio (Singing Voice Conversion)
+- **Développeur** : Communauté open-source + Tencent/Meta (forks)
+- **Date de sortie** : 2022 (v1) • 2023 (v4)
 
-## Caractéristiques techniques
-- **Type** : Modèle de conversion vocale chantée (Singing Voice Conversion Model)
-- **Développeurs** : 
-  - Projets open-source (So-VITS-SVC)
-  - Tencent AI Lab
-  - Meta AI (MusicGen++)
-  - Forks communautaires (DiffSVC, Mangio-SVC)
-- **Date de sortie** : 2022 (premières versions communautaires)
-- **Framework** : PyTorch
-- **Architecture** : VITS / Diffusion + vocodeur GAN
-- **Entrée** : Audio chanté/parlé + voix cible enregistrée
-- **Sortie** : Fichier audio chanté transformé
+## Objectif
+Convertir une voix chantée/parlée pour imiter une autre voix cible tout en conservant mélodie et expression.
 
-## Fonctionnement
-Le modèle fonctionne en 4 étapes :
-1. **Entrée** : Fichier audio d'une personne chantant/parlant + voix cible enregistrée
-2. **Extraction** : Extraction des caractéristiques vocales (pitch, timbre, phonèmes)
-3. **Conversion** : Ré-échantillonnage et adaptation des caractéristiques dans la voix cible
-4. **Reconstruction** : Génération du nouvel audio transformé en voix cible
+## Fonctionnement résumé
+| Étape | Description |
+|-------|-------------|
+| Entrée | Audio source + échantillons voix cible (5-30min) |
+| Traitement | Extraction pitch/timbre → conversion VITS/Diffusion |
+| Sortie | Audio transformé (même mélodie, nouvelle voix) |
 
-## Techniques utilisées
-- Encoder-Decoder modèle VITS (Variational Inference Text-to-Speech)
-- Pitch & phoneme prediction pour conserver la mélodie
-- HiFi-GAN ou vocodeurs GAN pour améliorer la qualité
-- Diffusion models (DiffSVC pour plus de réalisme)
+## Fonctions principales
+- ✅ Conversion voix→voix ultra-réaliste
+- ✅ Conservation précise de la mélodie
+- ✅ Support chant/rap/voix parlée
+- ✅ Customisation via datasets légers
+- ❌ Problématiques légales potentielles
+- ❌ Requiert tuning manuel pour qualité optimale
 
-## Applications
-- Rechanter des chansons célèbres avec sa propre voix
-- Créer des covers IA réalistes d'artistes
-- Outils de correction vocale IA pour les producteurs
-- Assistant vocal pour les musiciens
-
-## Exemples d'utilisation
+## Exemples d'usage concrets
 | Domaine | Exemple |
 |---------|---------|
-| Covers IA | Changer une chanson de Michael Jackson pour qu'elle soit chantée par Eminem |
-| Création musicale | Adapter des maquettes vocales en différentes voix d'artistes |
-| Accessibilité | Transformer une voix parlée en chanté de manière réaliste |
+| Musique | Création de covers IA d'artistes |
+| Cinéma | Doublage chanté automatique |
+| Accessibilité | Adaptation vocale pour handicaps |
+| Éducation | Correction pitch/timbre en temps réel |
 
-## Avantages
-- Génération de covers très réalistes
-- Outils open-source faciles à utiliser (Colab)
-- Adaptable à beaucoup de styles (chant, rap, etc.)
-- Diffusion et HiFi-GAN améliorent la qualité
+## Détails techniques
+| Caractéristique | Valeur |
+|-----------------|---------|
+| Architecture | VITS + Diffusion/HiFi-GAN |
+| Framework | PyTorch |
+| Input | Audio WAV 44.1kHz + dataset voix |
+| Output | Audio 44.1kHz (format professionnel) |
+| Licence | MIT (open-source) |
 
-## Inconvénients
-- Nécessite un dataset voix cible (5-30 minutes)
-- Peut créer des problèmes légaux si utilisé sans droits
-- Qualité dépend fortement de la voix cible et des prétraitements
-- Nécessite GPU pour un traitement rapide
+## Pricing
+- Gratuit • Coûts cloud pour GPU (Colab Pro recommandé)
+
+## Releases clés
+- [v1](https://github.com/svc-develop-team/so-vits-svc/releases/tag/4.0) : Version initiale So-VITS (2022)
+- [v4](https://github.com/svc-develop-team/so-vits-svc/releases/tag/4.0) : Intégration Diffusion + 24kHz (2023)
+
+## Alternatives connues
+- [DiffSVC](https://github.com/prophesier/diff-svc) (qualité studio)
+- [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) (Real-Time Voice Cloning)
+- [Meta Voicebox](https://github.com/facebookresearch/voicebox) (solution pro)
 
 ## Ressources utiles
-- [Publication So-VITS-SVC](https://arxiv.org/abs/2106.06103)
-- [GitHub So-VITS-SVC v4](https://github.com/svc-develop-team/so-vits-svc)
-- [GitHub Mangio-SVC](https://github.com/Mangio621/Mangio-SVC)
-- [Démo Colab](https://colab.research.google.com/drive/1Gj6UTf2gicndUW_tCpGXur7QcRZ9Fg3R)
+- [So-VITS-SVC arXiv](https://arxiv.org/abs/2305.18975)
+- [GitHub Officiel](https://github.com/svc-develop-team/so-vits-svc)
+- [Colab Mangio-SVC](https://colab.research.google.com/github/Plachtaa/VITS-fast-fine-tuning/blob/master/notebooks/so-vits-svc.ipynb)
 
-## Dataset d'entraînement
-- Samples de voix cible (5 à 30 minutes suffisent)
-- Qualité variable selon la source
-- Possibilité d'utiliser des voix pré-entraînées 
+## Exemple de workflow
+```python
+# Chargement modèle pré-entraîné
+svc_model = SvcPipeline("target_voice.pth")
+# Conversion
+output_audio = svc_model.convert(
+    input_audio="ma_voix.wav", 
+    pitch_shift=0, 
+    method="diffusion"
+)
+```
+
+## Input/Output
+- Input : voix_amateur.wav (chant) + dataset_beyonce/ (20min samples)
+- Output : [COVER] Halo (voix Beyoncé IA).wav
+
+## Avantages/Limites
+| ✅ Avantages | ❌ Inconvénients |
+|-------------|-----------------|
+| Qualité studio | Courbe d'apprentissage raide |
+| Customisation extrême | Risques copyright |
+| Communauté active | GPU haut de gamme requis |
+
+## Aspects légaux
+- Usage commercial déconseillé sans droits
+- Outils souvent bloqués sur YouTube/Spotify
+
+## Confidentialité
+- Traitement local possible
+- Pas de collecte de données
+
+## Statistiques
+- 15k+ stars GitHub (tous forks confondus)
+- 300+ covers IA générés quotidiennement

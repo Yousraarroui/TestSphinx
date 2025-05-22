@@ -1,136 +1,101 @@
-(chat-gpt)=
-# ChatGPT
+# [ChatGPT](https://chat.openai.com)
 
-ChatGPT est un modèle de langage développé par OpenAI, basé sur l'architecture GPT (Generative Pre-trained Transformer). Il est capable de comprendre et de générer du texte de manière naturelle, ce qui en fait un outil puissant pour diverses applications.
+- **Nom de l'outil** : ChatGPT
+- **Catégorie** : Texte, Multimodal (texte, image, audio, vidéo)
+- **Développeur** : OpenAI
+- **Date de sortie** : 30 novembre 2022
 
-## Fonctionnalités principales
+## Objectif
+Proposer une interface conversationnelle intuitive basée sur des modèles de langage avancés, accessible au grand public et aux professionnels, pour des tâches variées allant de la génération de texte à l'analyse multimodale.
 
-- Génération de texte
-- Réponses aux questions
-- Aide à la rédaction
-- Traduction
-- Résumé de textes
+## Fonctionnement résumé
+| Étape | Description |
+|-------|-------------|
+| Entrée | Texte, image, audio, vidéo |
+| Traitement | Modèles GPT (GPT-3.5, GPT-4, GPT-4o, GPT-4.1) |
+| Sortie | Réponses textuelles, images, audio |
 
-## Utilisation
+## Fonctions principales
+- ✅ Génération de texte (rédaction, résumé, traduction)
+- ✅ Analyse et génération d'images
+- ✅ Synthèse et reconnaissance vocale
+- ✅ Navigation web intégrée
+- ✅ Personnalisation via GPTs
+- ✅ Intégration de plugins tiers
+- ✅ Recherche avancée avec ChatGPT Search
 
-ChatGPT peut être utilisé via l'interface web d'OpenAI ou via l'API pour l'intégration dans d'autres applications.
+## Exemples d'usage concrets
+| Domaine | Exemple |
+|---------|---------|
+| Éducation | Aide aux devoirs |
+| Marketing | Rédaction de contenus |
+| Développement | Génération de code |
+| Accessibilité | Synthèse vocale |
+| Service client | Chatbots automatisés |
 
-## Limites
+## Détails techniques
+| Caractéristique | Valeur |
+|-----------------|---------|
+| Architecture | Transformer |
+| Framework | PyTorch |
+| Input | Texte, image, audio, vidéo |
+| Output | Texte, image, audio |
+| Licence | Propriétaire |
 
-- Connaissance limitée aux données d'entraînement
-- Possibilité d'hallucinations
-- Nécessite une vérification humaine pour les informations critiques
+## Pricing
+- **Gratuit** : GPT-3.5 et GPT-4o (limitations)
+- **Plus** : 20 $/mois (GPT-4)
+- **Pro** : 200 $/mois (accès prioritaire)
+- **API** : Tarification par tokens
 
-## 🏷️ Informations Générales
-- **Nom**: ChatGPT
-- **Version**: GPT-4 (Mars 2023)
-- **Date**: 30 novembre 2022
-- **Développeur**: OpenAI
-- **Site Web**: [openai.com](https://openai.com)
+## Releases clés
+- [GPT-3.5](https://openai.com/blog/chatgpt) : Version initiale (2022)
+- [GPT-4](https://openai.com/blog/gpt-4) : Améliorations majeures (2023)
+- [GPT-4o](https://openai.com/blog/gpt-4o) : Multimodal (2024)
+- [GPT-4.1](https://openai.com/blog/gpt-4-1) : Optimisations (2025)
 
+## Alternatives connues
+- Claude (Anthropic)
+- Gemini (Google)
+- Mistral (Mistral AI)
 
+## Ressources utiles
+- [Site officiel](https://chat.openai.com)
+- [Documentation API](https://platform.openai.com/docs)
+- [Blog OpenAI](https://openai.com/blog)
 
-## 🛠️ Caractéristiques Techniques
-- **Architecture**: Transformer
-- **Type**: LLM (Large Language Model)
-- **Contexte**: 
-  - GPT-3.5: 4K tokens
-  - GPT-4: 8K/32K tokens
-- **Entrée**: Texte
-- **Sortie**: Texte
-
-
-## 💰 Accès et Coûts
-- **Version Gratuite**: ✅
-- **ChatGPT Plus**: $20/mois
-- **API**: Pay-as-you-go
-- **Licence**: Propriétaire
-- **Open Source**: ❌
-
-
-## 📝 Description
-
-ChatGPT est un modèle de langage conversationnel avancé capable de comprendre et générer du texte en langage naturel. Il excelle dans la compréhension du contexte et peut être utilisé pour une grande variété de tâches.
-
-### 🎯 Cas d'Utilisation
-- 🤖 Assistance à la programmation
-- ✍️ Rédaction et édition de texte
-- 📞 Support client automatisé
-- 📚 Aide à l'apprentissage
-- 📊 Analyse et résumé de textes
-
-## ⚖️ Avantages et Inconvénients
-
-### ✅ Avantages
-- Interface conversationnelle intuitive
-- Excellente compréhension du contexte
-- Polyvalence dans les tâches
-- Mises à jour régulières
-- API bien documentée
-
-
-
-### ❌ Inconvénients
-- Peut générer des informations incorrectes
-- Coût significatif pour l'utilisation pro
-- Limites de contexte
-- Pas de connexion internet en temps réel
-- Biais potentiels dans les réponses
-
-
-
-## 🔧 Intégration
-
-### 📚 Documentation
-- [Documentation API OpenAI](https://platform.openai.com/docs)
-- [Guide des Bonnes Pratiques](https://platform.openai.com/docs/guides/gpt-best-practices)
-
-### 💻 Code d'Exemple
-
-```python
-import openai
-
-openai.api_key = 'your-api-key'
-
-response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Hello, how are you?"}
-    ]
-)
-
-print(response.choices[0].message.content)
+## Exemple d'appel API
+```bash
+curl https://api.openai.com/v1/chat/completions \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "Explique la théorie de la relativité"}]
+}'
 ```
 
-### 🤝 Intégrations Compatibles
-- LangChain
-- OpenAI Python Package
-- ChatGPT Plugins
-- Microsoft Azure OpenAI Service
+## Input/Output
+- Input : "Explique la théorie de la relativité"
+- Output : "La théorie de la relativité, développée par Albert Einstein..."
 
-## 📋 Exemples
+## Avantages/Limites
+| ✅ Avantages | ❌ Inconvénients |
+|-------------|-----------------|
+| Interface conviviale | Modèle propriétaire |
+| Capacités multimodales | Limitations contextuelles |
+| Large éventail d'applications | Dépendance internet |
 
+## Confidentialité
+- Données utilisées pour l'entraînement (sauf désactivation)
+- Conformité RGPD
+- Options de contrôle des données
 
-### Exemple 1 - Explication de Concept
-```python
-Input: Explique-moi le concept de récursivité en programmation
-Output: La récursivité est une technique de programmation où une fonction s'appelle 
-elle-même pour résoudre un problème plus grand en le décomposant en sous-problèmes 
-plus simples. C'est comme une mise en abyme, où chaque appel résout une partie plus 
-petite du problème jusqu'à atteindre un cas de base.
-```
+## Statistiques
+- 400M+ utilisateurs actifs hebdomadaires
+- 15.5M abonnés ChatGPT Plus
+- 1.5M clients entreprises
 
-
-### Exemple 2 - Traduction
-```python
-Input: Traduis cette phrase en anglais : "Le chat dort sur le canapé"
-Output: The cat is sleeping on the couch
-```
-
-
-## 📌 Notes
-- Les performances varient selon la version du modèle
-- La qualité des réponses dépend de la formulation du prompt
-- Important de vérifier les informations critiques
-- Mise à jour régulière des capacités
+## Compatibilité
+- Web, iOS, Android, macOS
+- Slack, Microsoft Teams, Zapier

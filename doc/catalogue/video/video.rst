@@ -6,6 +6,5 @@ Générateurs de vidéo par IA
     :caption: Générateurs de vidéo par IA
 
     sora
-    lumen5
-    pictory
+    vidu
     

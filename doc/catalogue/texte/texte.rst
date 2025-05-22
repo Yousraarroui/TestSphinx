@@ -8,15 +8,6 @@ Générateurs de texte par IA
     claude
     bloom
     t5
-    animoto
-    canva
-    invideo
-    copy-ai
-    jasper
-    writesonic
-    grok
-    gemini
-    mistral
-    deepseek
-    gpt-family
     chat-gpt
+    llama
+    nous-hermes-2-mistral-7b-dpo
