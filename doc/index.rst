@@ -1,80 +1,111 @@
-.. Example documentation master file, created by
-   sphinx-quickstart on Sat Sep 23 20:35:12 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Bienvenue sur IAn
+=================
+
+Bienvenue sur IAn, votre guide ultime pour explorer et découvrir les meilleurs outils d'IA générative. Laissez notre avatar, IAn, vous accompagner dans cette aventure technologique.
+
+.. raw:: html
+
+   <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/urRUEOBvMaA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
 
 
-Ian un Vulgarisateur pour l'IA
-==============================
+.. raw:: html
 
-.. admonition:: Ian Vulgarisateur
-   :class: note
+   <div style="text-align: center;">
+      Laissez l'IA vous aider à résoudre vos problèmes
+   </div>
 
-   Bienvenue sur notre plateforme de vulgarisation de l'intelligence artificielle. 
-   Découvrez les concepts clés, les modèles d'IA et leurs applications à travers 
-   des explications claires et accessibles.
-
-   Qu'est-ce que l'IA générative ? L'IA générative ou l'intelligence artificielle générative fait référence à l'utilisation de l'IA pour créer de nouveaux contenus, comme du texte, des images, de la musique, de l'audio et des vidéos.
-
-.. admonition:: Important
-   :class: important
-
-   **Ne confondez pas IA générative et IA générale !** 
-
-   *L'IA générative* se concentre sur la création de nouveaux contenus, tandis que *l'IA générale* (AGI) fait référence à une intelligence artificielle capable d'accomplir n'importe quelle tâche intellectuelle humaine. L'IA générative est une sous-catégorie spécifique de l'IA, alors que l'AGI reste un objectif théorique non encore atteint.
-
-🔥 À la une
------------
-
+Les meilleurs outils d'IA générative
+====================================
 .. grid:: 2
-   :gutter: 2
-   :margin: 0
-
-   .. grid-item-card::
-      :link: catalogue/chat-gpt.md
-      :link-type: doc
-
-      **GPT-4**  
-      Un des plus puissants modèles de génération de texte.
-
-   .. grid-item-card::
-      :link: catalogue/stable_diffusion
-      :link-type: doc
-
-      **Stable Diffusion**  
-      Génération d'images réalistes à partir de texte.
-
-📂 Explorer par catégorie
--------------------------
-
-.. grid:: 3
-   :class-container: custom-grid
    :gutter: 3
 
-   .. grid-item-card::
-      :link: free_tools
+   .. grid-item-card:: 🦙 premium
+      :img-alt:
+      :link: catalogue/texte/llama
       :link-type: doc
+      :class-card: bg-light-blue
 
-      🆓 **Outils Gratuits**  
-      Liste des IA totalement gratuites à utiliser.
+      Llama
+      ^^^
+      Modèle de langage de Meta
 
-   .. grid-item-card::
-      :link: freemium_tools
+   .. grid-item-card:: 🤖 freemium
+      :img-alt:
+      :link: catalogue/texte/claude
       :link-type: doc
+      :class-card: bg-light-green
 
-      💸 **Freemium**  
-      Des outils avec une offre gratuite limitée.
+      Claude
+      ^^^
+      Générateur de texte par IA
 
-   .. grid-item-card::
-      :link: paid_tools
+   .. grid-item-card:: 🎥 payant
+      :img-alt:
+      :link: catalogue/video/vidu
       :link-type: doc
+      :class-card: bg-light-yellow
 
-      💰 **Payants**  
-      Solutions avancées nécessitant un abonnement.
+      Vidu
+      ^^^
+      Génération de vidéos par IA
 
-📌 Ressources utiles
---------------------
+   .. grid-item-card:: 📹 freemium
+      :img-alt:
+      :link: catalogue/video/sora
+      :link-type: doc
+      :class-card: bg-light-red
 
-.. seealso::
-   - `Document PDF du projet <https://docs.google.com/document/...>`_
-   - `Code source sur GitHub <https://github.com/Yousraarroui/TestSphinx>`_
+      Sora
+      ^^^
+      Création de vidéos par IA
+
+   .. grid-item-card:: 🎵 premium
+      :img-alt:
+      :link: catalogue/son/wavenet
+      :link-type: doc
+      :class-card: bg-light-purple
+
+      WaveNet
+      ^^^
+      Synthèse audio par IA
+
+   .. grid-item-card:: 🎶 gratuit
+      :img-alt:
+      :link: catalogue/son/jukebox
+      :link-type: doc
+      :class-card: bg-light-orange
+
+      Jukebox
+      ^^^
+      Génération musicale par IA
+
+   .. grid-item-card:: 🖼️ payantes
+      :img-alt:
+      :link: catalogue/image/dall-e
+      :link-type: doc
+      :class-card: bg-light-pink
+
+      DALL-E
+      ^^^
+      Génération d'images par IA
+
+   .. grid-item-card:: 🌌 gratuit
+      :img-alt:
+      :link: catalogue/image/stable-diffusion
+      :link-type: doc
+      :class-card: bg-light-teal
+
+      Stable Diffusion
+      ^^^
+      Génération d'images par IA
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+   :titlesonly:
+
+   indexcontenu.rst
+   big-list-ia.rst
