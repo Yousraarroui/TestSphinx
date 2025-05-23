@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="86400000" />
+    <meta name="docsearch:name" content="IAn" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1" />
+    <meta name="docsearch:version" content="0.1" />
+    
+      <title>Architectures CNN Populaires &mdash; IAn 0.1 documentation</title>
+    
+    <link rel="canonical" href="contenu/03_modeles_apprentissage/architectures_cnn" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-nefertiti-default.min.css?v=84f2ec69" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css?v=ce93212b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/red-hat-mono/stylesheet.css?v=4eee5046" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-dark.css?v=589f9147" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-light.css?v=1620426e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../../genindex.html" />
+        <link rel="search" title="Search" href="../../search.html" />
+        <link rel="top" title="IAn 0.1 documentation" href="#" />
+        <link rel="up" title="Modèles d’Apprentissage" href="mdl_appr.html" />
+        <link rel="next" title="Modèles généraux de NLP" href="modeles_nlp.html" />
+        <link rel="prev" title="Modèles d’Apprentissage" href="mdl_appr.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl neutral nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-xl-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2 pe-lg-4"
+          ><span class="brand-text">IAn</span></a>
+        
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-text">IAn</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/Yousraarroui/TestSphinx.git" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/Yousraarroui/TestSphinx.git">
+                      TestSphinx
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+                <!-- colorssets-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle color set">
+    <i class="bi bi-palette"></i>
+    <span id="snftt-color-text" class="d-xl-none ms-2">Change color set</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+    <li>
+      <h6 class="dropdown-header">Change color set</h6>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+        <span class="blue">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Blue</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="indigo" href="#" aria-pressed="false">
+        <span class="indigo">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Indigo</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+        <span class="purple">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Purple</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+        <span class="pink">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Pink</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+        <span class="red">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Red</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+        <span class="orange">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Orange</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+        <span class="yellow">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Yellow</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+        <span class="green">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Green</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+        <span class="teal">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Teal</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="default" href="#" aria-pressed="false">
+        <span class="cyan">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Cyan</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li><hr class="dropdown-divider" /></li>
+    <li>
+      <h6 class="dropdown-header">Neutral header</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center active current" data-snftt-colorset-neutral="on" href="#" aria-pressed="false">
+        <i class="bi bi-noise-reduction"></i>
+        <span class="ms-3">Neutral</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+  <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+  <hr class="d-lg-none text-white-50">
+</li>
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-block">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../indexcontenu.html">Contenu Théorique</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_introduction/intro.html">Introduction à l’IA Générative</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01_introduction/introduction.html">Introduction à l’Apprentissage Automatique et à l’Apprentissage Profond dans l’IA générative</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02_notions_basiques/notion.html">Notions de Base en IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_notions_basiques/notion_de_base_de_l%27apprentissage_profond.html">Notions de Base de l’Apprentissage Profond</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="mdl_appr.html">Modèles d’Apprentissage</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Architectures CNN Populaires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modeles_nlp.html">Modèles généraux de NLP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../04_modeles_generatifs/mdl_gen.html">Modèles Génératifs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_modeles_generatifs/modeles_generatifs.html">Modèles Génératifs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../big-list-ia.html">Listes des outils d’IA génératifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/texte/texte.html">Générateurs de texte par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/claude.html">Claude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/bloom.html">BLOOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/t5.html">T5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/chat-gpt.html">ChatGPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/llama.html">Llama</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/nous-hermes-2-mistral-7b-dpo.html">Nous-Hermes 2 Mistral 7B DPO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/image/image.html">Générateurs d’images par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/stable-diffusion.html">Stable Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/dall-e.html">DALL-E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/adobe-firefly.html">Adobe Firefly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/midjourney.html">Midjourney</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/video/video.html">Générateurs de vidéo par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/sora.html">Sora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/vidu.html">Vidu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/son/son.html">Générateurs de sons par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/audioldm.html">AudioLDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/bark.html">Bark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/coversong.html">CoverSong / So-VITS-SVC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/dancediffusion.html">Dance Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/gansynth.html">GANSynth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jen1.html">JEN-1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jukebox.html">Jukebox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/melgan.html">MelGAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/musiclm.html">MusicLM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/riffusion.html">Riffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/wavenet.html">WaveNet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../index.html">Start</a></li>
+      <li class="breadcrumb-item"><a href="../../indexcontenu.html">Contenu Théorique</a></li>
+      <li class="breadcrumb-item"><a href="mdl_appr.html">Modèles d’Apprentissage</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Architectures CNN Populaires</li>
+  </ol>
+</nav>
+    <section class="tex2jax_ignore mathjax_ignore" id="architectures-cnn-populaires">
+<h1>Architectures CNN Populaires<a class="headerlink" href="#architectures-cnn-populaires" title="Link to this heading">¶</a></h1>
+<ol class="arabic">
+<li><p class="rubric" id="lenet"><strong>LeNet</strong></p>
+</li>
+</ol>
+<p>LeNet est l’une des architectures les plus anciennes et les plus célèbres en apprentissage profond, créée par Yann LeCun dans les années 1990. Elle a été principalement conçue pour la reconnaissance de chiffres manuscrits, comme ceux présents dans le jeu de données MNIST.</p>
+<section id="structure-de-lenet">
+<h2><strong>Structure de LeNet :</strong><a class="headerlink" href="#structure-de-lenet" title="Link to this heading">¶</a></h2>
+<p>LeNet est une architecture relativement simple, composée de plusieurs couches, chacune ayant un rôle spécifique. Voici les principaux composants de LeNet :</p>
+<ol class="arabic simple">
+<li><p><strong>Couches de convolution :</strong> Ces couches sont le cœur de l’architecture. Elles appliquent des filtres (ou noyaux) sur les images d’entrée pour extraire des caractéristiques telles que des bords, des textures ou des formes. LeNet utilise deux couches de convolution. Chaque couche applique plusieurs filtres et produit des cartes de caractéristiques (feature maps).</p></li>
+<li><p><strong>Couches de sous-échantillonnage (ou “pooling”) :</strong> Après les couches de convolution, LeNet utilise une couche de “pooling” pour réduire la taille des cartes de caractéristiques tout en préservant les informations essentielles. Le “pooling” le plus utilisé dans LeNet est le <strong>subsampling</strong> ou <strong>average pooling</strong>, qui effectue une moyenne des valeurs sur une petite zone de la carte de caractéristiques.</p></li>
+<li><p><strong>Couches entièrement connectées :</strong> Après les couches de convolution et de pooling, les données passent par des couches entièrement connectées, où chaque neurone est relié à tous les neurones de la couche suivante. Ces couches agissent comme un classificateur pour déterminer l’étiquette finale (par exemple, un chiffre de 0 à 9 pour MNIST).</p></li>
+</ol>
+</section>
+<section id="avantages-de-lenet">
+<h2><strong>Avantages de LeNet :</strong><a class="headerlink" href="#avantages-de-lenet" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Simplicité :</strong> LeNet est relativement simple par rapport aux architectures plus récentes, ce qui en fait un bon point de départ pour comprendre les réseaux convolutifs.</p></li>
+<li><p><strong>Efficacité pour les petites images :</strong> À l’origine, LeNet a été conçu pour fonctionner avec des images de petite taille (par exemple, 32x32 pixels), ce qui le rend efficace pour des tâches de reconnaissance d’images simples.</p></li>
+</ul>
+</section>
+<section id="limites-de-lenet">
+<h2><strong>Limites de LeNet :</strong><a class="headerlink" href="#limites-de-lenet" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Taille des images :</strong> LeNet a été conçu pour de petites images, ce qui limite son efficacité pour des images de plus grande taille, comme celles utilisées dans les réseaux sociaux ou les vidéos.</p></li>
+<li><p><strong>Manque de profondeur :</strong> Par rapport aux architectures modernes comme VGG ou ResNet, LeNet est assez peu profond et ne peut pas capturer des caractéristiques complexes dans des images complexes.</p></li>
+</ul>
+<p>En résumé, LeNet est une architecture pionnière dans le domaine des réseaux convolutifs et reste un excellent modèle pour apprendre les bases des CNN, même si des architectures plus récentes ont surpassé ses performances pour des tâches plus complexes.</p>
+<p><img alt="Architecture LeNet" src="../../_images/image36.png" /><br />
+Image extraite de :  <a class="reference external" href="https://syedabis98.medium.com/hands-on-guide-to-lenet-5-the-complete-info-b2ae631db34b">https://syedabis98.medium.com/hands-on-guide-to-lenet-5-the-complete-info-b2ae631db34b</a></p>
+<ol class="arabic" start="2">
+<li><p class="rubric" id="alexnet"><strong>AlexNet</strong></p>
+</li>
+</ol>
+<p>AlexNet est une architecture de réseau de neurones convolutifs (CNN) développée par Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton en 2012. Elle a remporté la compétition ImageNet Large Scale Visual Recognition Challenge (ILSVRC) cette année-là en battant les autres modèles avec une réduction significative de l’erreur de classification. AlexNet a démontré l’efficacité des réseaux de neurones profonds et a ouvert la voie à l’usage généralisé des CNN dans le domaine de la vision par ordinateur.</p>
+</section>
+<section id="structure-d-alexnet">
+<h2><strong>Structure d’AlexNet</strong><a class="headerlink" href="#structure-d-alexnet" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Couches de Convolution (5 couches)</strong><br />
+<strong>AlexNet</strong> commence par une série de 5 couches de convolution qui extraient différentes caractéristiques à partir de l’image d’entrée. Ces couches ont des filtres plus grands et plus nombreux par rapport à LeNet, permettant de capter des informations plus complexes.</p></li>
+<li><p><strong>Couches de Pooling (2 couches)</strong><br />
+Après chaque série de couches de convolution, AlexNet applique des couches de max pooling pour réduire la taille des cartes de caractéristiques et rendre le modèle plus rapide et moins sujet au sur-apprentissage.</p></li>
+<li><p><strong>Couches Fully Connected (3 couches)</strong><br />
+Après les couches de convolution et de pooling, AlexNet utilise 3 couches entièrement connectées (fully connected layers) pour faire la classification finale.</p></li>
+<li><p><strong>Fonction d’Activation - ReLU</strong><br />
+AlexNet utilise la fonction d’activation ReLU après chaque couche de convolution et entièrement connectée. Cela permet au réseau d’apprendre des relations non-linéaires, ce qui est essentiel pour la classification d’images complexes.</p></li>
+<li><p><strong>Normalisation par lots (Batch Normalization)</strong><br />
+AlexNet introduit également une forme de normalisation par lots après les couches de convolution, ce qui aide à accélérer l’entraînement et à rendre l’apprentissage plus stable.</p></li>
+<li><p><strong>Dropout</strong><br />
+Afin de réduire le risque de sur-apprentissage (overfitting), AlexNet utilise la technique de dropout sur les couches entièrement connectées, désactivant de manière aléatoire certaines connexions pendant l’entraînement pour encourager la généralisation du modèle.</p></li>
+</ol>
+<p>AlexNet a marqué un tournant majeur dans l’histoire de la vision par ordinateur et des réseaux de neurones profonds. Avec ses 8 couches principales, son usage de ReLU pour activer les neurones et des techniques de régularisation comme dropout et normalisation par lots, il a réussi à surpasser les modèles existants et a ouvert la voie à des réseaux encore plus profonds et plus complexes. En réduisant de manière significative le taux d’erreur sur la tâche de classification d’images, AlexNet a démontré le potentiel des CNN à gérer des données massives et complexes, contribuant ainsi à la popularisation des réseaux de neurones profonds dans diverses applications d’intelligence artificielle.</p>
+<p><strong>![][image37]</strong><br />
+Image extraite de : <a class="reference external" href="https://karan3-zoh.medium.com/paper-summary-imagenet-classification-with-deep-convolutional-neural-networks-41ce6c65960">https://karan3-zoh.medium.com/paper-summary-imagenet-classification-with-deep-convolutional-neural-networks-41ce6c65960</a></p>
+<ol class="arabic" start="3">
+<li><p class="rubric" id="vgg"><strong>VGG</strong></p>
+</li>
+</ol>
+<p>VGGNet est une architecture de réseau de neurones convolutifs (CNN) développée par le groupe de recherche de <strong>Visual Geometry Group</strong> de l’Université d’Oxford. Elle a été présentée dans le cadre de la compétition <strong>ImageNet Large Scale Visual Recognition Challenge (ILSVRC)</strong> en 2014. L’architecture VGGNet se distingue par sa simplicité et sa profondeur, mettant en avant l’importance de l’utilisation de petites fenêtres de convolution (3x3) empilées pour capturer des informations complexes à différents niveaux d’abstraction.</p>
+</section>
+<section id="structure-de-vggnet">
+<h2><strong>Structure de VGGNet</strong><a class="headerlink" href="#structure-de-vggnet" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Couches de Convolution (16 à 19 couches)</strong><br />
+VGGNet se compose principalement de couches de convolution, qui utilisent des <strong>filtres de taille 3x3</strong> et un <strong>stride de 1</strong>. Ces petites tailles de filtres permettent d’extraire des caractéristiques détaillées de l’image tout en maintenant une grande efficacité dans l’apprentissage. <strong>Les premières couches</strong> (C1 à C4) commencent par appliquer des convolutions avec des filtres <strong>3x3</strong>, en doublant progressivement le nombre de filtres à chaque étape. Par exemple, de <strong>64</strong> filtres dans la première couche, à <strong>128</strong> dans la deuxième, puis <strong>256</strong> et <strong>512</strong> dans les couches suivantes.</p></li>
+<li><p><strong>Couches de Pooling (Max-Pooling)</strong><br />
+Après chaque série de convolutions, VGGNet applique des couches de <strong>max pooling</strong> avec un <strong>taille de filtre de 2x2</strong> et un <strong>stride de 2</strong>. Cela permet de réduire la taille des cartes de caractéristiques tout en préservant les informations les plus importantes.</p></li>
+<li><p><strong>Couches Fully Connected (3 couches)</strong><br />
+Après les couches de convolution et de pooling, VGGNet passe à trois couches entièrement connectées (fully connected layers). Ces couches ont un grand nombre de neurones (4096 dans le cas de VGG16) et sont responsables de la classification finale des images.</p></li>
+<li><p><strong>Fonction d’Activation - ReLU</strong><br />
+VGGNet utilise la fonction d’activation <strong>ReLU</strong> après chaque couche de convolution et chaque couche entièrement connectée. Cela permet d’introduire de la non-linéarité dans le réseau, ce qui est crucial pour la capacité du réseau à apprendre des relations complexes.</p></li>
+<li><p><strong>Caractéristiques de VGGNet</strong></p>
+<ul class="simple">
+<li><p><strong>Simplicité et profondeur</strong> : VGGNet a une structure relativement simple comparée à d’autres architectures de la même époque, mais sa profondeur (jusqu’à 19 couches dans le cas de VGG19) lui permet de capturer des représentations de plus en plus complexes.</p></li>
+<li><p><strong>Importance des petites fenêtres de convolution</strong> : L’usage de <strong>petits filtres 3x3</strong> au lieu de plus grands filtres permet de réduire le nombre de paramètres tout en conservant une grande capacité d’expression du modèle.</p></li>
+</ul>
+</li>
+</ol>
+<p>VGGNet est reconnu pour sa simplicité et son efficacité, et bien qu’elle soit relativement plus lente à l’entraînement en raison de sa profondeur, elle a servi de base pour de nombreuses architectures plus récentes et plus complexes. L’idée centrale de l’architecture VGG réside dans l’utilisation de petites fenêtres de convolution répétées, ce qui permet de capter des informations de plus en plus fines tout en maintenant une complexité gérable du modèle. Cette approche, bien que relativement coûteuse en termes de calculs, continue d’être un modèle de référence dans le domaine des CNN.</p>
+<p><strong>![][image38]</strong><br />
+Image extraite de : <a class="reference external" href="https://viso.ai/deep-learning/vgg-very-deep-convolutional-networks/">https://viso.ai/deep-learning/vgg-very-deep-convolutional-networks/</a></p>
+<ol class="arabic" start="4">
+<li><p class="rubric" id="googlenet-inception"><strong>GoogleNet (Inception)</strong></p>
+</li>
+</ol>
+<p>GoogLeNet, aussi appelé <strong>Inception v1</strong>, est un réseau de neurones convolutifs (CNN) proposé par Google lors de la compétition <strong>ImageNet Large Scale Visual Recognition Challenge (ILSVRC)</strong> en 2014. Il a marqué une avancée majeure en termes d’efficacité et de performance, en introduisant le concept innovant de <strong>modules Inception</strong> pour améliorer à la fois la profondeur et l’efficacité computationnelle du réseau.</p>
+</section>
+<section id="structure-de-googlenet-inception">
+<h2><strong>Structure de GoogLeNet (Inception)</strong><a class="headerlink" href="#structure-de-googlenet-inception" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Modules Inception</strong><br />
+La grande innovation de GoogLeNet est l’utilisation des <strong>modules Inception</strong>, qui permettent au réseau d’extraire plusieurs types de caractéristiques en parallèle.<br />
+Chaque module Inception applique simultanément :</p>
+<ul class="simple">
+<li><p><strong>Des convolutions 1x1, 3x3, et 5x5</strong> pour capturer différentes tailles de motifs.</p></li>
+<li><p><strong>Du max pooling 3x3</strong> pour réduire la dimension et extraire des caractéristiques robustes. Les résultats de toutes ces opérations sont ensuite concaténés le long de la dimension des canaux (profondeur).</p></li>
+<li><p><strong>Convolutions 1x1</strong> : utilisées pour réduire le nombre de canaux avant d’appliquer les convolutions plus lourdes (3x3, 5x5), ce qui permet de réduire le coût en calculs.</p></li>
+<li><p>Ce mécanisme permet au réseau d’être à la fois <strong>large</strong> et <strong>profond</strong> sans exploser en nombre de paramètres.</p></li>
+</ul>
+</li>
+<li><p><strong>Couches de Convolution</strong><br />
+GoogLeNet commence avec quelques couches classiques de convolution et de pooling pour réduire la taille de l’image initiale avant de passer à une série de modules Inception.</p>
+<ul class="simple">
+<li><p>L’utilisation de <strong>convolutions 1x1</strong> est fréquente, notamment pour faire des réductions de dimensions avant des opérations plus coûteuses.</p></li>
+</ul>
+</li>
+<li><p><strong>Global Average Pooling</strong><br />
+Contrairement à VGGNet qui utilise de grandes couches entièrement connectées à la fin, GoogLeNet utilise une opération de <strong>global average pooling</strong>.</p>
+<ul class="simple">
+<li><p>Cette opération consiste à prendre la moyenne de chaque carte de caractéristiques, ce qui réduit la sortie à une seule valeur par carte.</p></li>
+<li><p>Cela permet de diminuer considérablement le nombre de paramètres et de réduire les risques de surapprentissage.</p></li>
+</ul>
+</li>
+<li><p><strong>Pas de Couches Fully Connected Massives</strong><br />
+GoogLeNet n’utilise pas de couches entièrement connectées traditionnelles volumineuses comme VGGNet. Cela réduit drastiquement la taille du modèle (environ <strong>5 millions de paramètres</strong> contre plus de <strong>100 millions</strong> pour VGGNet) tout en maintenant une très haute performance.</p></li>
+<li><p><strong>Fonction d’Activation - ReLU</strong><br />
+Après chaque convolution, GoogLeNet utilise la fonction d’activation <strong>ReLU</strong>, qui introduit de la non-linéarité et permet un apprentissage plus rapide et plus efficace.</p></li>
+<li><p><strong>Caractéristiques de GoogLeNet (Inception)</strong></p>
+<ul class="simple">
+<li><p><strong>Modules multi-chemins</strong> : le réseau apprend des caractéristiques à plusieurs échelles en même temps.</p></li>
+<li><p><strong>Efficacité</strong> : une architecture très profonde sans explosion du nombre de paramètres.</p></li>
+<li><p><strong>Meilleure généralisation</strong> : la structure multi-niveaux aide à capturer des détails fins tout en gardant la capacité à généraliser sur de nouvelles données.</p></li>
+</ul>
+</li>
+</ol>
+<p>GoogLeNet a démontré qu’il était possible de construire des réseaux très profonds tout en gardant l’efficacité computationnelle, en s’appuyant sur une conception intelligente des architectures internes comme les modules Inception. Cette approche a inspiré de nombreuses versions améliorées (Inception v2, v3, v4) et reste l’une des contributions fondamentales dans l’évolution des architectures de réseaux de neurones convolutifs.</p>
+<ol class="arabic" start="5">
+<li><p class="rubric" id="resnet-residual-networks"><strong>ResNet (Residual Networks)</strong></p>
+</li>
+</ol>
+<p>ResNet, ou <strong>Residual Network</strong>, est une architecture introduite par Microsoft Research en 2015 lors de la compétition <strong>ImageNet Large Scale Visual Recognition Challenge (ILSVRC)</strong>. ResNet a non seulement remporté la compétition avec un score record, mais a aussi marqué un tournant dans l’histoire des réseaux profonds grâce à l’introduction des <strong>blocs résiduels</strong>, permettant d’entraîner des réseaux extrêmement profonds sans perdre en efficacité.</p>
+<section id="structure-de-resnet-residual-networks">
+<h3><strong>Structure de ResNet (Residual Networks)</strong><a class="headerlink" href="#structure-de-resnet-residual-networks" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Blocs Résiduels (Residual Blocks)</strong><br />
+L’innovation principale de ResNet est l’utilisation de <strong>connexions de saut (skip connections)</strong> :</p>
+<ul class="simple">
+<li><p>Au lieu de simplement empiler des couches les unes sur les autres, ResNet apprend la <strong>différence</strong> (résidu) entre l’entrée et la sortie d’un bloc de couches.</p></li>
+<li><p>Chaque bloc résiduel contient une ou plusieurs couches de convolution, mais en plus, il ajoute l’entrée du bloc directement à la sortie après ces couches.</p></li>
+</ul>
+</li>
+<li><p>Mathématiquement, au lieu d’apprendre une fonction complexe H(x)H(x)H(x), le réseau apprend une fonction plus simple F(x)=H(x)−xF(x) = H(x) - xF(x)=H(x)−x, ce qui permet de mieux guider l’apprentissage.</p>
+<ul class="simple">
+<li><p><strong>Skip connections</strong> : facilitent la circulation du gradient lors du backpropagation, ce qui rend possible l’entraînement de réseaux beaucoup plus profonds sans problème de dégradation.</p></li>
+</ul>
+</li>
+<li><p><strong>Couches de Convolution</strong><br />
+ResNet utilise des couches de convolution standards combinées avec :</p>
+<ul class="simple">
+<li><p><strong>Batch Normalization</strong> après chaque convolution, pour stabiliser l’entraînement.</p></li>
+<li><p><strong>Fonction d’activation ReLU</strong> pour introduire la non-linéarité.</p></li>
+</ul>
+</li>
+<li><p><strong>Architecture Très Profonde</strong><br />
+Grâce aux blocs résiduels, ResNet peut être construit avec beaucoup plus de couches que les architectures précédentes sans dégradation de la performance.</p>
+<ul class="simple">
+<li><p>Les modèles classiques de ResNet sont : <strong>ResNet-18</strong>, <strong>ResNet-34</strong>, <strong>ResNet-50</strong>, <strong>ResNet-101</strong>, et <strong>ResNet-152</strong> (le chiffre représente le nombre de couches).</p></li>
+</ul>
+</li>
+<li><p><strong>Global Average Pooling et Couches Fully Connected</strong><br />
+Comme GoogLeNet, ResNet utilise du <strong>global average pooling</strong> avant la dernière couche fully connected, ce qui permet de réduire le nombre de paramètres par rapport aux architectures plus anciennes comme VGGNet.</p></li>
+<li><p><strong>Fonction d’Activation - ReLU</strong><br />
+Après chaque convolution et normalisation, ResNet utilise la fonction <strong>ReLU</strong>, qui permet un apprentissage rapide et évite la saturation des gradients.</p></li>
+<li><p><strong>Caractéristiques de ResNet</strong></p>
+<ul class="simple">
+<li><p><strong>Très grande profondeur</strong> : possible grâce aux connexions résiduelles.</p></li>
+<li><p><strong>Amélioration du flux de gradients</strong> : facilite l’entraînement en réduisant le risque de disparition ou explosion du gradient.</p></li>
+<li><p><strong>Excellentes performances</strong> sur de nombreuses tâches de vision par ordinateur, y compris la classification, la détection et la segmentation.</p></li>
+</ul>
+</li>
+</ol>
+<p>ResNet a ouvert la voie à des réseaux extrêmement profonds, en rendant l’entraînement plus stable et plus efficace. Le concept de connexions résiduelles est aujourd’hui omniprésent dans les architectures modernes, bien au-delà de la vision par ordinateur.</p>
+<p>![][image39]</p>
+<p>Image extraite de : <a class="reference external" href="https://arxiv.org/pdf/1512.03385.pdf">https://arxiv.org/pdf/1512.03385.pdf</a></p>
+<ol class="arabic" start="6">
+<li><p class="rubric" id="densenet-densely-connected-convolutional-networks"><strong>DenseNet (Densely Connected Convolutional Networks)</strong></p>
+</li>
+</ol>
+<p>DenseNet est une architecture introduite en 2017 qui améliore encore l’idée de faciliter la circulation de l’information dans les réseaux profonds. Là où ResNet ajoute des connexions résiduelles entre les couches, <strong>DenseNet</strong> va encore plus loin en connectant <strong>chaque couche</strong> à <strong>toutes les couches suivantes</strong>. Cela permet d’améliorer le flux d’information et de gradients dans tout le réseau.</p>
+</section>
+<section id="structure-de-densenet">
+<h3><strong>Structure de DenseNet</strong><a class="headerlink" href="#structure-de-densenet" title="Link to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p><strong>Connexions Denses (Dense Connections)</strong><br />
+Dans DenseNet, chaque couche reçoit en entrée :</p>
+<ul class="simple">
+<li><p>Les sorties de <strong>toutes les couches précédentes</strong>, et</p></li>
+<li><p>Son propre output est envoyé à <strong>toutes les couches suivantes</strong>.</p></li>
+</ul>
+</li>
+<li><p>Autrement dit, au lieu de n’envoyer son output qu’à la couche suivante immédiate, chaque couche partage ses résultats avec toutes celles qui viennent après. Cela signifie que si vous êtes à la couche lll, son entrée est la <strong>concaténation</strong> des sorties de toutes les couches précédentes.</p>
+<p>Cette approche rend l’apprentissage plus efficace, car :</p>
+<ul class="simple">
+<li><p>Les premières couches restent accessibles par les couches profondes.<br />
+Les gradients circulent mieux pendant l’entraînement.</p></li>
+<li><p>Le réseau est plus <strong>paramètre-efficient</strong> (il utilise moins de poids pour obtenir de bonnes performances).</p></li>
+</ul>
+</li>
+<li><p><strong>Dense Blocks et Transition Layers</strong><br />
+DenseNet est organisé en alternance entre :</p>
+<ul class="simple">
+<li><p><strong>Dense Blocks</strong> : plusieurs couches densément connectées.<br />
+<strong>Transition Layers</strong> : elles réduisent la taille des feature maps par pooling et compression pour contrôler la croissance du réseau.</p></li>
+</ul>
+</li>
+<li><p><strong>Couches de Convolution et Normalisation</strong><br />
+Chaque couche standard dans un Dense Block est composée de :</p>
+<ul class="simple">
+<li><p><strong>Batch Normalization</strong></p></li>
+<li><p><strong>ReLU</strong></p></li>
+<li><p><strong>Convolution 3×33 \times 33×3</strong></p></li>
+</ul>
+</li>
+<li><p>Avant chaque Dense Block, il peut y avoir une convolution 1×11 \times 11×1 pour réduire le nombre de canaux.</p></li>
+<li><p><strong>Architecture Profonde mais Efficace</strong><br />
+DenseNet permet d’avoir des réseaux très profonds, mais avec <strong>moins de paramètres</strong> qu’un réseau classique ou même qu’un ResNet de profondeur similaire.</p></li>
+<li><p><strong>Fonction d’Activation - ReLU</strong><br />
+Comme dans beaucoup d’autres architectures modernes, DenseNet utilise <strong>ReLU</strong> après la normalisation et avant la convolution pour introduire la non-linéarité.</p></li>
+<li><p><strong>Caractéristiques de DenseNet</strong></p>
+<ul class="simple">
+<li><p><strong>Propagation efficace</strong> de l’information et des gradients.</p></li>
+<li><p><strong>Moins de paramètres</strong> grâce au partage intensif d’informations.</p></li>
+<li><p><strong>Réduction du surapprentissage</strong> (overfitting) sur des petits jeux de données.</p></li>
+<li><p><strong>Utilisation optimale des features</strong> extraits par les différentes couches.</p></li>
+</ul>
+</li>
+</ol>
+<p>DenseNet a prouvé qu’il était possible d’entraîner des réseaux encore plus profonds tout en restant léger et efficace. Aujourd’hui, les idées de connexions denses inspirent de nombreuses architectures modernes dans le domaine de la vision et au-delà.</p>
+<p>![][image40]<br />
+Image extraite de : <a class="reference external" href="https://paperswithcode.com/method/densenet">https://paperswithcode.com/method/densenet</a></p>
+<ol class="arabic" start="7">
+<li><p class="rubric" id="xception"><strong>Xception</strong></p>
+</li>
+</ol>
+<p>Xception est une architecture proposée en 2017 qui peut être vue comme une extension et une amélioration d’Inception. L’idée principale est de simplifier les modules complexes d’Inception en remplaçant les convolutions classiques par une approche plus efficace appelée <strong>convolutions séparables en profondeur</strong> (<em>depthwise separable convolutions</em>).</p>
+</section>
+</section>
+<section id="structure-de-xception">
+<h2><strong>Structure de Xception</strong><a class="headerlink" href="#structure-de-xception" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Convolutions Séparables en Profondeur</strong><br />
+Au lieu d’appliquer une convolution standard qui mélange l’information spatiale (largeur et hauteur) et l’information entre canaux en même temps, Xception sépare les deux opérations :</p>
+<ul class="simple">
+<li><p><strong>Depthwise Convolution</strong> : une convolution est appliquée <strong>indépendamment sur chaque canal</strong>.</p></li>
+<li><p><strong>Pointwise Convolution (1×1)</strong> : ensuite, une convolution 1×11 \times 11×1 est utilisée pour mélanger les canaux.</p></li>
+</ul>
+</li>
+<li><p>Cette décomposition permet de <strong>réduire le nombre de paramètres</strong> tout en capturant efficacement l’information.</p></li>
+<li><p><strong>Architecture Basée sur une Structure Modulaire</strong><br />
+Xception est organisé en trois grandes parties :</p>
+<ul class="simple">
+<li><p><strong>Entrée (Entry Flow)</strong> : plusieurs convolutions classiques pour extraire des premières caractéristiques.</p></li>
+<li><p><strong>Corps Principal (Middle Flow)</strong> : une série de modules basés uniquement sur des convolutions séparables en profondeur.<br />
+<strong>Sortie (Exit Flow)</strong> : prépare les représentations finales pour la classification.</p></li>
+</ul>
+</li>
+<li><p><strong>Convolutions avec Strides et Pooling</strong><br />
+Certaines convolutions utilisent un <strong>stride</strong> supérieur à 1 pour réduire la taille spatiale des feature maps, jouant le rôle de réduction comme un pooling.</p></li>
+<li><p><strong>Utilisation de Batch Normalization et ReLU</strong><br />
+Après chaque convolution (que ce soit depthwise ou pointwise), il y a une étape de <strong>Batch Normalization</strong> suivie d’une activation <strong>ReLU</strong> pour accélérer et stabiliser l’entraînement.</p></li>
+<li><p><strong>Absence de Modules Inception Complexes</strong><br />
+Contrairement à GoogLeNet qui utilisait différents types de convolutions 1×11 \times 11×1, 3×33 \times 33×3, etc., en parallèle dans chaque bloc, Xception utilise uniquement des convolutions séparables de manière simple et séquentielle.</p></li>
+<li><p><strong>Caractéristiques de Xception</strong></p>
+<ul class="simple">
+<li><p><strong>Meilleure efficacité</strong> : moins de paramètres et de calculs qu’une architecture Inception classique.</p></li>
+<li><p><strong>Performance élevée</strong> : résultats compétitifs sur des bases de données comme ImageNet.</p></li>
+<li><p><strong>Modèle élégant</strong> : l’approche purement basée sur des convolutions séparables en profondeur est simple et puissante.</p></li>
+</ul>
+</li>
+</ol>
+<p>Xception a montré qu’en repensant complètement la manière de faire des convolutions, on pouvait obtenir des réseaux plus légers et plus performants. C’est un modèle très utilisé dans les systèmes embarqués et les applications où l’efficacité est essentielle.</p>
+<p>![][image41]</p>
+<p>Image extraite de : <a class="reference external" href="https://www.researchgate.net/figure/Proposed-structure-of-Xception-network-used-within-each-stream-of-CNN_fig2_355098045">https://www.researchgate.net/figure/Proposed-structure-of-Xception-network-used-within-each-stream-of-CNN_fig2_355098045</a></p>
+<section id="liens-externes-youtube-medium-etc">
+<h3><strong>Liens Externes (Youtube, Medium, etc):</strong><a class="headerlink" href="#liens-externes-youtube-medium-etc" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/DAOcjicFr1Y?si=_2Ov4AH417rN4xbi">Lecture 9 : Popular CNN Architectures</a></p></li>
+<li><p><a class="reference external" href="https://syedabis98.medium.com/hands-on-guide-to-lenet-5-the-complete-info-b2ae631db34b">Hands on guide to LeNet-5 (The Complete Info)</a></p></li>
+<li><p><a class="reference external" href="https://karan3-zoh.medium.com/paper-summary-imagenet-classification-with-deep-convolutional-neural-networks-41ce6c65960">Paper Summary: ImageNet Classification with Deep Convolutional Neural Networks</a></p></li>
+<li><p><a class="reference external" href="https://karan3-zoh.medium.com/paper-summary-very-deep-convolutional-networks-for-large-scale-image-recognition-e7437959d856">Paper Summary: Very Deep Convolutional Networks for Large-Scale Image Recognition</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/aiguys/going-deeper-with-convolutions-the-inception-paper-explained-841a0c661fd3">Going deeper with convolutions: The Inception paper, explained</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;ibtedaazeem/understanding-resnet-architecture-a-deep-dive-into-residual-neural-network-2c792e6537a9">Understanding ResNet Architecture: A Deep Dive into Residual Neural Network</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/data-science/paper-review-densenet-densely-connected-convolutional-networks-acf9065dfefb">Paper review: DenseNet -Densely Connected Convolutional Networks</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;kdk199604/xception-deep-learnings-leap-beyond-inception-05a708c205f9">Xception: Deep Learning’s Leap Beyond Inception</a></p></li>
+</ul>
+</section>
+<section id="bibliographie">
+<h3><strong>Bibliographie</strong><a class="headerlink" href="#bibliographie" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>LeCun, Y., Bottou, L., Bengio, Y. and Haffner, P., 1998. Gradient-based learning applied to document recognition. <em>Proceedings of the IEEE</em>, <em>86</em>(11), pp.2278-2324.</p></li>
+<li><p>Krizhevsky, A., Sutskever, I. and Hinton, G.E., 2012. Imagenet classification with deep convolutional neural networks. <em>Advances in neural information processing systems</em>, <em>25</em>.</p></li>
+<li><p>Simonyan, K. and Zisserman, A., 2014. Very deep convolutional networks for large-scale image recognition. <em>arXiv preprint arXiv:1409.1556</em>.</p></li>
+<li><p>Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., Erhan, D., Vanhoucke, V. and Rabinovich, A., 2015. Going deeper with convolutions. In <em>Proceedings of the IEEE conference on computer vision and pattern recognition</em> (pp. 1-9).</p></li>
+<li><p>He, K., Zhang, X., Ren, S. and Sun, J., 2016. Deep residual learning for image recognition. In <em>Proceedings of the IEEE conference on computer vision and pattern recognition</em> (pp. 770-778).</p></li>
+<li><p>Huang, G., Liu, Z., Van Der Maaten, L. and Weinberger, K.Q., 2017. Densely connected convolutional networks. In <em>Proceedings of the IEEE conference on computer vision and pattern recognition</em> (pp. 4700-4708).</p></li>
+<li><p>Chollet, F., 2017. Xception: Deep learning with depthwise separable convolutions. In <em>Proceedings of the IEEE conference on computer vision and pattern recognition</em> (pp. 1251-1258).</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link link-dark p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Architectures CNN Populaires</a><ul>
+<li><a class="reference internal" href="#structure-de-lenet"><strong>Structure de LeNet :</strong></a></li>
+<li><a class="reference internal" href="#avantages-de-lenet"><strong>Avantages de LeNet :</strong></a></li>
+<li><a class="reference internal" href="#limites-de-lenet"><strong>Limites de LeNet :</strong></a></li>
+<li><a class="reference internal" href="#structure-d-alexnet"><strong>Structure d’AlexNet</strong></a></li>
+<li><a class="reference internal" href="#structure-de-vggnet"><strong>Structure de VGGNet</strong></a></li>
+<li><a class="reference internal" href="#structure-de-googlenet-inception"><strong>Structure de GoogLeNet (Inception)</strong></a><ul>
+<li><a class="reference internal" href="#structure-de-resnet-residual-networks"><strong>Structure de ResNet (Residual Networks)</strong></a></li>
+<li><a class="reference internal" href="#structure-de-densenet"><strong>Structure de DenseNet</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#structure-de-xception"><strong>Structure de Xception</strong></a><ul>
+<li><a class="reference internal" href="#liens-externes-youtube-medium-etc"><strong>Liens Externes (Youtube, Medium, etc):</strong></a></li>
+<li><a class="reference internal" href="#bibliographie"><strong>Bibliographie</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="mdl_appr.html" class="d-flex px-5 align-items-end" rel="prev" aria-label="Previous page: Modèles d’Apprentissage">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Modèles d’Apprentissage</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="modeles_nlp.html" class="d-flex px-5 align-items-end" rel="next" aria-label="Next page: Modèles généraux de NLP">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">Modèles généraux de NLP</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="https://github.com/danirus/sphinx-nefertiti/issues" class="list-item">Issues</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://docs.google.com/document/d/1X9dO4tD5R5DBlG_WFETr6D9i2sSP5pHR8RI8enTSceU/edit?tab=t.0#heading=h.bg3x17yqchk" class="list-item">Documentation</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://github.com/Yousraarroui/TestSphinx.git" class="list-item">Repository</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">IAn</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>ARROUI Yousra</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.7.5</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/colorsets.js?v=93c30d22"></script>
+    <script src="../../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../../_static/sphinx-nefertiti.min.js?v=de1d41e1"></script>
+    <script src="../../_static/bootstrap.bundle.min.js?v=ff4e7878"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+# [T5](https://github.com/google-research/text-to-text-transfer-transformer)
+
+- **Nom de l'outil** : T5 (Text-to-Text Transfer Transformer)
+- **Catégorie** : Texte (NLP)
+- **Développeur** : Google AI
+- **Date de sortie** : 23 octobre 2019
+
+## Objectif
+Fournir un cadre unifié pour les tâches de traitement du langage naturel en reformulant toutes les tâches en une approche texte-à-texte, permettant ainsi une flexibilité maximale dans l'application à diverses tâches linguistiques.
+
+## Fonctionnement résumé
+| Étape | Description |
+|-------|-------------|
+| Entrée | Texte (prompt avec préfixe de tâche) |
+| Traitement | Architecture Transformer (encodeur-décodeur) |
+| Sortie | Texte généré selon la tâche |
+
+## Fonctions principales
+- ✅ Génération de texte (rédaction, résumé, traduction)
+- ✅ Réponse à des questions
+- ✅ Classification de texte
+- ✅ Analyse de sentiments
+- ✅ Complétion de texte
+- ❌ Pas de génération multimodale
+
+## Exemples d'usage concrets
+| Domaine | Exemple |
+|---------|---------|
+| Éducation | Génération de résumés de cours |
+| Développement | Documentation automatique |
+| Recherche | Extraction d'informations |
+| Service client | Réponses automatisées |
+
+## Détails techniques
+| Caractéristique | Valeur |
+|-----------------|---------|
+| Architecture | Transformer (encodeur-décodeur) |
+| Framework | TensorFlow, JAX (T5X) |
+| Input | Texte |
+| Output | Texte |
+| Licence | Apache 2.0 |
+
+## Pricing
+- Gratuit (open-source) • Coûts d'infrastructure selon l'usage
+
+## Releases clés
+- [T5](https://github.com/google-research/text-to-text-transfer-transformer/releases/tag/v1.0) : Version initiale (2019)
+- [T5 v1.1](https://github.com/google-research/text-to-text-transfer-transformer/releases/tag/v1.1) : Améliorations (2020)
+- [Flan-T5](https://github.com/google-research/text-to-text-transfer-transformer/releases/tag/flan-t5) : Instruction fine-tuning (2022)
+
+## Alternatives connues
+- BERT (Google)
+- GPT-3 (OpenAI)
+- BART (Facebook AI)
+
+## Ressources utiles
+- [Publication officielle](https://ai.googleblog.com/2020/02/exploring-transfer-learning-with-t5.html)
+- [Documentation API](https://huggingface.co/docs/transformers/model_doc/t5)
+- [GitHub](https://github.com/google-research/text-to-text-transfer-transformer)
+
+## Exemple d'appel API
+```bash
+curl https://api-inference.huggingface.co/models/google/t5-base \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{ "inputs": "translate English to French: The house is wonderful." }'
+```
+
+## Input/Output
+- Input : "translate English to French: The house is wonderful."
+- Output : "La maison est merveilleuse."
+
+## Avantages/Limites
+| ✅ Avantages | ❌ Inconvénients |
+|-------------|-----------------|
+| Approche unifiée pour NLP | Ressources computationnelles importantes |
+| Open-source avec large communauté | Fine-tuning nécessaire pour tâches spécifiques |
+| Performances compétitives | |
+
+## Confidentialité
+- Aucune collecte de données utilisateur (modèle open-source)
+- Confidentialité dépend de l'implémentation
+
+## Statistiques
+- Données spécifiques non publiées par Google AI
+
+## Compatibilité
+- TensorFlow
+- JAX (T5X)
+- PyTorch (via Hugging Face)
+- Google Cloud Vertex AI 

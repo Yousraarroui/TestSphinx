@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="86400000" />
+    <meta name="docsearch:name" content="IAn" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1" />
+    <meta name="docsearch:version" content="0.1" />
+    
+      <title>Modèles généraux de NLP &mdash; IAn 0.1 documentation</title>
+    
+    <link rel="canonical" href="contenu/03_modeles_apprentissage/modeles_nlp" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-nefertiti-default.min.css?v=84f2ec69" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css?v=ce93212b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/red-hat-mono/stylesheet.css?v=4eee5046" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-dark.css?v=589f9147" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-light.css?v=1620426e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../../genindex.html" />
+        <link rel="search" title="Search" href="../../search.html" />
+        <link rel="top" title="IAn 0.1 documentation" href="#" />
+        <link rel="up" title="Modèles d’Apprentissage" href="mdl_appr.html" />
+        <link rel="next" title="Modèles Génératifs" href="../04_modeles_generatifs/mdl_gen.html" />
+        <link rel="prev" title="Architectures CNN Populaires" href="architectures_cnn.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl neutral nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-xl-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2 pe-lg-4"
+          ><span class="brand-text">IAn</span></a>
+        
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-text">IAn</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/Yousraarroui/TestSphinx.git" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/Yousraarroui/TestSphinx.git">
+                      TestSphinx
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+                <!-- colorssets-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle color set">
+    <i class="bi bi-palette"></i>
+    <span id="snftt-color-text" class="d-xl-none ms-2">Change color set</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+    <li>
+      <h6 class="dropdown-header">Change color set</h6>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+        <span class="blue">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Blue</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="indigo" href="#" aria-pressed="false">
+        <span class="indigo">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Indigo</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+        <span class="purple">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Purple</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+        <span class="pink">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Pink</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+        <span class="red">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Red</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+        <span class="orange">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Orange</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+        <span class="yellow">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Yellow</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+        <span class="green">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Green</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+        <span class="teal">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Teal</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="default" href="#" aria-pressed="false">
+        <span class="cyan">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Cyan</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li><hr class="dropdown-divider" /></li>
+    <li>
+      <h6 class="dropdown-header">Neutral header</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center active current" data-snftt-colorset-neutral="on" href="#" aria-pressed="false">
+        <i class="bi bi-noise-reduction"></i>
+        <span class="ms-3">Neutral</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+  <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+  <hr class="d-lg-none text-white-50">
+</li>
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-block">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../indexcontenu.html">Contenu Théorique</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_introduction/intro.html">Introduction à l’IA Générative</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01_introduction/introduction.html">Introduction à l’Apprentissage Automatique et à l’Apprentissage Profond dans l’IA générative</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02_notions_basiques/notion.html">Notions de Base en IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_notions_basiques/notion_de_base_de_l%27apprentissage_profond.html">Notions de Base de l’Apprentissage Profond</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="mdl_appr.html">Modèles d’Apprentissage</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="architectures_cnn.html">Architectures CNN Populaires</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Modèles généraux de NLP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../04_modeles_generatifs/mdl_gen.html">Modèles Génératifs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_modeles_generatifs/modeles_generatifs.html">Modèles Génératifs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../big-list-ia.html">Listes des outils d’IA génératifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/texte/texte.html">Générateurs de texte par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/claude.html">Claude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/bloom.html">BLOOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/t5.html">T5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/chat-gpt.html">ChatGPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/llama.html">Llama</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/nous-hermes-2-mistral-7b-dpo.html">Nous-Hermes 2 Mistral 7B DPO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/image/image.html">Générateurs d’images par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/stable-diffusion.html">Stable Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/dall-e.html">DALL-E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/adobe-firefly.html">Adobe Firefly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/midjourney.html">Midjourney</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/video/video.html">Générateurs de vidéo par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/sora.html">Sora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/vidu.html">Vidu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/son/son.html">Générateurs de sons par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/audioldm.html">AudioLDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/bark.html">Bark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/coversong.html">CoverSong / So-VITS-SVC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/dancediffusion.html">Dance Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/gansynth.html">GANSynth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jen1.html">JEN-1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jukebox.html">Jukebox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/melgan.html">MelGAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/musiclm.html">MusicLM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/riffusion.html">Riffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/wavenet.html">WaveNet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../index.html">Start</a></li>
+      <li class="breadcrumb-item"><a href="../../indexcontenu.html">Contenu Théorique</a></li>
+      <li class="breadcrumb-item"><a href="mdl_appr.html">Modèles d’Apprentissage</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Modèles généraux de NLP</li>
+  </ol>
+</nav>
+    <section class="tex2jax_ignore mathjax_ignore" id="modeles-generaux-de-nlp">
+<h1>Modèles généraux de NLP<a class="headerlink" href="#modeles-generaux-de-nlp" title="Link to this heading">¶</a></h1>
+<ol class="arabic">
+<li><p class="rubric" id="reseaux-de-neurones-recurrents-rnn"><strong>Réseaux de Neurones Récurrents (RNN)</strong></p>
+</li>
+</ol>
+<p>Les réseaux de neurones récurrents (RNN) sont conçus pour traiter <strong>des données séquentielles</strong>, c’est-à-dire des données où l’ordre a une importance (par exemple : du texte, de l’audio, des séries temporelles).</p>
+<section id="structure-d-un-rnn">
+<h2><strong>Structure d’un RNN</strong><a class="headerlink" href="#structure-d-un-rnn" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Mémoire du Passé</strong><br />
+La principale idée des RNNs est de <strong>garder une mémoire</strong> des informations passées.<br />
+À chaque instant, un RNN prend :</p>
+<ul class="simple">
+<li><p>L’entrée actuelle xt</p></li>
+<li><p>Son propre état précédent ht−1</p></li>
+<li><p>Il calcule un nouvel état ht​ en combinant les deux.</p></li>
+</ul>
+</li>
+<li><p>Cela permet au réseau de tenir compte des éléments précédents pour faire ses prédictions.</p></li>
+<li><p><strong>Propagation sur la Séquence</strong><br />
+Contrairement à un réseau classique qui traite les données indépendamment, un RNN traite <strong>toute la séquence</strong> pas à pas :<br />
+ht​​ ​= tanh(Whht−1 ​+ Wx​xt​ + b)<br />
+où Wh​, Wx et b sont des poids appris pendant l’entraînement.</p></li>
+<li><p><strong>Sortie</strong></p>
+<ul class="simple">
+<li><p>À chaque étape, le réseau peut produire une sortie yt​.</p></li>
+<li><p>Selon l’application, on peut vouloir une sortie à chaque pas de temps (ex : traduction automatique) ou seulement à la fin (ex : analyse de sentiment).</p></li>
+</ul>
+</li>
+<li><p><strong>Partage des Paramètres</strong><br />
+Tous les pas de temps partagent <strong>les mêmes paramètres</strong> (mêmes poids). Cela permet au modèle d’apprendre à généraliser le comportement sur toute la séquence.</p></li>
+</ol>
+</section>
+<section id="caracteristiques-des-rnns">
+<h2><strong>Caractéristiques des RNNs</strong><a class="headerlink" href="#caracteristiques-des-rnns" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Adaptés aux Séquences</strong> : très efficaces pour traiter des données où l’ordre est important.</p></li>
+<li><p><strong>Mémoire à Court Terme</strong> : les RNNs sont capables de se souvenir d’informations récentes.</p></li>
+<li><p><strong>Problèmes de Long Terme</strong> : en pratique, il devient difficile pour un RNN de se souvenir d’informations lointaines dans la séquence à cause des problèmes de <strong>vanishing gradient</strong> (le gradient devient très petit et bloque l’apprentissage sur de longues distances).</p></li>
+</ul>
+<p>Les RNNs ont été une avancée majeure pour des tâches comme la reconnaissance vocale, la génération de texte, ou encore la prévision de séries temporelles.<br />
+Cependant, pour résoudre certains de leurs problèmes, des architectures améliorées comme <strong>LSTM</strong> et <strong>GRU</strong> ont été développées par la suite.</p>
+<p>![][image42]<br />
+Image extraite de : <a class="reference external" href="https://www.researchgate.net/figure/The-standard-RNN-and-unfolded-RNN_fig1_318332317">https://www.researchgate.net/figure/The-standard-RNN-and-unfolded-RNN_fig1_318332317</a></p>
+<ol class="arabic" start="2">
+<li><p class="rubric" id="lstm-long-short-term-memory"><strong>LSTM (Long Short-Term Memory)</strong></p>
+</li>
+</ol>
+<p>Les RNNs classiques peuvent rencontrer des problèmes pour apprendre des dépendances à long terme dans les séquences, car ils ont du mal à retenir des informations sur plusieurs étapes temporelles. Pour résoudre ce problème, les <strong>Long Short-Term Memory (LSTM)</strong> ont été introduits. Ils sont une extension des RNNs, conçus pour résoudre le problème de <strong>vanishing gradients</strong> et permettre la modélisation de dépendances temporelles sur de longues périodes.</p>
+<p>Les LSTM introduisent des <strong>cellules de mémoire</strong> qui peuvent conserver des informations sur plusieurs étapes temporelles, ce qui permet à l’architecture de mieux gérer les dépendances longues.</p>
+</section>
+<section id="structure-du-lstm">
+<h2><strong>Structure du LSTM</strong><a class="headerlink" href="#structure-du-lstm" title="Link to this heading">¶</a></h2>
+<p>Un LSTM est composé de plusieurs éléments clés :</p>
+<ol class="arabic simple">
+<li><p><strong>La cellule de mémoire</strong> : Elle stocke l’information de manière persistante sur plusieurs étapes temporelles.</p></li>
+<li><p><strong>Les portes (gates)</strong> : Les portes contrôlent l’ajout ou la suppression d’informations dans la cellule de mémoire. Il y a trois portes principales :</p>
+<ul class="simple">
+<li><p><strong>La porte d’oubli (Forget Gate)</strong> : Elle détermine quelles informations doivent être oubliées de la cellule de mémoire.</p></li>
+<li><p><strong>La porte d’entrée (Input Gate)</strong> : Elle détermine quelles nouvelles informations doivent être ajoutées à la cellule de mémoire.</p></li>
+<li><p><strong>La porte de sortie (Output Gate)</strong> : Elle détermine quelles informations de la cellule de mémoire seront utilisées pour la sortie du LSTM à l’instant ttt.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="avantages-des-lstm">
+<h2><strong>Avantages des LSTM</strong><a class="headerlink" href="#avantages-des-lstm" title="Link to this heading">¶</a></h2>
+<p>Les LSTM sont particulièrement utiles dans les tâches nécessitant l’apprentissage de dépendances longues dans les données temporelles. Par exemple :</p>
+<ul class="simple">
+<li><p><strong>Mémoire à long terme</strong> : Ils conservent efficacement les informations importantes pendant plusieurs étapes temporelles.</p></li>
+<li><p><strong>Résolution du problème de vanishing gradient</strong> : Les LSTM sont capables de maintenir un gradient plus stable pendant l’entraînement, ce qui permet un apprentissage plus efficace sur de longues séquences.</p></li>
+</ul>
+<section id="applications-des-lstm">
+<h3><strong>Applications des LSTM</strong><a class="headerlink" href="#applications-des-lstm" title="Link to this heading">¶</a></h3>
+<p>Les LSTM sont utilisés dans divers domaines :</p>
+<ul class="simple">
+<li><p><strong>Modélisation du langage</strong> : Prédiction des mots suivants dans une phrase ou traduction automatique.</p></li>
+<li><p><strong>Reconnaissance vocale</strong> : Modélisation des dépendances temporelles dans les signaux audio.</p></li>
+<li><p><strong>Prédiction des séries temporelles</strong> : Prévisions économiques, prévisions météorologiques, etc.</p></li>
+<li><p><strong>Génération de texte</strong> : Génération automatique de contenu textuel basé sur un contexte donné.</p></li>
+</ul>
+<p>Les LSTM sont un puissant outil pour traiter des séquences de données où la mémoire à long terme joue un rôle crucial. Grâce à leurs portes et leur cellule de mémoire, ils surpassent les RNNs classiques dans les tâches nécessitant une compréhension de dépendances complexes sur de longues périodes. Les LSTM sont une pièce maîtresse dans de nombreuses applications modernes de l’intelligence artificielle.</p>
+<p>![][image43]<br />
+Image extaite de : <a class="reference external" href="https://fr.mathworks.com/discovery/lstm.html">https://fr.mathworks.com/discovery/lstm.html</a></p>
+<ol class="arabic" start="3">
+<li><p class="rubric" id="gated-recurrent-unit-gru"><strong>Gated Recurrent Unit (GRU)</strong></p>
+</li>
+</ol>
+<p>Les <strong>GRU (Gated Recurrent Unit)</strong> sont une variante des RNNs, développée pour résoudre les problèmes de dépendances longues que les RNNs classiques ont du mal à gérer. Les GRU sont une version simplifiée des LSTM et visent à atteindre des performances similaires avec un nombre de paramètres réduits, ce qui les rend plus légers tout en restant efficaces pour la modélisation de séquences.</p>
+<p>Les GRU, comme les LSTM, utilisent des portes pour contrôler l’information qui entre, reste ou sort du réseau. Toutefois, les GRU combinent certaines étapes de calcul des LSTM, ce qui réduit leur complexité sans sacrifier leurs performances.</p>
+</section>
+</section>
+<section id="structure-du-gru">
+<h2><strong>Structure du GRU</strong><a class="headerlink" href="#structure-du-gru" title="Link to this heading">¶</a></h2>
+<p>Le GRU utilise deux portes principales :</p>
+<ol class="arabic simple">
+<li><p><strong>La porte de mise à jour (Update Gate)</strong> : Cette porte détermine dans quelle mesure l’état précédent doit être retenu ou mis à jour avec de nouvelles informations.</p></li>
+<li><p><strong>La porte de réinitialisation (Reset Gate)</strong> : Elle détermine dans quelle mesure les informations passées doivent être oubliées avant d’ajouter de nouvelles informations.</p></li>
+</ol>
+</section>
+<section id="avantages-des-gru">
+<h2><strong>Avantages des GRU</strong><a class="headerlink" href="#avantages-des-gru" title="Link to this heading">¶</a></h2>
+<p>Les <strong>GRU</strong> présentent plusieurs avantages qui les rendent attrayants :</p>
+<ul class="simple">
+<li><p><strong>Moins de paramètres</strong> : Les GRU ont moins de paramètres que les LSTM, car ils utilisent moins de portes. Cela les rend plus rapides à entraîner et moins coûteux en termes de mémoire.</p></li>
+<li><p><strong>Performances similaires</strong> : Bien qu’ils aient moins de paramètres, les GRU obtiennent souvent des résultats très similaires à ceux des LSTM sur diverses tâches de séquences.</p></li>
+<li><p><strong>Simplification</strong> : La structure des GRU est plus simple que celle des LSTM, ce qui permet une meilleure interprétabilité tout en restant efficace pour capturer des dépendances longues.</p></li>
+</ul>
+</section>
+<section id="applications-des-gru">
+<h2><strong>Applications des GRU</strong><a class="headerlink" href="#applications-des-gru" title="Link to this heading">¶</a></h2>
+<p>Les GRU sont utilisés dans les mêmes domaines que les LSTM, où la gestion des séquences est essentielle. Voici quelques exemples d’applications :</p>
+<ul class="simple">
+<li><p><strong>Modélisation du langage</strong> : Prévision de la prochaine séquence de mots dans des tâches de génération de texte.</p></li>
+<li><p><strong>Prédiction des séries temporelles</strong> : Prévisions financières, prévisions météorologiques, etc.</p></li>
+<li><p><strong>Reconnaissance vocale</strong> : Compréhension et transcription de la parole.</p></li>
+<li><p><strong>Traduction automatique</strong> : Traduction de texte d’une langue à une autre, en capturant les dépendances contextuelles.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<p>Les <strong>GRU</strong> sont une alternative plus simple et plus rapide aux <strong>LSTM</strong>, tout en offrant des performances similaires dans des tâches impliquant des séquences. Grâce à leur structure plus légère et leurs portes efficaces, les GRU sont particulièrement adaptés aux applications nécessitant des modèles rapides à entraîner et capables de gérer des séquences longues sans la complexité des LSTM. Ils représentent une excellente option pour des tâches en traitement de langage naturel, reconnaissance vocale, et bien d’autres applications nécessitant l’analyse de données temporelles.</p>
+<p>![][image44]<br />
+Image extraite de : <a class="reference external" href="https://www.oreilly.com/library/view/advanced-deep-learning/9781789956177/8ad9dc41-3237-483e-8f6b-7e5f653dc693.xhtml">https://www.oreilly.com/library/view/advanced-deep-learning/9781789956177/8ad9dc41-3237-483e-8f6b-7e5f653dc693.xhtml</a></p>
+<ol class="arabic" start="4">
+<li><p class="rubric" id="modeles-d-attention-attention-based-models"><strong>Modèles d’attention (Attention-based models)</strong></p>
+</li>
+</ol>
+<p>Les modèles d’attention sont devenus un élément central dans le domaine du deep learning, en particulier pour les tâches impliquant des séquences de données, comme la traduction automatique, la reconnaissance d’images ou encore la compréhension du langage naturel. Avant l’introduction des mécanismes d’attention, les modèles comme les RNNs, LSTM et GRU avaient du mal à capturer les dépendances à long terme dans les séquences. Les mécanismes d’attention ont révolutionné cette capacité en permettant au modèle de se concentrer sur les parties les plus pertinentes d’une séquence, tout en ignorant le reste.</p>
+</section>
+<section id="le-principe-de-l-attention">
+<h2><strong>Le principe de l’attention</strong><a class="headerlink" href="#le-principe-de-l-attention" title="Link to this heading">¶</a></h2>
+<p>L’idée principale derrière l’attention est de permettre au modèle de “peser” différentes parties de l’entrée selon leur importance pour la tâche à accomplir. Ce mécanisme est inspiré de la façon dont les humains prêtent attention à certains éléments plus que d’autres lorsqu’ils accomplissent une tâche, comme lire un texte ou écouter une conversation.</p>
+</section>
+<section id="structure-du-mecanisme-d-attention">
+<h2><strong>Structure du mécanisme d’attention</strong><a class="headerlink" href="#structure-du-mecanisme-d-attention" title="Link to this heading">¶</a></h2>
+<p>Un modèle d’attention calcule une <strong>poids d’attention</strong> pour chaque élément d’une séquence d’entrée, ce qui détermine l’importance de cet élément dans la prédiction de la sortie. Ce processus peut être décrit par les étapes suivantes :</p>
+<ol class="arabic simple">
+<li><p><strong>Calcul des scores d’attention</strong> : Pour chaque élément de la séquence d’entrée, on calcule un score qui indique à quel point cet élément est important par rapport à un autre élément. Cela se fait généralement en calculant une similarité entre l’élément courant et les éléments précédents de la séquence.</p></li>
+<li><p><strong>Normalisation des scores</strong> : Les scores d’attention sont ensuite normalisés via une fonction softmax pour obtenir des poids qui somment à 1. Ces poids déterminent l’importance relative de chaque élément de la séquence.</p></li>
+<li><p><strong>Calcul de la sortie pondérée</strong> : En utilisant ces poids d’attention, on calcule une somme pondérée des éléments de la séquence d’entrée. Cela donne une représentation de l’entrée, où les éléments les plus pertinents ont une plus grande influence.</p></li>
+</ol>
+</section>
+<section id="l-attention-dans-les-transformers">
+<h2><strong>L’attention dans les Transformers</strong><a class="headerlink" href="#l-attention-dans-les-transformers" title="Link to this heading">¶</a></h2>
+<p>Le modèle Transformer, introduit dans le papier <strong>“Attention is All You Need”</strong>, repose entièrement sur des mécanismes d’attention, sans recourir à des architectures récurrentes comme les RNNs. Dans un Transformer, l’attention est utilisée à la fois pour encoder et pour décoder les séquences d’entrée et de sortie. Voici les deux types principaux d’attention utilisés dans un Transformer :</p>
+<ol class="arabic simple">
+<li><p><strong>Self-attention (ou intra-attention)</strong> : Chaque élément de la séquence d’entrée accorde de l’attention à tous les autres éléments de la séquence. Cela permet au modèle de capturer les dépendances contextuelles entre les éléments de la séquence. Par exemple, dans une phrase, le mot “banque” pourrait se référer à une institution financière ou à la rive d’un fleuve, et le modèle pourrait utiliser la self-attention pour distinguer le sens correct selon le contexte.</p></li>
+<li><p><strong>Attention encodage-décodage</strong> : Dans la phase de décodage, l’attention est utilisée pour relier l’entrée et la sortie. Par exemple, dans la traduction automatique, l’attention permet au modèle de se concentrer sur les mots clés de la phrase source lorsqu’il génère la traduction.</p></li>
+</ol>
+</section>
+<section id="avantages-des-modeles-d-attention">
+<h2><strong>Avantages des modèles d’attention</strong><a class="headerlink" href="#avantages-des-modeles-d-attention" title="Link to this heading">¶</a></h2>
+<p>Les mécanismes d’attention offrent plusieurs avantages qui les rendent particulièrement efficaces pour de nombreuses tâches :</p>
+<ul class="simple">
+<li><p><strong>Capturer les dépendances longues</strong> : Contrairement aux RNNs ou LSTM, les modèles d’attention peuvent se concentrer directement sur des éléments spécifiques de la séquence, qu’ils soient proches ou éloignés dans la séquence, ce qui permet de mieux capturer les relations à long terme.</p></li>
+<li><p><strong>Parallélisation</strong> : Contrairement aux RNNs, qui traitent les séquences élément par élément, l’attention permet de traiter toutes les positions d’une séquence en parallèle, ce qui accélère l’entraînement.</p></li>
+<li><p><strong>Flexibilité</strong> : Le mécanisme d’attention peut être facilement intégré dans différents types d’architectures, y compris les réseaux de neurones convolutifs (CNN) et les réseaux récurrents (RNN).</p></li>
+</ul>
+</section>
+<section id="applications-des-modeles-d-attention">
+<h2><strong>Applications des modèles d’attention</strong><a class="headerlink" href="#applications-des-modeles-d-attention" title="Link to this heading">¶</a></h2>
+<p>Les mécanismes d’attention ont été appliqués avec succès dans divers domaines du deep learning, notamment :</p>
+<ul class="simple">
+<li><p><strong>Traduction automatique</strong> : Le modèle Transformer, qui repose entièrement sur l’attention, a largement remplacé les modèles basés sur RNNs et LSTM pour la traduction de texte entre langues.</p></li>
+<li><p><strong>Compréhension du langage naturel</strong> : Les modèles comme BERT (Bidirectional Encoder Representations from Transformers) utilisent l’attention pour comprendre le contexte de chaque mot dans une phrase, ce qui est crucial pour des tâches comme l’analyse de sentiment, la réponse aux questions et la classification de texte.</p></li>
+<li><p><strong>Vision par ordinateur</strong> : L’attention est également utilisée dans des architectures de type Vision Transformer (ViT), qui appliquent des mécanismes d’attention à des images en traitant celles-ci comme des séquences de “patches” d’images.</p></li>
+<li><p><strong>Résumé automatique</strong> : L’attention aide à identifier les parties les plus importantes d’un texte pour générer un résumé significatif.</p></li>
+</ul>
+<p>Les <strong>modèles d’attention</strong> ont transformé le domaine du deep learning, notamment pour le traitement des séquences. Grâce à leur capacité à se concentrer sur les parties les plus pertinentes des données d’entrée, ils permettent de traiter efficacement des dépendances à long terme et d’améliorer les performances des modèles. L’introduction de modèles comme les <strong>Transformers</strong> a permis d’atteindre des résultats remarquables dans des domaines variés comme la traduction, la compréhension du langage et la vision par ordinateur.</p>
+<p>![][image45]</p>
+<p>Image extraite de : <a class="reference external" href="https://www.geeksforgeeks.org/self-attention-in-nlp/">https://www.geeksforgeeks.org/self-attention-in-nlp/</a></p>
+<section id="liens-externes-youtube-medium-etc">
+<h3><strong>Liens Externes (Youtube, Medium, etc):</strong><a class="headerlink" href="#liens-externes-youtube-medium-etc" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/&#64;RobuRishabh/recurrent-neural-network-rnn-8412b9abd755">Recurrent Neural Network (RNN)</a></p></li>
+<li><p><a class="reference external" href="https://aws.amazon.com/fr/what-is/recurrent-neural-network/">Qu’est-ce qu’un RNN (réseau neuronal récurrent) ?</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;anishnama20/understanding-lstm-architecture-pros-and-cons-and-implementation-3e0cca194094">Understanding LSTM: Architecture, Pros and Cons, and Implementation</a></p></li>
+<li><p><a class="reference external" href="https://www.ionos.fr/digitalguide/sites-internet/developpement-web/long-short-term-memory/#:~:text=Long%20Short%2DTerm%20Memory%20(LSTM,importantes%20sur%20le%20long%20terme.">Long Short-Term Memory : réseaux à mémoire longue</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;anishnama20/understanding-gated-recurrent-unit-gru-in-deep-learning-2e54923f3e2">Understanding Gated Recurrent Unit (GRU) in Deep Learning</a></p></li>
+<li><p><a class="reference external" href="https://www.intelligence-artificielle-school.com/ecole/technologies/gated-recurrent-unit/">Qu’est-ce qu’une Gated Recurrent Unit (GRU) ?</a></p></li>
+<li><p><a class="reference external" href="https://www.aimasterclass.com/glossary/attention-based-neural-networks">What is Attention-Based Neural Networks?</a></p></li>
+<li><p><a class="reference external" href="https://inside-machinelearning.com/mecanisme-attention/">Le Mécanisme de l’Attention en Deep Learning – Comprendre Rapidement</a></p></li>
+</ul>
+</section>
+<section id="bibliographie">
+<h3><strong>Bibliographie</strong><a class="headerlink" href="#bibliographie" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Schmidt, R.M., 2019. Recurrent neural networks (rnns): A gentle introduction and overview. <em>arXiv preprint arXiv:1912.05911</em>.</p></li>
+<li><p>Hochreiter, S. and Schmidhuber, J., 1997. Long short-term memory. <em>Neural computation</em>, <em>9</em>(8), pp.1735-1780.</p></li>
+<li><p>Dey, R. and Salem, F.M., 2017, August. Gate-variants of gated recurrent unit (GRU) neural networks. In <em>2017 IEEE 60th international midwest symposium on circuits and systems (MWSCAS)</em> (pp. 1597-1600). IEEE.</p></li>
+<li><p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, Ł. and Polosukhin, I., 2017. Attention is all you need. <em>Advances in neural information processing systems</em>, <em>30</em>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link link-dark p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Modèles généraux de NLP</a><ul>
+<li><a class="reference internal" href="#structure-d-un-rnn"><strong>Structure d’un RNN</strong></a></li>
+<li><a class="reference internal" href="#caracteristiques-des-rnns"><strong>Caractéristiques des RNNs</strong></a></li>
+<li><a class="reference internal" href="#structure-du-lstm"><strong>Structure du LSTM</strong></a></li>
+<li><a class="reference internal" href="#avantages-des-lstm"><strong>Avantages des LSTM</strong></a><ul>
+<li><a class="reference internal" href="#applications-des-lstm"><strong>Applications des LSTM</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#structure-du-gru"><strong>Structure du GRU</strong></a></li>
+<li><a class="reference internal" href="#avantages-des-gru"><strong>Avantages des GRU</strong></a></li>
+<li><a class="reference internal" href="#applications-des-gru"><strong>Applications des GRU</strong></a></li>
+<li><a class="reference internal" href="#conclusion"><strong>Conclusion</strong></a></li>
+<li><a class="reference internal" href="#le-principe-de-l-attention"><strong>Le principe de l’attention</strong></a></li>
+<li><a class="reference internal" href="#structure-du-mecanisme-d-attention"><strong>Structure du mécanisme d’attention</strong></a></li>
+<li><a class="reference internal" href="#l-attention-dans-les-transformers"><strong>L’attention dans les Transformers</strong></a></li>
+<li><a class="reference internal" href="#avantages-des-modeles-d-attention"><strong>Avantages des modèles d’attention</strong></a></li>
+<li><a class="reference internal" href="#applications-des-modeles-d-attention"><strong>Applications des modèles d’attention</strong></a><ul>
+<li><a class="reference internal" href="#liens-externes-youtube-medium-etc"><strong>Liens Externes (Youtube, Medium, etc):</strong></a></li>
+<li><a class="reference internal" href="#bibliographie"><strong>Bibliographie</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="architectures_cnn.html" class="d-flex px-5 align-items-end" rel="prev" aria-label="Previous page: Architectures CNN Populaires">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Architectures CNN Populaires</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="../04_modeles_generatifs/mdl_gen.html" class="d-flex px-5 align-items-end" rel="next" aria-label="Next page: Modèles Génératifs">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">Modèles Génératifs</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="https://github.com/danirus/sphinx-nefertiti/issues" class="list-item">Issues</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://docs.google.com/document/d/1X9dO4tD5R5DBlG_WFETr6D9i2sSP5pHR8RI8enTSceU/edit?tab=t.0#heading=h.bg3x17yqchk" class="list-item">Documentation</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://github.com/Yousraarroui/TestSphinx.git" class="list-item">Repository</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">IAn</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>ARROUI Yousra</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.7.5</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/colorsets.js?v=93c30d22"></script>
+    <script src="../../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../../_static/sphinx-nefertiti.min.js?v=de1d41e1"></script>
+    <script src="../../_static/bootstrap.bundle.min.js?v=ff4e7878"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+  </body>
+</html>

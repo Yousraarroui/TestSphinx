@@ -1,0 +1,1261 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="86400000" />
+    <meta name="docsearch:name" content="IAn" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1" />
+    <meta name="docsearch:version" content="0.1" />
+    
+      <title>Notions de Base de l’Apprentissage Profond &mdash; IAn 0.1 documentation</title>
+    
+    <link rel="canonical" href="contenu/02_notions_basiques/notion_de_base_de_l'apprentissage_profond" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-nefertiti-default.min.css?v=84f2ec69" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css?v=ce93212b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/red-hat-mono/stylesheet.css?v=4eee5046" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-dark.css?v=589f9147" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-light.css?v=1620426e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../../genindex.html" />
+        <link rel="search" title="Search" href="../../search.html" />
+        <link rel="top" title="IAn 0.1 documentation" href="#" />
+        <link rel="up" title="Notions de Base en IA" href="notion.html" />
+        <link rel="next" title="Modèles d’Apprentissage" href="../03_modeles_apprentissage/mdl_appr.html" />
+        <link rel="prev" title="Notions de Base en IA" href="notion.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl neutral nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-xl-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2 pe-lg-4"
+          ><span class="brand-text">IAn</span></a>
+        
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-text">IAn</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/Yousraarroui/TestSphinx.git" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/Yousraarroui/TestSphinx.git">
+                      TestSphinx
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+                <!-- colorssets-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle color set">
+    <i class="bi bi-palette"></i>
+    <span id="snftt-color-text" class="d-xl-none ms-2">Change color set</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+    <li>
+      <h6 class="dropdown-header">Change color set</h6>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+        <span class="blue">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Blue</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="indigo" href="#" aria-pressed="false">
+        <span class="indigo">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Indigo</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+        <span class="purple">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Purple</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+        <span class="pink">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Pink</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+        <span class="red">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Red</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+        <span class="orange">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Orange</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+        <span class="yellow">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Yellow</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+        <span class="green">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Green</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+        <span class="teal">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Teal</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="default" href="#" aria-pressed="false">
+        <span class="cyan">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Cyan</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li><hr class="dropdown-divider" /></li>
+    <li>
+      <h6 class="dropdown-header">Neutral header</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center active current" data-snftt-colorset-neutral="on" href="#" aria-pressed="false">
+        <i class="bi bi-noise-reduction"></i>
+        <span class="ms-3">Neutral</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+  <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+  <hr class="d-lg-none text-white-50">
+</li>
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-block">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../indexcontenu.html">Contenu Théorique</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_introduction/intro.html">Introduction à l’IA Générative</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01_introduction/introduction.html">Introduction à l’Apprentissage Automatique et à l’Apprentissage Profond dans l’IA générative</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="notion.html">Notions de Base en IA</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Notions de Base de l’Apprentissage Profond</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03_modeles_apprentissage/mdl_appr.html">Modèles d’Apprentissage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../03_modeles_apprentissage/architectures_cnn.html">Architectures CNN Populaires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_modeles_apprentissage/modeles_nlp.html">Modèles généraux de NLP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../04_modeles_generatifs/mdl_gen.html">Modèles Génératifs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_modeles_generatifs/modeles_generatifs.html">Modèles Génératifs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../big-list-ia.html">Listes des outils d’IA génératifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/texte/texte.html">Générateurs de texte par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/claude.html">Claude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/bloom.html">BLOOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/t5.html">T5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/chat-gpt.html">ChatGPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/llama.html">Llama</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/nous-hermes-2-mistral-7b-dpo.html">Nous-Hermes 2 Mistral 7B DPO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/image/image.html">Générateurs d’images par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/stable-diffusion.html">Stable Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/dall-e.html">DALL-E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/adobe-firefly.html">Adobe Firefly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/midjourney.html">Midjourney</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/video/video.html">Générateurs de vidéo par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/sora.html">Sora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/vidu.html">Vidu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/son/son.html">Générateurs de sons par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/audioldm.html">AudioLDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/bark.html">Bark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/coversong.html">CoverSong / So-VITS-SVC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/dancediffusion.html">Dance Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/gansynth.html">GANSynth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jen1.html">JEN-1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jukebox.html">Jukebox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/melgan.html">MelGAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/musiclm.html">MusicLM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/riffusion.html">Riffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/wavenet.html">WaveNet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../index.html">Start</a></li>
+      <li class="breadcrumb-item"><a href="../../indexcontenu.html">Contenu Théorique</a></li>
+      <li class="breadcrumb-item"><a href="notion.html">Notions de Base en IA</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Notions de Base de l’Apprentissage Profond</li>
+  </ol>
+</nav>
+    <section class="tex2jax_ignore mathjax_ignore" id="notions-de-base-de-l-apprentissage-profond">
+<h1>Notions de Base de l’Apprentissage Profond<a class="headerlink" href="#notions-de-base-de-l-apprentissage-profond" title="Link to this heading">¶</a></h1>
+<section id="concepts-fondamentaux">
+<h2>Concepts Fondamentaux<a class="headerlink" href="#concepts-fondamentaux" title="Link to this heading">¶</a></h2>
+<section id="donnees-structurees-et-non-structurees">
+<h3>1. Données Structurées et non Structurées<a class="headerlink" href="#donnees-structurees-et-non-structurees" title="Link to this heading">¶</a></h3>
+<p>En <strong>machine learning</strong>, les données peuvent généralement être classées dans deux grandes catégories :</p>
+<p>Les <strong>données structurées</strong> sont organisées sous forme de tableau, avec des colonnes représentant différentes caractéristiques décrivant chaque observation. Par exemple, des informations comme l’âge d’une personne, son revenu, ou le nombre de fois où elle a visité un site web au cours du mois précédent peuvent servir à prédire si elle va s’abonner à un service en ligne le mois suivant.</p>
+<p>Les <strong>données non structurées</strong>, quant à elles, ne suivent pas cette organisation tabulaire. Elles incluent des formats comme des images, de l’audio ou du texte, qui ne s’intègrent pas naturellement dans des colonnes. Une image a une structure spatiale, un enregistrement audio a une structure temporelle, et une vidéo combine les deux. Mais comme ces informations ne sont pas organisées en colonnes prédéfinies, elles sont considérées comme non structurées.![][image1]</p>
+<p>Image extraite de:  « Generative Deep Learning » par D. Foster</p>
+<p>Le <strong>deep learning</strong> peut être utilisé avec des données structurées, mais sa véritable force — surtout dans les modèles génératifs — réside dans le traitement des données non structurées. En effet, dans la majorité des cas, l’objectif est de générer des sorties non structurées comme de nouvelles images ou des séquences de texte uniques.</p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/5M2okstYF3A?si=PS0Oi3yGy5lEI_DG">Structured vs Unstructured Data Explained</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;gurkanc/whats-the-difference-structured-vs-unstructured-data-1bfe09077be6">What is the difference: Structured vs Unstructured data</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/xINa3byXDQA?si=-bRkyJ0iTKqM4wbF">Quelle est la différence entre les données structurées, semi-structurées et non structurées?</a></p></li>
+</ul>
+<p><strong>Bibliographie:</strong></p>
+<ul class="simple">
+<li><p>D. Foster, Generative Deep Learning, 2nd ed. Sebastopol, CA, USA: O’Reilly Media, Inc., 2023.</p></li>
+<li><p>Eberendu, A.C., 2016. Unstructured Data: an overview of the data of Big Data. <em>International Journal of Computer Trends and Technology</em>, <em>38</em>(1), pp.46-50.</p></li>
+</ul>
+</section>
+<section id="apprentissage-supervise-et-non-supervise">
+<h3>2. Apprentissage Supervisé et non Supervisé<a class="headerlink" href="#apprentissage-supervise-et-non-supervise" title="Link to this heading">¶</a></h3>
+<p>Le machine learning se divise en deux grands domaines : <strong>l’apprentissage supervisé</strong> (<em>Supervised Learning</em>) et <strong>l’apprentissage non supervisé</strong> (<em>Unsupervised Learning</em>).</p>
+<p>L’<strong>apprentissage supervisé</strong> consiste à entraîner un modèle sur des données annotées. Cela signifie que pour chaque entrée, on connaît la sortie correcte. Le modèle apprend ainsi à faire des prédictions ou des classifications en s’appuyant sur cette correspondance entrée-sortie.<br />
+On distingue deux grands types de problèmes en apprentissage supervisé : la <strong>classification</strong> et la <strong>régression</strong>.</p>
+<p>En <strong>classification</strong>, l’objectif est d’attribuer une étiquette de classe à une observation, à partir d’un ensemble de classes possibles. Il existe deux types principaux de classification :</p>
+<ul class="simple">
+<li><p>la <strong>classification binaire</strong>, où l’on distingue exactement deux catégories,</p></li>
+<li><p>la <strong>classification multiclasse</strong>, avec plus de deux options possibles.</p></li>
+</ul>
+<p>Par exemple, déterminer si un email est un spam ou non est un cas de classification binaire. En revanche, reconnaître si une image contient un chat, un chien ou un poisson relève de la classification multiclasse.<br />
+Parmi les modèles populaires utilisés en classification, on retrouve : SVM, arbres de décision (<em>Decision Trees</em>), régression logistique (<em>Logistic Regression</em>).</p>
+<p>En <strong>régression</strong>, le but est de prédire une valeur numérique continue. Par exemple, estimer le salaire annuel d’une personne en fonction de son niveau d’études, de son âge et de sa localisation.<br />
+Les modèles les plus courants incluent la régression linéaire (<em>Linear Regression</em>), la régression polynomiale (<em>Polynomial Regression</em>), ainsi que la régression régularisée (Ridge, Lasso, ElasticNet).</p>
+<p>L’<strong>apprentissage non supervisé</strong>, à l’inverse, s’applique à des données <strong>non annotées</strong>. Le modèle ne reçoit pas les réponses correctes et tente de découvrir seul des motifs, des regroupements ou des structures cachées dans les données.<br />
+On distingue quatre grandes approches en apprentissage non supervisé :</p>
+<ul class="simple">
+<li><p>le <strong>clustering</strong> (regroupement),</p></li>
+<li><p>la <strong>réduction de dimensionnalité</strong>,</p></li>
+<li><p>la <strong>détection d’anomalies</strong>,</p></li>
+<li><p>et l’<strong>apprentissage des règles d’association</strong>.</p></li>
+</ul>
+<p>Le <strong>clustering</strong> regroupe les points de données similaires en fonction de motifs ou de caractéristiques communes. Les algorithmes populaires sont K-Means, DBSCAN et le <strong>clustering hiérarchique</strong> (<em>Hierarchical Clustering</em>).<br />
+La <strong>réduction de dimensionnalité</strong> permet de diminuer le nombre de variables d’entrée tout en conservant la structure ou la variance essentielle des données. Les méthodes connues incluent l’analyse en composantes principales (<em>PCA</em>), t-SNE, UMAP et les autoencodeurs (<em>Autoencoders</em>).<br />
+La <strong>détection d’anomalies</strong> (ou détection d’outliers) vise à identifier les données rares ou inhabituelles qui s’écartent fortement de la norme. Exemples : Isolation Forest, One-Class SVM.<br />
+Enfin, l’<strong>apprentissage des règles d’association</strong> cherche à découvrir des liens ou des motifs de cooccurrence entre des variables. Les algorithmes comme Apriori et FP-Growth sont souvent utilisés dans des cas comme l’analyse de panier d’achat.</p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/W01tIRP_Rqs?si=zWHlVXArWMHSiwNr">Supervised vs Unsupervised Learning</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/TJveOYsK6MY?si=NF8-i3sXMPIRqs6W">Classification and Regression in Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;uma.bollikonda/6-types-of-regression-models-in-machine-learning-you-should-know-about-ed1e83dd0c4d">6 Types of Regression Models You Should Know About</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/imagescv/top-8-most-important-unsupervised-machine-learning-algorithms-with-python-code-references-1222393b5077">Top 8 Most Important Unsupervised Learning Algorithms</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/3uxOyk-SczU?si=4Kb8ccBMid2IZ_h2">Dimensionality Reduction</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;ainsupriyofficial/what-is-association-rule-learning-a6ef399fdc01">What is Association Rule Learning?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/jTF2aLBHA80?si=qfNbQSAWrK-oFDQi">Différence entre apprentissage machine supervisé et non-supervisé (cours exemple concret définition)</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/iFE5Dz-YJCk?si=P8ggC6RAc6npzQAc">Comprendre L’ Apprentissage Supervisé : Les 4 Piliers à Connaitre</a></p></li>
+<li><p><a class="reference external" href="https://cloud.google.com/discover/supervised-vs-unsupervised-learning?hl=fr">Apprentissage supervisé et non supervisé</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>A. Géron, Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd ed. Sebastopol, CA, USA: O’Reilly Media, Inc., 2019.</p></li>
+<li><p>Rajoub, B. (2020). <em>Supervised and unsupervised learning</em>. In W. Zgallai (ed.) <em>Biomedical Signal Processing and Artificial Intelligence in Healthcare</em>. Developments in Biomedical Engineering and Bioelectronics. Academic Press, pp. 51–89.</p></li>
+<li><p>Nasteski, V., 2017. An overview of the supervised machine learning methods. <em>Horizons. b</em>, <em>4</em>(51-62), p.56.</p></li>
+<li><p>Celebi, M.E. and Aydin, K. eds., 2016. <em>Unsupervised learning algorithms</em> (Vol. 1). Berlin: Springer International Publishing.</p></li>
+<li><p>Pang, G., Shen, C., Cao, L. and Hengel, A.V.D., 2021. Deep learning for anomaly detection: A review. <em>ACM computing surveys (CSUR)</em>, <em>54</em>(2), pp.1-38.</p></li>
+</ul>
+</section>
+<section id="surapprentissage-et-sous-apprentissage">
+<h3>3. Surapprentissage et Sous-apprentissage<a class="headerlink" href="#surapprentissage-et-sous-apprentissage" title="Link to this heading">¶</a></h3>
+<section id="le-surapprentissage-overfitting-en-machine-learning">
+<h4><strong>1. Le surapprentissage (Overfitting) en machine learning</strong><a class="headerlink" href="#le-surapprentissage-overfitting-en-machine-learning" title="Link to this heading">¶</a></h4>
+<p>Le <strong>surapprentissage</strong> se produit lorsqu’un modèle s’adapte trop fortement aux données d’entraînement. Il apprend non seulement les motifs importants, mais aussi des détails inutiles comme le bruit ou les valeurs aberrantes.</p>
+<p>Par exemple, imaginez qu’on essaie d’ajuster une courbe très complexe à un nuage de points. La courbe passe peut-être par tous les points, mais elle ne reflète pas vraiment la tendance générale. Le modèle fonctionne alors très bien sur les données d’entraînement, mais a du mal avec de nouvelles données.</p>
+<p>Un modèle en surapprentissage, c’est un peu comme un élève qui apprend les réponses par cœur sans comprendre le cours. Il réussit aux examens blancs mais échoue aux vrais tests.</p>
+<p><strong>Causes fréquentes du surapprentissage</strong> :</p>
+<ul class="simple">
+<li><p>Le modèle est trop complexe.</p></li>
+<li><p>Le jeu de données d’entraînement est trop petit.</p></li>
+<li><p>Le modèle apprend des détails spécifiques au lieu de repérer des tendances générales.</p></li>
+</ul>
+</section>
+<section id="le-sous-apprentissage-underfitting-en-machine-learning">
+<h4><strong>2. Le sous-apprentissage (Underfitting) en machine learning</strong><a class="headerlink" href="#le-sous-apprentissage-underfitting-en-machine-learning" title="Link to this heading">¶</a></h4>
+<p>Le <strong>sous-apprentissage</strong> est l’inverse du surapprentissage : le modèle est trop simple pour capturer la structure des données.</p>
+<p>Par exemple, si vous tentez de tracer une droite sur des données qui suivent une courbe, la droite passera à côté de la majorité des points. Le modèle aura de mauvais résultats, aussi bien sur les données d’entraînement que sur les nouvelles données.</p>
+<p>Un modèle en sous-apprentissage, c’est comme un élève qui n’a pas assez révisé : il échoue partout, que ce soit en entraînement ou en examen réel.</p>
+<p><strong>Causes fréquentes du sous-apprentissage</strong> :</p>
+<ul class="simple">
+<li><p>Le modèle est trop simple pour repérer les motifs pertinents.</p></li>
+<li><p>Les variables d’entrée ne décrivent pas assez bien les facteurs importants.</p></li>
+<li><p>Le jeu de données d’entraînement est trop limité.</p></li>
+<li><p>La régularisation est trop forte, empêchant le modèle d’apprendre correctement.</p></li>
+<li><p>Les caractéristiques ne sont pas bien mises à l’échelle (<em>feature scaling</em>), ce qui complique la détection des relations.</p></li>
+</ul>
+<p>![][image2]<br />
+Image extraite de:  <a class="reference external" href="https://www.kevindegila.com/blog/underfitting-and-overfitting-explained/">https://www.kevindegila.com/blog/underfitting-and-overfitting-explained/</a></p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/o3DztvnfAJg?si=QZ8OOZPniYrtkqnY">Underfitting &amp; Overfitting - Explained</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;jimcanary/overfitting-vs-underfitting-how-to-balance-your-model-b2c19d5e23b6#:~:text=Level%201%3A%20Overfitting%20means%20your,models%20overfit%20(high%20variance).">Overfitting vs. Underfitting: How to Balance Your Model</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/iAQEswd38r4?si=7ddrpS65WUoshPYV">Overfitting Et Underfitting: Les Ennemis Du Machine Learning, Comment Les Eviter?</a></p></li>
+<li><p><a class="reference external" href="https://mrmint.fr/overfitting-et-underfitting-quand-vos-algorithmes-de-machine-learning-derapent">Overfitting et Underfitting : Quand vos algorithmes de Machine Learning dérapent !</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Jabbar, H. and Khan, R.Z., 2015. Methods to avoid over-fitting and under-fitting in supervised machine learning (comparative study). <em>Computer science, communication and instrumentation devices</em>, <em>70</em>(10.3850), pp.978-981.</p></li>
+<li><p>Pothuganti, S., 2018. Review on over-fitting and under-fitting problems in Machine Learning and solutions. <em>Int. J. Adv. Res. Electr. Electron. Instrum. Eng</em>, <em>7</em>(9), pp.3692-3695.</p></li>
+<li><p>Van der Aalst, W.M., Rubin, V., Verbeek, H.M., van Dongen, B.F., Kindler, E. and Günther, C.W., 2010. Process mining: a two-step approach to balance between underfitting and overfitting. <em>Software &amp; Systems Modeling</em>, <em>9</em>, pp.87-111.</p></li>
+</ul>
+</section>
+</section>
+<section id="metriques-d-evaluation-et-fonctions-de-perte">
+<h3>4. Métriques d’Évaluation et Fonctions de Perte<a class="headerlink" href="#metriques-d-evaluation-et-fonctions-de-perte" title="Link to this heading">¶</a></h3>
+<p>Chaque tâche d’apprentissage automatique relève soit de la régression, soit de la classification, et cela vaut également pour les métriques utilisées pour évaluer les performances. Il existe de nombreuses métriques adaptées à chaque type de problème, mais nous allons nous concentrer sur les plus courantes et sur ce qu’elles révèlent sur la qualité d’un modèle.</p>
+<p>Il est important de faire la distinction entre <strong>fonction de coût (loss function)</strong> et <strong>métrique (metric)</strong>.</p>
+<ul class="simple">
+<li><p>Les fonctions de coût mesurent la qualité des prédictions pendant l’entraînement. Elles guident le processus d’apprentissage en minimisant l’erreur grâce à des techniques d’optimisation comme la descente de gradient (Gradient Descent). Elles sont généralement différentiables par rapport aux paramètres du modèle.</p></li>
+<li><p>Les métriques, quant à elles, servent à évaluer les performances pendant l’entraînement <strong>et</strong> la phase de test, mais n’ont pas besoin d’être différentiables.</p></li>
+</ul>
+<p>Cela dit, dans certains cas, une métrique peut également servir de fonction de coût si elle est différentiable. Par exemple, <strong>l’erreur quadratique moyenne (Mean Squared Error, MSE)</strong> est à la fois une métrique de régression courante et une fonction de coût, notamment lorsqu’elle est associée à des techniques de régularisation.</p>
+<section id="metriques-pour-les-taches-de-regression">
+<h4><strong>Métriques pour les tâches de régression</strong><a class="headerlink" href="#metriques-pour-les-taches-de-regression" title="Link to this heading">¶</a></h4>
+<p>Les modèles de régression produisent des sorties continues. Leur évaluation nécessite donc des métriques capables de mesurer l’écart entre les prédictions et les valeurs réelles. Voici les principales métriques utilisées :</p>
+<ul class="simple">
+<li><p><strong>Erreur absolue moyenne (Mean Absolute Error, MAE)</strong></p></li>
+<li><p><strong>Erreur quadratique moyenne (Mean Squared Error, MSE)</strong></p></li>
+<li><p><strong>Racine de l’erreur quadratique moyenne (Root Mean Squared Error, RMSE)</strong></p></li>
+<li><p><strong>R² (coefficient de détermination)</strong></p></li>
+</ul>
+<p><strong>Erreur quadratique moyenne (MSE)</strong><br />
+L’erreur quadratique moyenne mesure l’écart moyen au carré entre les valeurs prédites et les valeurs réelles. Plus les écarts sont importants, plus ils sont sévèrement pénalisés.</p>
+<p>![][image3]</p>
+<p><strong>Erreur absolue moyenne (MAE)</strong></p>
+<p>Elle mesure la moyenne des écarts absolus entre les valeurs prédites et les valeurs réelles. Elle fournit une vision plus équilibrée de l’erreur, moins sensible aux valeurs extrêmes.</p>
+<p>![][image4]</p>
+<p><strong>Racine de l’erreur quadratique moyenne (RMSE)</strong><br />
+Elle correspond à la racine carrée de la MSE. Cela permet d’interpréter l’erreur dans les mêmes unités que la variable cible, ce qui la rend plus lisible.</p>
+<p>![][image5]</p>
+<p><strong>R² (coefficient de détermination)</strong></p>
+<p>Cette métrique mesure la proportion de la variance de la variable cible qui est expliquéepar les variables d’entrée. Elle évalue le pouvoir explicatif du modèle:</p>
+<p>![][image6]</p>
+</section>
+<section id="metriques-pour-les-taches-de-classification">
+<h4><strong>Métriques pour les tâches de classification</strong><a class="headerlink" href="#metriques-pour-les-taches-de-classification" title="Link to this heading">¶</a></h4>
+<p>Les modèles de classification produisent des sorties discrètes (comme des étiquettes ou des classes). Leur évaluation repose sur des métriques qui examinent leur capacité à effectuer des prédictions correctes. Les plus utilisées sont :</p>
+<ul class="simple">
+<li><p><strong>Accuracy (exactitude)</strong></p></li>
+<li><p><strong>Précision (Precision)</strong></p></li>
+<li><p><strong>Rappel (Recall)</strong></p></li>
+<li><p><strong>F1-score</strong></p></li>
+</ul>
+<p>Pour bien comprendre ces métriques, il est essentiel d’introduire la notion de <strong>matrice de confusion (Confusion Matrix)</strong>.</p>
+</section>
+<section id="matrice-de-confusion">
+<h4><strong>Matrice de confusion</strong><a class="headerlink" href="#matrice-de-confusion" title="Link to this heading">¶</a></h4>
+<p>C’est un tableau qui permet d’évaluer les performances d’un modèle de classification, en montrant combien de prédictions ont été correctes ou incorrectes pour chaque classe.</p>
+<p>![][image7]</p>
+<p>Image extraite de:  <a class="reference external" href="https://www.blog.trainindata.com/confusion-matrix-precision-and-recall/">https://www.blog.trainindata.com/confusion-matrix-precision-and-recall/</a></p>
+<p>Dans le cas d’une classification binaire (par exemple, spam ou non spam), la matrice de confusion comprend les éléments suivants :</p>
+<ul class="simple">
+<li><p><strong>Vrai Positif (True Positive, TP)</strong> : le modèle a prédit “positif”, et c’était correct.</p></li>
+<li><p><strong>Vrai Négatif (True Negative, TN)</strong> : le modèle a prédit “négatif”, et c’était correct.</p></li>
+<li><p><strong>Faux Positif (False Positive, FP)</strong> : le modèle a prédit “positif”, mais c’était faux (erreur de type I).</p></li>
+<li><p><strong>Faux Négatif (False Negative, FN)</strong> : le modèle a prédit “négatif”, alors que c’était positif (erreur de type II).</p></li>
+</ul>
+<p>Accuracy</p>
+<p>L’<strong>accuracy</strong> mesure la proportion de prédictions correctes sur l’ensemble des données. C’est simple et souvent utile, mais elle peut être trompeuse en cas de déséquilibre entre les classes.</p>
+<p>![][image8]</p>
+</section>
+<section id="precision-et-rappel">
+<h4><strong>Précision et rappel</strong><a class="headerlink" href="#precision-et-rappel" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Précision (Precision)</strong> : parmi toutes les prédictions positives du modèle, combien étaient correctes ? Elle est importante lorsque le <strong>coût d’un faux positif</strong> est élevé (par exemple, dans la détection de spam).</p></li>
+<li><p><strong>Rappel (Recall)</strong> : parmi tous les cas positifs réels, combien ont été correctement identifiés par le modèle ? Elle est cruciale quand <strong>rater un cas positif est risqué</strong> (par exemple, en diagnostic médical).</p></li>
+</ul>
+<p>![][image9]</p>
+<p>![][image10]</p>
+</section>
+<section id="f1-score">
+<h4><strong>F1-score</strong><a class="headerlink" href="#f1-score" title="Link to this heading">¶</a></h4>
+<p>Le F1-score est la moyenne harmonique de la précision et du rappel. Il est utile lorsque l’on souhaite un compromis équilibré entre ces deux métriques, en particulier quand les faux positifs et les faux négatifs sont aussi problématiques l’un que l’autre.</p>
+<p>![][image11]</p>
+</section>
+<section id="entropie-binaire-mesurer-l-incertitude">
+<h4><strong>Entropie binaire : mesurer l’incertitude</strong><a class="headerlink" href="#entropie-binaire-mesurer-l-incertitude" title="Link to this heading">¶</a></h4>
+<p>L’entropie binaire est un concept issu de la théorie de l’information. Elle mesure l’incertitude d’un système avec seulement deux résultats possibles (par exemple, “vrai” ou “faux”, “chat” ou “chien”, “0” ou “1”). En apprentissage automatique, elle permet d’estimer à quel point une prédiction probabiliste est proche de la vérité.</p>
+<p>La formule de l’entropie binaire pour une probabilité est :</p>
+<p><strong>![][image12]</strong></p>
+<p>Cette formule atteint son maximum lorsque p=0.5, c’est-à-dire quand le système est le plus incertain. À l’inverse, si p=0 ou p=1, l’entropie est minimale (nulle), car il n’y a pas d’incertitude.</p>
+</section>
+<section id="cross-entropy-comparer-predictions-et-verite">
+<h4><strong>Cross-entropy : comparer prédictions et vérité</strong><a class="headerlink" href="#cross-entropy-comparer-predictions-et-verite" title="Link to this heading">¶</a></h4>
+<p>La <strong>cross-entropy (ou entropie croisée)</strong> est une généralisation de l’entropie. Elle est utilisée pour <strong>mesurer l’écart entre deux distributions de probabilité</strong> : une distribution réelle (ou cible) et une distribution prédite. Dans le contexte de la classification binaire, on compare souvent la <strong>vraie étiquette</strong> avec la <strong>probabilité prédite</strong>.</p>
+<p>Sa formule est :</p>
+<p>![][image13]</p>
+<p>Cette fonction est souvent utilisée comme <strong>fonction de perte</strong> dans les modèles de classification binaire (par exemple, dans un réseau de neurones dont la sortie est une probabilité entre 0 et 1 grâce à une fonction <strong>sigmoïde</strong>).</p>
+</section>
+<section id="pourquoi-utiliser-la-cross-entropy">
+<h4><strong>Pourquoi utiliser la cross-entropy ?</strong><a class="headerlink" href="#pourquoi-utiliser-la-cross-entropy" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Elle pénalise fortement les mauvaises prédictions : par exemple, si la vraie étiquette est 1 mais que le modèle prédit 0.01, la perte sera très grande.</p></li>
+<li><p>Elle est dérivable, ce qui est important pour l’apprentissage par rétropropagation.</p></li>
+<li><p>Elle donne une mesure claire de la performance : plus la cross-entropy est faible, plus le modèle est proche de la vérité.</p></li>
+</ul>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/LbX4X71-TFI?si=IHg5r7VopAAvQy4C">Evaluation Metrics in Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide">Performance Metrics in Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/jyeNAByFL_A?si=RQpz65CH1PSJgQ54">Machine Learning Regression Metrics</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/8d3JbbSj-I8?si=9UDXCQZsfCVDyD7U">Precision, Recall and F1 Score Intuitively Explained</a></p></li>
+<li><p><a class="reference external" href="https://www.evidentlyai.com/classification-metrics/accuracy-precision-recall">Accuracy vs Precision vs Recall in Machine Learning: What is the difference?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/m3XQvhUsNJ8?si=u0CnUyaQJxkIvg4x">Comment Evaluer La Performance De Votre Modèle De Classification : Fonctions De Perte Et Métriques</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/NrLOc9IFjrI?si=qcNjYm6lgsoPz2Hp">Machine Learning : Precision ou Recall ?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/ngvEcjZhSMY?si=8d1iH2dD0Oh1HYa3">Précision, Rappel, F1 score, Accuracy, Matrice de Confusion : Que choisir et quand ?</a></p></li>
+<li><p><a class="reference external" href="https://datascientest.com/metriques-en-machine-learning">Métriques en Machine Learning : Tout ce qu’il faut savoir</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/Pwgpl9mKars?si=k_0-YiaSuhe2ZGpC">Intuitively Understanding the Cross Entropy Loss</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Naidu, G., Zuva, T. and Sibanda, E.M., 2023, April. A review of evaluation metrics in machine learning algorithms. In <em>Computer science on-line conference</em> (pp. 15-25). Cham: Springer International Publishing.</p></li>
+<li><p>Tatachar, A.V., 2021. Comparative assessment of regression models based on model evaluation metrics. <em>International Research Journal of Engineering and Technology (IRJET)</em>, <em>8</em>(09), pp.2395-0056.</p></li>
+<li><p>Vujović, Ž., 2021. Classification model evaluation metrics. <em>International Journal of Advanced Computer Science and Applications</em>, <em>12</em>(6), pp.599-606.</p></li>
+<li><p>Buckland, M. and Gey, F., 1994. The relationship between recall and precision. <em>Journal of the American society for information science</em>, <em>45</em>(1), pp.12-19.</p></li>
+</ul>
+</section>
+</section>
+<section id="perceptron">
+<h3>5. Perceptron<a class="headerlink" href="#perceptron" title="Link to this heading">¶</a></h3>
+<p>Un <strong>perceptron</strong> est un type élémentaire de neurone artificiel utilisé pour des tâches de <strong>classification binaire</strong>. Il prend en entrée un ensemble de caractéristiques x₁, x₂, …, xₙ​​, chacune étant multipliée par un poids correspondant w₁, w₂, …, wₙ​, ajoute un terme de biais bbb, puis applique une <strong>fonction d’activation</strong> au résultat.</p>
+<p>![][image14]</p>
+<p>Image extraite de: <a class="reference external" href="https://www.linkedin.com/pulse/perceptron-journey-through-history-challenges-current-santosh-kamble">https://www.linkedin.com/pulse/perceptron-journey-through-history-challenges-current-santosh-kamble</a>)</p>
+<p>La fonction d’activation <em>f</em> est généralement une <strong>fonction en escalier</strong> (produisant 0 ou 1), mais d’autres fonctions comme la <strong>sigmoïde</strong> peuvent également être utilisées.</p>
+<p>Pendant l’apprentissage, le perceptron met à jour ses poids selon une règle d’apprentissage visant à réduire l’erreur entre les sorties prédites et les sorties attendues. Ce processus est répété jusqu’à ce que le modèle parvienne à correctement classer les données d’entraînement.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}  z = w₁x₁ + w₂x₂ + ⋯ + wₙxₙ + b\\  output = f(z) = f(w₁x₁ + w₂x₂ + ⋯ + wₙxₙ + b)\end{aligned}\end{align} \]</div>
+<p>Un perceptron à une seule couche fonctionne efficacement pour des problèmes <strong>linéairement séparables</strong>. Cependant, il est incapable de résoudre des tâches plus complexes et non linéaires. Pour traiter ce type de problèmes, il est nécessaire d’utiliser des perceptrons multicouches (Multi-Layer Perceptrons, MLP) et des modèles d’apprentissage profond.</p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/&#64;iamask09/math-behind-perceptrons-7241d5dadbfc">Math Behind Perceptrons</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/4Gac5I64LM4?si=uVnzWhM34Z-k__Ae">Perceptron (Youtube)</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/ai/ai_perceptrons.asp">Perceptrons w3Schools</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/VlMm4VZ6lk4?si=2dhuzU4q7MQatNAV">LE PERCEPTRON - DEEP LEARNING</a></p></li>
+<li><p><a class="reference external" href="https://datascientest.com/perceptron">Perceptron : qu’est-ce que c’est et à quoi ça sert ?</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Islam, M.N., 2023. <em>Introduction to the Perceptron and Its Applications</em> (Doctoral dissertation, Jahangirnagar University).</p></li>
+<li><p>Kim, E.H. and Kim, H.S., 2021. Perceptron: Basic Principles of Deep Neural Networks. <em>Cardiovascular Prevention and Pharmacotherapy</em>, <em>3</em>(3), pp.64-72.</p></li>
+<li><p>Joshi, A.V., 2022. Perceptron and neural networks. In <em>Machine learning and artificial intelligence</em> (pp. 57-72). Cham: Springer International Publishing.</p></li>
+</ul>
+</section>
+<section id="gradient-descent">
+<h3>6. Gradient Descent<a class="headerlink" href="#gradient-descent" title="Link to this heading">¶</a></h3>
+<p>Les algorithmes d’optimisation sont essentiels pour l’entraînement des modèles de machine learning. Ils permettent de mettre à jour les paramètres du modèle (par exemple les poids et les biais) de manière à minimiser la <strong>fonction de perte</strong>. L’objectif est de trouver les meilleurs paramètres possibles afin que le modèle puisse effectuer des prédictions précises. Sans optimisation, l’entraînement du modèle ne mènerait pas à des résultats pertinents ou fiables.<br />
+Le <strong>Gradient Descent</strong> est un algorithme d’optimisation utilisé pour minimiser la fonction de coût (ou fonction de perte) dans les modèles de machine learning et les réseaux de neurones. Il ajuste les paramètres du modèle en calculant le gradient de la fonction de perte par rapport aux paramètres, puis en avançant dans la direction opposée au gradient. Le but est de trouver l’ensemble des paramètres qui minimise l’erreur.<br />
+![][image15]</p>
+<p>Image extraite de: <a class="reference external" href="https://www.tpointtech.com/gradient-descent-in-machine-learning">https://www.tpointtech.com/gradient-descent-in-machine-learning</a></p>
+<p>La formule générale pour une itération est :<br />
+![][image16]</p>
+<section id="batch-gradient-descent">
+<h4><strong>Batch Gradient Descent</strong><a class="headerlink" href="#batch-gradient-descent" title="Link to this heading">¶</a></h4>
+<p>Le <strong>Batch Gradient Descent</strong> calcule le gradient en utilisant l’ensemble du jeu de données d’entraînement. Il effectue une mise à jour unique des paramètres par itération, basée sur le gradient moyen calculé à partir de toutes les données.</p>
+<p><strong>Caractéristiques principales :</strong></p>
+<ul class="simple">
+<li><p><strong>Calcul :</strong> Utilise l’ensemble complet des données pour calculer le gradient.</p></li>
+<li><p><strong>Efficacité :</strong> Peut être lent pour les grands ensembles de données car tout le jeu de données doit être traité à chaque itération.</p></li>
+<li><p><strong>Convergence :</strong> Garantit la convergence vers le minimum global pour les fonctions convexes, ou vers un minimum local pour les fonctions non convexes.</p></li>
+</ul>
+<p>Batch Gradient Descent est en général plus stable et moins bruité. Le calcul du gradient est plus précis puisqu’il repose sur l’ensemble des données. Toutefois, il est coûteux en ressources pour les grands ensembles de données et nécessite une importante capacité mémoire.</p>
+</section>
+<section id="stochastic-gradient-descent-sgd">
+<h4><strong>Stochastic Gradient Descent (SGD)</strong><a class="headerlink" href="#stochastic-gradient-descent-sgd" title="Link to this heading">¶</a></h4>
+<p>Le Stochastic Gradient Descent (SGD) met à jour les paramètres du modèle après chaque échantillon individuel d’entraînement. Contrairement au batch gradient descent, il ne calcule pas le gradient sur l’ensemble des données mais réalise une mise à jour pour chaque donnée.</p>
+<p><strong>Caractéristiques principales :</strong></p>
+<ul class="simple">
+<li><p><strong>Calcul :</strong> Utilise un seul point de données à la fois pour calculer le gradient.</p></li>
+<li><p><strong>Efficacité :</strong> Plus rapide que le batch gradient descent pour les grands ensembles de données.</p></li>
+<li><p><strong>Convergence :</strong> Peut être bruité à cause des mises à jour sur des échantillons individuels, mais conduit souvent à une convergence plus rapide en pratique.</p></li>
+</ul>
+<p>SGD permet des calculs plus rapides, particulièrement pour de grands ensembles de données. Sa nature aléatoire lui permet également d’échapper aux minima locaux dans les fonctions non convexes. Ses inconvénients incluent des mises à jour bruitées et une convergence moins stable. Il nécessite également un réglage minutieux du taux d’apprentissage pour éviter le dépassement du minimum.</p>
+</section>
+<section id="mini-batch-gradient-descent">
+<h4><strong>Mini-Batch Gradient Descent</strong><a class="headerlink" href="#mini-batch-gradient-descent" title="Link to this heading">¶</a></h4>
+<p>Le <strong>Mini-Batch Gradient Descent</strong> combine les avantages du batch gradient descent et du stochastic gradient descent. Il divise l’ensemble de données en petits lots (mini-batches) et calcule le gradient pour chaque mini-batch avant de mettre à jour les paramètres.</p>
+</section>
+<section id="caracteristiques-principales">
+<h4><strong>Caractéristiques principales :</strong><a class="headerlink" href="#caracteristiques-principales" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Calcul</strong> : Utilise un sous-ensemble (mini-batch) du jeu de données pour chaque mise à jour du gradient.</p></li>
+<li><p><strong>Efficacité</strong> : Offre un équilibre entre l’efficacité computationnelle du batch gradient descent et la rapidité du SGD.</p></li>
+<li><p><strong>Convergence</strong> : Apporte une convergence plus stable que le SGD tout en étant plus rapide que le batch gradient descent.</p></li>
+</ul>
+<p>Le <strong>Mini-Batch Gradient Descent</strong> est plus efficace d’un point de vue computationnel que le batch gradient descent. Il est aussi moins bruité que le SGD, ce qui conduit à des mises à jour plus stables. De plus, il peut tirer avantage du parallélisme offert par le matériel comme les GPU. Cependant, il nécessite un ajustement précis de la taille du mini-batch et du taux d’apprentissage.</p>
+<p>![][image17]<br />
+Image extraite de: <a class="reference external" href="https://alwaysai.co/blog/what-is-gradient-descent">https://alwaysai.co/blog/what-is-gradient-descent</a></p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2020/10/how-does-the-gradient-descent-algorithm-work-in-machine-learning/">What is Gradient Descent Algorithm</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/data-science/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32">Stochastic Gradient Descent Explained in Real Life</a></p></li>
+<li><p><a class="reference external" href="https://www.tpointtech.com/gradient-descent-in-machine-learning">Gradient Descent in Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;jaleeladejumo/gradient-descent-from-scratch-batch-gradient-descent-stochastic-gradient-descent-and-mini-batch-def681187473#:~:text=In%20batch%20gradient%20descent%2C%20the,in%20a%20single%20training%20iteration.">Gradient Descent From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/IHZwWFHWa-w?si=GRQcHPtTETczyqgK">Gradient Descent | How Neural Networks Learn</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/1xMs6A3DLYw?si=oh-ao1JDFh8W8sfX">Batch GD vs Mini-Batch GD vs SGD</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/a5xuJLFTC7o?si=LtXpjVtpIHUHlKKU">Les bases de la descente de gradient | Réseaux de neurones</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/Q9-vDFvDdfg?si=HuDzAVO4XfqM9dNT">La descente de gradient (stochastique) | Intelligence artificielle</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Ruder, S., 2016. An overview of gradient descent optimization algorithms. <em>arXiv preprint arXiv:1609.04747</em>.</p></li>
+<li><p>Ketkar, N., 2017. Stochastic gradient descent. In <em>Deep learning with Python: A hands-on introduction</em> (pp. 113-132). Berkeley, CA: Apress.</p></li>
+<li><p>Khirirat, S., Feyzmahdavian, H.R. and Johansson, M., 2017, December. Mini-batch gradient descent: Faster convergence under data sparsity. In <em>2017 IEEE 56th Annual Conference on Decision and Control (CDC)</em> (pp. 2880-2887). IEEE.</p></li>
+<li><p>Adigun, A.A. and Yinka-Banjo, C., 2022, January. Comparing Stochastic Gradient Descent and Mini-batch Gradient Descent Algorithms. In <em>Informatics and Intelligent Applications: First International Conference, ICIIA 2021, Ota, Nigeria, November 25–27, 2021, Revised Selected Papers</em> (p. 283). Springer Nature.</p></li>
+<li><p>Tian, Y., Zhang, Y. and Zhang, H., 2023. Recent advances in stochastic gradient descent in deep learning. <em>Mathematics</em>, <em>11</em>(3), p.682.</p></li>
+</ul>
+</section>
+</section>
+<section id="algorithmes-doptimisation">
+<h3>7. Algorithmes d’Optimisation<a class="headerlink" href="#algorithmes-doptimisation" title="Link to this heading">¶</a></h3>
+<p>Optimiser un modèle n’est pas toujours une tâche simple. Pour les modèles complexes comme les réseaux de neurones profonds, la fonction de perte est souvent non convexe, ce qui signifie qu’il existe plusieurs minima locaux et que les gradients peuvent être bruités, clairsemés ou s’annuler. Dans ces situations, des méthodes d’optimisation simples comme le batch gradient descent peuvent rencontrer des difficultés pour trouver une solution optimale, en particulier avec de grands ensembles de données.</p>
+<p>C’est dans ce contexte que des algorithmes d’optimisation avancés comme Adam, RMSProp et le Gradient Descent avec Momentum interviennent. Ces techniques avancées permettent de mieux naviguer sur la surface de la fonction de perte en adaptant le taux d’apprentissage et en utilisant des stratégies comme l’inertie (momentum) et les taux d’apprentissage adaptatifs.</p>
+<p>Voici pourquoi ces algorithmes avancés sont nécessaires :</p>
+<ul class="simple">
+<li><p><strong>Convergence plus rapide</strong> : Le gradient descent classique peut être lent, en particulier lorsque les gradients varient rapidement ou que la surface de perte est irrégulière. Les algorithmes avancés accélèrent le processus de convergence.</p></li>
+<li><p><strong>Gestion des gradients bruités</strong> : En deep learning, les gradients peuvent être instables, surtout avec de grands ensembles de données. Des algorithmes comme Adam et RMSProp ajustent les taux d’apprentissage pour maintenir des mises à jour stables.</p></li>
+<li><p><strong>Évitement des minima locaux</strong> : Le Momentum et Adam permettent au modèle d’éviter de rester bloqué dans des minima locaux peu profonds, augmentant ainsi les chances de trouver de meilleures solutions.</p></li>
+<li><p><strong>Taux d’apprentissage adaptatif</strong> : Contrairement au gradient descent classique, RMSProp et Adam modifient automatiquement le taux d’apprentissage au cours de l’entraînement, rendant le processus plus efficace et limitant le besoin d’un réglage manuel.</p></li>
+</ul>
+<section id="gradient-descent-avec-momentum">
+<h4><strong>Gradient Descent avec Momentum</strong><a class="headerlink" href="#gradient-descent-avec-momentum" title="Link to this heading">¶</a></h4>
+<p>Le <strong>Gradient Descent avec Momentum</strong> est une amélioration du gradient descent de base. Il accélère le processus d’optimisation dans la bonne direction tout en atténuant les oscillations. Il introduit un terme d’inertie (momentum) qui prend en compte les gradients précédents pour lisser les mises à jour des paramètres.</p>
+<p>La <strong>formule de mise à jour</strong> pour le Gradient Descent avec Momentum est la suivante :</p>
+<p>![][image18]</p>
+</section>
+<section id="avantages-du-gradient-descent-avec-momentum">
+<h4><strong>Avantages du Gradient Descent avec Momentum</strong><a class="headerlink" href="#avantages-du-gradient-descent-avec-momentum" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Réduction des oscillations</strong> : Le momentum atténue les oscillations et permet une convergence plus rapide, en particulier dans les régions où les gradients changent fréquemment de direction.</p></li>
+<li><p><strong>Échappement aux minima locaux peu profonds</strong> : En conservant une impulsion dans la bonne direction, le momentum aide le modèle à sortir des minima locaux peu profonds.</p></li>
+</ul>
+</section>
+<section id="inconvenients-du-gradient-descent-avec-momentum">
+<h4><strong>Inconvénients du Gradient Descent avec Momentum</strong><a class="headerlink" href="#inconvenients-du-gradient-descent-avec-momentum" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Nécessité de réglage</strong> : Le taux d’apprentissage ainsi que le facteur de momentum doivent être ajustés avec soin pour garantir une convergence optimale.</p></li>
+<li><p><strong>Risque de dépassement</strong> : Si le facteur de momentum est trop élevé, le modèle peut dépasser le minimum recherché, entraînant une instabilité de l’optimisation.</p></li>
+</ul>
+<p>![][image19]</p>
+<p>Image extraite de: <a class="reference external" href="https://towardsdatascience.com/gradient-descent-extensions-to-your-deep-learning-models-32045ccfa644/">https://towardsdatascience.com/gradient-descent-extensions-to-your-deep-learning-models-32045ccfa644/</a></p>
+</section>
+<section id="rmsprop-root-mean-square-propagation">
+<h4><strong>RMSProp (Root Mean Square Propagation)</strong><a class="headerlink" href="#rmsprop-root-mean-square-propagation" title="Link to this heading">¶</a></h4>
+<p>RMSProp est un algorithme d’optimisation avec taux d’apprentissage adaptatif. Il ajuste dynamiquement le taux d’apprentissage en le divisant par une moyenne exponentiellement décroissante des carrés des gradients. RMSProp a été conçu pour résoudre le problème des gradients de grande amplitude durant l’entraînement, ce qui permet au modèle de converger plus rapidement.</p>
+<p>Voici la formule de mise à jour utilisée par RMSProp :</p>
+<p>![][image20]</p>
+</section>
+<section id="avantages-de-rmsprop">
+<h4><strong>Avantages de RMSProp</strong><a class="headerlink" href="#avantages-de-rmsprop" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Taux d’apprentissage adaptatif</strong> : Ajuste dynamiquement le taux d’apprentissage en fonction de la magnitude du gradient.</p></li>
+<li><p><strong>Efficace sur des objectifs non stationnaires</strong> : Particulièrement utile pour l’entraînement de réseaux de neurones où la fonction de perte peut évoluer au cours du temps.</p></li>
+<li><p><strong>Convergence accélérée</strong> : Conduit souvent à une convergence plus rapide que la descente de gradient classique.</p></li>
+</ul>
+</section>
+<section id="inconvenients-de-rmsprop">
+<h4><strong>Inconvénients de RMSProp</strong><a class="headerlink" href="#inconvenients-de-rmsprop" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Nécessité d’un réglage fin</strong> : Le taux d’apprentissage et le facteur de décroissance doivent être soigneusement ajustés.</p></li>
+<li><p><strong>Risque de dépassement</strong> : Si les hyperparamètres ne sont pas bien choisis, RMSProp peut conduire à des dépassements du minimum optimal.</p></li>
+</ul>
+</section>
+<section id="adam-adaptive-moment-estimation">
+<h4><strong>Adam (Adaptive Moment Estimation)</strong><a class="headerlink" href="#adam-adaptive-moment-estimation" title="Link to this heading">¶</a></h4>
+<p><strong>Adam</strong> est l’un des algorithmes d’optimisation les plus utilisés. Il combine les avantages de la descente de gradient avec momentum et de RMSProp. Adam <strong>ajuste le taux d’apprentissage</strong> pour chaque paramètre en calculant à la fois le premier moment (la moyenne) et le second moment (la variance non centrée) des gradients.</p>
+<p>La règle de mise à jour est la suivante :</p>
+<p>![][image21]</p>
+</section>
+<section id="avantages-d-adam">
+<h4><strong>Avantages d’Adam</strong><a class="headerlink" href="#avantages-d-adam" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Combinaison des forces de momentum et de RMSProp</strong> : Permet d’avoir des mises à jour rapides et stables.</p></li>
+<li><p><strong>Taux d’apprentissage adaptatif</strong> : Ajuste dynamiquement le taux d’apprentissage en fonction de la moyenne et de la variance des gradients.</p></li>
+<li><p><strong>Robustesse</strong> : Fonctionne bien sur une grande variété de problèmes et est souvent utilisé comme optimiseur par défaut dans l’entraînement de modèles de deep learning.</p></li>
+</ul>
+</section>
+<section id="inconvenients-d-adam">
+<h4><strong>Inconvénients d’Adam</strong><a class="headerlink" href="#inconvenients-d-adam" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Nécessité d’un réglage des hyperparamètres</strong> : Les paramètres β₁, β₂ et α doivent être soigneusement choisis.</p></li>
+<li><p><strong>Convergence sous-optimale possible</strong> : Adam peut parfois converger vers solutions sous-optimales si les hyperparamètres ne sont pas bien ajustés.</p></li>
+</ul>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/gradient-descent-extensions-to-your-deep-learning-models-32045ccfa644/">Gradient Descent Extensions to Your Deep Learning Models</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/data-science/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c">A visual Explanation of Gradient Descent Methods</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/k8fTYJPd3_I?si=dX8QjkiYdiRyfzqN">Gradient Descent With Momentum</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;piyushkashyap045/understanding-rmsprop-a-simple-guide-to-one-of-deep-learnings-powerful-optimizers-403baeed9922">Understanding RMSProp</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/MD2fYip6QsQ?si=J5oi0bHBq0pHAIkl">Deep Dive into Optimizers for Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;weidagang/demystifying-the-adam-optimizer-in-machine-learning-4401d162cb9e">Demystifying the Adam Optimizer in Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://www.ultralytics.com/fr/glossary/adam-optimizer">Adam Optimizer (Français)</a></p></li>
+<li><p><a class="reference external" href="https://www.lamsade.dauphine.fr/~croyer/ensdocs/TUN/PolyTUN.pdf">Optimisation pour l’apprentissage automatique</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Choi, D., Shallue, C.J., Nado, Z., Lee, J., Maddison, C.J. and Dahl, G.E., 2019. On empirical comparisons of optimizers for deep learning. <em>arXiv preprint arXiv:1910.05446</em>.</p></li>
+<li><p>Nakerst, G., Brennan, J. and Haque, M., 2020. Gradient descent with momentum—to accelerate or to super-accelerate?. <em>arXiv preprint arXiv:2001.06472</em>.</p></li>
+<li><p>Huk, M., 2020. Stochastic optimization of contextual neural networks with RMSprop. In <em>Intelligent Information and Database Systems: 12th Asian Conference, ACIIDS 2020, Phuket, Thailand, March 23–26, 2020, Proceedings, Part II 12</em> (pp. 343-352). Springer International Publishing.</p></li>
+<li><p>Kingma, D.P. and Ba, J., 2014. Adam: A method for stochastic optimization. <em>arXiv preprint arXiv:1412.6980</em>.</p></li>
+</ul>
+</section>
+</section>
+<section id="couche-dense">
+<h3>8. Couche Dense<a class="headerlink" href="#couche-dense" title="Link to this heading">¶</a></h3>
+<p><strong>Introduction</strong></p>
+<p>Avec la complexification croissante des problèmes de machine learning, notamment dans des domaines tels que la reconnaissance d’images, le traitement de la parole et la compréhension du langage naturel, les algorithmes traditionnels montrent souvent leurs limites. Les réseaux de neurones denses (DNN) sont des modèles puissants conçus pour capturer des schémas complexes dans les données en empilant plusieurs couches de neurones. Chaque couche apprend des caractéristiques de plus en plus abstraites, permettant aux DNN de résoudre des problèmes que les modèles peu profonds ne peuvent pas traiter.</p>
+<p>Un DNN est composé d’une couche d’entrée, de plusieurs couches cachées et d’une couche de sortie. La profondeur (c’est-à-dire le nombre de couches) confère au modèle sa capacité d’expression, lui permettant d’approximer des fonctions non linéaires complexes. Dans un DNN, chaque neurone est connecté à l’ensemble des neurones de la couche suivante. Ces connexions, appelées poids, doivent être optimisées au cours du processus de rétropropagation.</p>
+<p>![][image22]</p>
+<p>Image extraite de: <a class="reference external" href="https://www.researchgate.net/figure/General-Architecture-for-a-Deep-Neural-Network-with-Two-Hidden-Layers_fig2_353032163">https://www.researchgate.net/figure/General-Architecture-for-a-Deep-Neural-Network-with-Two-Hidden-Layers_fig2_353032163</a></p>
+<section id="cas-d-utilisation-classification-et-regression">
+<h4><strong>Cas d’Utilisation : Classification et Régression</strong><a class="headerlink" href="#cas-d-utilisation-classification-et-regression" title="Link to this heading">¶</a></h4>
+<p>Les réseaux de neurones profonds (DNN) peuvent être utilisés pour des tâches de classification et de régression :</p>
+<ul class="simple">
+<li><p><strong>Classification:</strong> Les DNN sont largement utilisés dans des tâches telles que la classification d’images (par exemple, identifier des objets dans des photos), l’analyse de sentiments, et le diagnostic de maladies, où l’objectif est d’assigner les données d’entrée à des catégories discrètes.</p></li>
+<li><p><strong>Régression</strong> : Les DNN sont également efficaces pour prédire des valeurs continues, telles que les prix des maisons, les prix des actions ou la consommation d’énergie, où la sortie est un nombre réel plutôt qu’une étiquette de classe.</p></li>
+</ul>
+</section>
+<section id="propagation-avant-forward-propagation">
+<h4><strong>Propagation Avant (Forward Propagation)</strong><a class="headerlink" href="#propagation-avant-forward-propagation" title="Link to this heading">¶</a></h4>
+<ol class="arabic simple">
+<li><p>La propagation avant est le processus par lequel les données d’entrée traversent le réseau pour produire une sortie. Chaque caractéristique d’entrée xi est multipliée par un poids correspondant <em>wi</em>​, et les résultats sont additionnés avec un biais <em>b</em> :<br />
+<em>z = w₁x₁ + w₂x₂ + ⋯ + wₙxₙ + b</em></p></li>
+<li><p>Le résultat <em>z</em> est ensuite passé par une fonction d’activation <em>f(z)</em>, telle que ReLU ou sigmoïde, introduisant ainsi de la non-linéarité.</p></li>
+<li><p>Ce processus se répète couche par couche, chaque sortie de couche devenant l’entrée de la couche suivante, jusqu’à ce que la prédiction finale soit obtenue à la couche de sortie.</p></li>
+</ol>
+</section>
+<section id="retropropagation-backpropagation">
+<h4><strong>Rétropropagation (Backpropagation)</strong><a class="headerlink" href="#retropropagation-backpropagation" title="Link to this heading">¶</a></h4>
+<p>La <strong>rétropropagation</strong> est l’algorithme utilisé pour entraîner le réseau de neurones en mettant à jour ses poids et ses biais afin de minimiser la perte.</p>
+<p>Voici comment cela fonctionne étape par étape :</p>
+<ol class="arabic simple">
+<li><p><strong>Calcul de la Perte :</strong> Après la propagation avant, nous calculons l’écart entre la sortie et la vérité de terrain en utilisant une fonction de perte (par exemple, l’entropie croisée pour la classification, l’erreur quadratique moyenne (MSE) pour la régression).</p></li>
+<li><p><strong>Calcul du Gradient de la Perte :</strong> En utilisant la règle de la chaîne en calcul différentiel, nous calculons la dérivée partielle de la perte par rapport à chaque poids et biais du réseau.</p></li>
+<li><p><strong>Propagation des Erreurs en Arrière :</strong> En partant de la couche de sortie, l’algorithme calcule le gradient de la perte par rapport à chaque sortie de neurone. Il se déplace en arrière à travers les couches, couche par couche, mettant à jour les poids et biais de chaque neurone en calculant combien ils ont contribué à l’erreur.</p></li>
+<li><p><strong>Mise à Jour des Paramètres :</strong> Une fois que les gradients sont calculés, les poids sont mis à jour en utilisant la descente de gradient ou l’une de ses variantes (comme Adam ou RMSProp).</p></li>
+</ol>
+<p>Ce processus est répété pendant plusieurs itérations (époques) jusqu’à ce que le réseau apprenne à minimiser la fonction de perte.</p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://playground.tensorflow.org/#activation=tanh&amp;amp;batchSize=10&amp;amp;dataset=circle&amp;amp;regDataset=reg-plane&amp;amp;learningRate=0.03&amp;amp;regularizationRate=0&amp;amp;noise=0&amp;amp;networkShape=4,2&amp;amp;seed=0.00428&amp;amp;showTestData=false&amp;amp;discretize=false&amp;amp;percTrainData=50&amp;amp;x=false&amp;amp;y=true&amp;amp;xTimesY=true&amp;amp;xSquared=false&amp;amp;ySquared=false&amp;amp;cosX=false&amp;amp;sinX=false&amp;amp;cosY=false&amp;amp;sinY=false&amp;amp;collectStats=false&amp;amp;problem=classification&amp;amp;initZero=false&amp;amp;hideText=false">Neural Network Animated</a></p></li>
+<li><p><a class="reference external" href="https://botpress.com/blog/deep-neural-network">What is a deep neural network?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/aircAruvnKk?si=LXCNgKl9wx6gKf5P">But what is a Neural Network (Youtube)</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/99CcviQchd8?si=mFmzX3500G0ifHE3">Forward Propagation in Neural Networks</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/Ilg3gGewQ5U?si=8XcZPowJJVuScLu3">Backpropagation, intuitively</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/tIeHLnjs5U8?si=_62VyRYKVCYrKxes">Backpropagation Calculus</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/dB-u77Y5a6A?si=gL9hKbcl2fF-j1WY">Backpropagation</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/NE1iCyqUMRI?si=ar9R7zh8EyYlkTsV">How to Evaluate a Neural Network’s Performance</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/bkoNl7ImPBU?si=mcZGz2Pc_t6_kwyR">Comprendre les réseaux de neurones</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/yFcdKE6YI0E?si=q413Mrm_rCZkIFS9">Qu’est-ce qui se passe dans un réseau de neurones ?</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Bishop, C.M., 1994. Neural networks and their applications. <em>Review of scientific instruments</em>, <em>65</em>(6), pp.1803-1832.</p></li>
+<li><p>Zou, J., Han, Y. and So, S.S., 2009. Overview of artificial neural networks. <em>Artificial neural networks: methods and applications</em>, pp.14-22.</p></li>
+<li><p>Rojas, R. and Rojas, R., 1996. The backpropagation algorithm. <em>Neural networks: a systematic introduction</em>, pp.149-182.</p></li>
+<li><p>Hecht-Nielsen, R., 1992. Theory of the backpropagation neural network. In <em>Neural networks for perception</em> (pp. 65-93). Academic Press.</p></li>
+<li><p>Heaton, J., 2020. Applications of deep neural networks. <em>arXiv preprint arXiv:2009.05673</em>.</p></li>
+<li><p>Jain, B.A. and Nag, B.N., 1997. Performance evaluation of neural network decision models. <em>Journal of Management Information Systems</em>, <em>14</em>(2), pp.201-216.</p></li>
+</ul>
+</section>
+</section>
+<section id="couche-convolutionnelle">
+<h3>9. Couche Convolutionnelle<a class="headerlink" href="#couche-convolutionnelle" title="Link to this heading">¶</a></h3>
+<p><strong>Pourquoi avons-nous besoin de CNN ?</strong></p>
+<p>Les réseaux de neurones denses traitent tous les pixels d’entrée de manière égale et ne tiennent pas compte de la structure spatiale de l’image. Cela entraîne deux problèmes :</p>
+<ul class="simple">
+<li><p><strong>Trop de paramètres</strong> : Un réseau dense qui connecte chaque pixel à chaque neurone devient coûteux en termes de calcul pour des images de haute résolution.</p></li>
+<li><p><strong>Perte d’information spatiale</strong> : Les couches denses ignorent la position relative des pixels, ce qui est crucial pour comprendre les images.</p></li>
+</ul>
+<p>Les CNN résolvent ces problèmes de la manière suivante :</p>
+<ul class="simple">
+<li><p><strong>Partage des poids</strong> à travers des noyaux, ce qui réduit considérablement le nombre de paramètres.</p></li>
+<li><p><strong>Préservation des relations spatiales</strong>, ce qui aide le modèle à apprendre des caractéristiques comme les formes et les textures de manière plus efficace.</p></li>
+</ul>
+<section id="loperation-de-convolution">
+<h4><strong>L’opération de convolution</strong><a class="headerlink" href="#loperation-de-convolution" title="Link to this heading">¶</a></h4>
+<p>Le cœur des CNN réside dans l’opération de convolution, qui extrait des caractéristiques des données d’entrée (généralement des images). Au lieu de connecter chaque neurone à toutes les entrées comme dans les réseaux denses, les CNN utilisent de petits filtres appelés <strong>noyaux</strong> qui glissent sur l’image, effectuent une multiplication élément par élément, puis une somme.</p>
+<p>![][image23]</p>
+<p>Image extraite de: <a class="reference external" href="https://viso.ai/deep-learning/convolution-operations/">https://viso.ai/deep-learning/convolution-operations/</a></p>
+</section>
+<section id="calcul-de-la-convolution">
+<h4><strong>Calcul de la Convolution</strong><a class="headerlink" href="#calcul-de-la-convolution" title="Link to this heading">¶</a></h4>
+<p>Pour calculer la convolution, le pixel central du noyau est placé sur un pixel de l’image source. Ensuite, chaque pixel de l’image source est multiplié par le pixel correspondant du noyau, et les résultats sont résumés. C’est ainsi que l’on obtient un pixel unique dans l’image résultante.</p>
+<p><strong>Noyaux (Filtres)</strong> : Ce sont de petites matrices (par exemple, 3×3 ou 5×5) qui détectent des motifs comme les bords, les coins ou les textures en scannant l’image.</p>
+<p><strong>Stride</strong> : Le stride détermine combien de pixels le noyau se déplace à chaque étape. Un stride plus grand réduit la taille de la sortie (sous-échantillonnage).</p>
+<p><strong>Padding</strong> : Pour contrôler la taille spatiale de la sortie, nous pouvons ajouter du padding (généralement des zéros) autour de l’image d’entrée. Cela aide à préserver la taille d’origine ou à contrôler combien elle rétrécit. Il existe 2 types de padding : <strong>same</strong> et <strong>valid</strong>.</p>
+<p>Le résultat de la convolution s’appelle une <strong>carte de caractéristiques</strong> (ou carte d’activation), qui met en évidence la présence de motifs spécifiques détectés par le noyau.</p>
+</section>
+<section id="changements-de-dimension-d-image">
+<h4><strong>Changements de Dimension d’Image</strong><a class="headerlink" href="#changements-de-dimension-d-image" title="Link to this heading">¶</a></h4>
+<p>La taille de la carte de caractéristiques résultante après une convolution dépend de quatre facteurs :</p>
+<ul class="simple">
+<li><p>Taille de l’entrée (W)</p></li>
+<li><p>Taille du noyau (K)</p></li>
+<li><p>Padding (P)</p></li>
+<li><p>Stride (S)</p></li>
+</ul>
+<p>La formule pour la dimension de la sortie (en supposant une entrée et un noyau carrés) est :</p>
+<p>![][image24]</p>
+<p><strong>Si le padding est 0 et le stride est 1, l’image rétrécit après chaque convolution.</strong></p>
+<p>Si le padding est correctement choisi (appelé “same” padding), la taille de la sortie reste identique à celle de l’entrée.</p>
+<p>Cela permet de contrôler la profondeur et la résolution du réseau à différentes étapes.</p>
+</section>
+<section id="hierarchies-de-caracteristiques">
+<h4><strong>Hiérarchies de Caractéristiques</strong><a class="headerlink" href="#hierarchies-de-caracteristiques" title="Link to this heading">¶</a></h4>
+<p>Les CNNs apprennent une hiérarchie de caractéristiques :</p>
+<ul class="simple">
+<li><p><strong>Les couches précoces</strong> détectent des caractéristiques de bas niveau telles que les bords, les lignes et les textures simples.</p></li>
+<li><p><strong>Les couches intermédiaires</strong> combinent ces caractéristiques pour former des caractéristiques intermédiaires, comme des formes ou des parties d’objets.</p></li>
+<li><p><strong>Les couches profondes</strong> capturent des caractéristiques de haut niveau, telles que les visages, les objets ou des régions significatives de l’image.</p></li>
+</ul>
+<p>Cette abstraction progressive est l’une des principales raisons pour lesquelles les CNNs réussissent si bien dans des tâches comme la reconnaissance d’objets, la détection de visages et l’analyse d’images médicales.</p>
+<p>Il existe un grand nombre d’architectures CNN connues qui ont révolutionné le domaine de la vision par ordinateur, telles que AlexNet, VGG, LeNet, etc. Elles seront abordées dans les chapitres suivants.</p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/QzY57FaENXg?si=FfpNZf7dx6hMMgHS">What are Convolutional Neural Networks?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/YRhxdVk_sIs?si=WaFmOMZ_OpG4dbr7">CNNs Explained</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/advanced-deep-learning/cnn-operation-with-2-kernels-resulting-in-2-feature-mapsunderstanding-the-convolutional-filter-c4aad26cf32">Understanding the Convolutional Filter Operations in CNNs</a></p></li>
+<li><p><a class="reference external" href="https://www.datacamp.com/tutorial/introduction-to-convolutional-neural-networks-cnns">An Introduction to Convolutional Neural Networks</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/2xqkSUhmmXU?si=US_y4Fvbdkk8Vvn-">Convolutional Neural Networks MIT</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/581X9wsnWJs?si=I6GQOeGaAkZ0BYwf">CNN1/ Réseaux convolutifs (CNN)</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/zG_5OtgxfAg?si=zleXRZTuWNiM1rcH">Les réseaux de convolution (CNN) | Intelligence artificielle 47</a></p></li>
+<li><p><a class="reference external" href="https://fr.mathworks.com/discovery/convolutional-neural-network.html">Introduction aux réseaux neuronaux convolutifs (CNN)</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>O’shea, K. and Nash, R., 2015. An introduction to convolutional neural networks. <em>arXiv preprint arXiv:1511.08458</em>.</p></li>
+<li><p>Ajit, A., Acharya, K. and Samanta, A., 2020, February. A review of convolutional neural networks. In <em>2020 international conference on emerging trends in information technology and engineering (ic-ETITE)</em> (pp. 1-5). IEEE.</p></li>
+<li><p>Aghdam, H.H. and Heravi, E.J., 2017. Guide to convolutional neural networks. <em>New York, NY: Springer</em>, <em>10</em>(978-973), p.51.</p></li>
+<li><p>Jain, S. and Chauhan, R., 2018. Recognition of handwritten digits using DNN, CNN, and RNN. In <em>Advances in Computing and Data Sciences: Second International Conference, ICACDS 2018, Dehradun, India, April 20-21, 2018, Revised Selected Papers, Part I 2</em> (pp. 239-248). Springer Singapore.</p></li>
+</ul>
+</section>
+</section>
+<section id="fonctions-dactivation">
+<h3>10. Fonctions d’Activation<a class="headerlink" href="#fonctions-dactivation" title="Link to this heading">¶</a></h3>
+<p>Les <strong>fonctions d’activation</strong> introduisent de la non-linéarité dans les réseaux neuronaux, leur permettant d’apprendre des modèles complexes. Sans elles, peu importe le nombre de couches du réseau, il se comporterait comme un modèle linéaire et échouerait à capturer la véritable structure des données réelles. Peu importe le nombre de couches, ce serait comme si nous travaillions avec un seul neurone.</p>
+<p>Il existe une grande variété de fonctions d’activation, mais voici les plus couramment utilisées :</p>
+<section id="relu-rectified-linear-unit">
+<h4><strong>ReLU (Rectified Linear Unit)</strong><a class="headerlink" href="#relu-rectified-linear-unit" title="Link to this heading">¶</a></h4>
+<p>Bien que ReLU apparaisse linéaire pour les entrées positives, elle est différentiable et supporte la rétropropagation, ce qui la rend à la fois efficace et performante sur le plan computationnel.</p>
+<p>Un aspect clé de ReLU est qu’elle n’active pas tous les neurones simultanément. Les neurones sont activés uniquement lorsque la sortie de la transformation linéaire est supérieure à zéro ; sinon, ils restent inactifs.</p>
+<p><strong>![][image25]</strong><br />
+Voici la formule de ReLU:<br />
+![][image26]</p>
+<p>Un problème avec la fonction d’activation ReLU est le problème du “dying ReLU”. Cela se produit lorsqu’un neurone génère une sortie de zéro pour toutes les entrées. Comme le gradient de ReLU est nul pour les entrées négatives, ces neurones cessent d’apprendre pendant l’entraînement et “meurent” effectivement. Une fois que cela se produit, ils ne contribuent plus aux prédictions ou aux mises à jour du modèle.</p>
+</section>
+<section id="fonction-leaky-relu">
+<h4><strong>Fonction Leaky ReLU</strong><a class="headerlink" href="#fonction-leaky-relu" title="Link to this heading">¶</a></h4>
+<p>Leaky ReLU est une version améliorée de la fonction ReLU pour résoudre le problème du Dying ReLU, car elle a une petite pente positive dans la zone négative. Cela permet aux neurones de continuer à apprendre, même si leur sortie est inférieure à zéro, en évitant ainsi qu’ils ne meurent.</p>
+<p>![][image27]<br />
+Voici la formule de LeakyReLU:<br />
+![][image28]</p>
+<p>Les avantages de Leaky ReLU sont les mêmes que ceux de ReLU, en plus du fait qu’il permet la rétropropagation, même pour les valeurs d’entrée négatives. En apportant cette légère modification pour les valeurs d’entrée négatives, le gradient du côté gauche du graphique devient non nul. Par conséquent, on ne rencontrera plus de neurones morts dans cette région.</p>
+</section>
+<section id="fonction-sigmoide">
+<h4><strong>Fonction Sigmoïde</strong><a class="headerlink" href="#fonction-sigmoide" title="Link to this heading">¶</a></h4>
+<p>Cette fonction accepte toute entrée réelle et produit une sortie comprise entre 0 et 1. À mesure que l’entrée devient plus positive, la sortie approche de 1,0 ; à mesure que l’entrée devient plus négative, la sortie approche de 0,0, comme illustré ci-dessous.</p>
+<p>![][image29]</p>
+<p>Voici la formule de la fonction logistique:</p>
+<p>![][image30]</p>
+<p>La fonction sigmoïde (ou logistique) est largement utilisée, en particulier dans les modèles qui prédisent des probabilités. Étant donné que les probabilités varient entre 0 et 1, la fonction sigmoïde est idéale en raison de son intervalle de sortie.<br />
+Elle est également différentiable et fournit un gradient lisse et continu, ce qui aide à garantir un apprentissage stable. Cette transition douce est représentée visuellement par la courbe en forme de S de la fonction sigmoïde.</p>
+</section>
+<section id="fonction-tanh">
+<h4><strong>Fonction Tanh</strong><a class="headerlink" href="#fonction-tanh" title="Link to this heading">¶</a></h4>
+<p>La fonction Tanh est similaire à la fonction sigmoïde et possède également une courbe en forme de S. Cependant, son output varie entre -1 et 1. À mesure que l’entrée devient plus positive, la sortie approche de 1,0 ; à mesure que l’entrée devient plus négative, la sortie approche de -1,0.</p>
+<p>![][image31]<br />
+Voici la formule de la fonction tanh :<br />
+![][image32]</p>
+</section>
+<section id="avantages-de-la-fonction-d-activation-tanh">
+<h4><strong>Avantages de la fonction d’activation Tanh</strong><a class="headerlink" href="#avantages-de-la-fonction-d-activation-tanh" title="Link to this heading">¶</a></h4>
+<p>La sortie de la fonction Tanh est centrée autour de zéro, ce qui facilite l’interprétation des valeurs comme étant fortement négatives, neutres ou fortement positives.</p>
+<p>Elle est couramment utilisée dans les couches cachées des réseaux neuronaux, car son output varie entre -1 et 1. Cela permet de centrer les données autour de zéro, ce qui peut améliorer l’efficacité de l’entraînement et rendre l’apprentissage plus facile pour la couche suivante.</p>
+</section>
+<section id="fonction-softmax">
+<h4><strong>Fonction Softmax</strong><a class="headerlink" href="#fonction-softmax" title="Link to this heading">¶</a></h4>
+<p>La fonction Softmax peut être considérée comme une combinaison de plusieurs sigmoïdes, et elle garantit que les probabilités qu’elle génère somment à 1. Elle est principalement utilisée dans la couche de sortie d’un réseau neuronal lors de la classification multiclasses.</p>
+<p>![][image33]</p>
+<p>Images extraites de: <a class="reference external" href="https://www.v7labs.com/blog/neural-networks-activation-functions">https://www.v7labs.com/blog/neural-networks-activation-functions</a></p>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.v7labs.com/blog/neural-networks-activation-functions">Activation Functions in Neural Networks</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/s-V7gKrsels?si=8cBf9LJCHZQ_2L2T">Activation Functions Explained</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/-7scQpJT7uo?si=iKxFBwYjWZl6n_aa">Which Activation Function Should I Use?</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/analytics-vidhya/activation-functions-all-you-need-to-know-355a850d025e">Activation Functions: all you need to know!</a></p></li>
+<li><p><a class="reference external" href="https://www.picsellia.fr/post/fonctions-dactivation-reseaux-neurones">Fonctions d’activation et réseaux de neurones</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/q0ZZ695vjkY?si=NnP-t4P8NwYdOocl">[Deepmath] 1.4. Fonctions d’activation</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Sharma, S., Sharma, S. and Athaiya, A., 2017. Activation functions in neural networks. <em>Towards Data Sci</em>, <em>6</em>(12), pp.310-316.</p></li>
+<li><p>Dubey, S.R., Singh, S.K. and Chaudhuri, B.B., 2022. Activation functions in deep learning: A comprehensive survey and benchmark. <em>Neurocomputing</em>, <em>503</em>, pp.92-108.</p></li>
+<li><p>Lederer, J., 2021. Activation functions in artificial neural networks: A systematic overview. <em>arXiv preprint arXiv:2101.09957</em>.</p></li>
+<li><p>Szandała, T., 2021. Review and comparison of commonly used activation functions for deep neural networks. <em>Bio-inspired neurocomputing</em>, pp.203-224.</p></li>
+</ul>
+</section>
+</section>
+<section id="dropout-et-normalisation-par-lots">
+<h3>11. Dropout et Normalisation par Lots<a class="headerlink" href="#dropout-et-normalisation-par-lots" title="Link to this heading">¶</a></h3>
+<p>Les réseaux neuronaux profonds peuvent facilement souffrir de sur-apprentissage, surtout lorsqu’ils sont formés avec des données limitées.</p>
+<section id="dropout">
+<h4><strong>Dropout</strong><a class="headerlink" href="#dropout" title="Link to this heading">¶</a></h4>
+<p>Le <em><strong>dropout</strong></em> est une technique de régularisation qui aide à réduire le sur-apprentissage. Pendant l’entraînement, elle désactive (ou “élimine”) aléatoirement une fraction des neurones d’une couche pour chaque passage avant. Cela signifie que le réseau ne peut pas trop dépendre de neurones spécifiques et doit apprendre des représentations redondantes et plus robustes. Les neurones sont désactivés pendant le passage avant et la rétropropagation.</p>
+<p>Le <strong>taux de <em>dropout</em></strong> (probabilité de suppression des neurones) est un hyperparamètre que vous pouvez ajuster. Typiquement, des valeurs comme 0.2 ou 0.5 sont utilisées, ce qui signifie que 20 % ou 50 % des neurones sont “abandonnés” à chaque itération.</p>
+<p>![][image34]<br />
+Image extraite de: <a class="reference external" href="https://www.researchgate.net/figure/An-illustration-of-the-dropout-mechanism-within-the-proposed-CNN-a-Shows-a-standard_fig23_317277576">https://www.researchgate.net/figure/An-illustration-of-the-dropout-mechanism-within-the-proposed-CNN-a-Shows-a-standard_fig23_317277576</a></p>
+</section>
+<section id="resultats">
+<h4><strong>Résultats :</strong><a class="headerlink" href="#resultats" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Améliore la généralisation en réduisant le sur-apprentissage.</p></li>
+<li><p>Force le réseau à devenir plus résilient et distribué dans l’apprentissage.</p></li>
+<li><p>Pendant les tests ou l’inférence, le <em>dropout</em> est désactivé et tous les neurones sont utilisés, avec leurs sorties mises à l’échelle en conséquence pour refléter le comportement d’entraînement.</p></li>
+</ul>
+</section>
+<section id="normalisation-par-lots-batch-normalization">
+<h4><strong>Normalisation par Lots (Batch Normalization)</strong><a class="headerlink" href="#normalisation-par-lots-batch-normalization" title="Link to this heading">¶</a></h4>
+<p>À mesure que les réseaux neuronaux deviennent plus profonds, l’entraînement peut devenir instable et lent. Une des raisons principales en est que la distribution des données à l’intérieur du réseau change constamment à mesure que les poids sont mis à jour — ce phénomène est appelé <em>shift de covariables internes</em> (internal covariate shift). Lorsque l’entrée de chaque couche change trop, le réseau doit constamment se réajuster, rendant l’apprentissage plus difficile.</p>
+<p>La normalisation par lots résout ce problème en normalisant les entrées de chaque couche — c’est-à-dire en leur donnant une moyenne de 0 et un écart-type de 1. Cela se fait pour chaque mini-lot pendant l’entraînement. Cette technique aide le réseau à apprendre plus rapidement, réduit la sensibilité à l’initialisation des poids et permet d’utiliser des taux d’apprentissage plus élevés.</p>
+<p>![][image35]</p>
+<p>Image extraite de: <a class="reference external" href="https://kharshit.github.io/blog/2018/12/28/why-batch-normalization">https://kharshit.github.io/blog/2018/12/28/why-batch-normalization</a></p>
+</section>
+<section id="avantages">
+<h4><strong>Avantages :</strong><a class="headerlink" href="#avantages" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Entraînement <strong>plus rapide</strong> et <strong>plus stable</strong>.</p></li>
+<li><p><strong>Réduit le <em>shift</em> des covariables</strong> internes.</p></li>
+<li><p>Agit comme un <strong>régulariseur</strong>, réduisant le besoin de techniques comme le <em>dropout</em>.</p></li>
+<li><p><strong>Améliore</strong> la <strong>généralisation</strong>.</p></li>
+</ul>
+<p><strong>Liens Externes (Youtube, Medium, etc):</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/DEMmkFC6IGM?si=rK-YZiAmT3jKdyMj">Overfitting in a Neural Network Explained</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;piyushkashyap045/understanding-dropout-in-deep-learning-a-guide-to-reducing-overfitting-26cbb68d5575">Understanding Dropout in Deep Learning</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/ARq74QuavAo?si=v049TNWMEotcLLT1">Understanding Dropout (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://kharshit.github.io/blog/2018/12/28/why-batch-normalization">Why Batch Normalization?</a></p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/batch-norm-explained-visually-how-it-works-and-why-neural-networks-need-it-b18919692739/">Batch Norm Explained Visually</a></p></li>
+<li><p><a class="reference external" href="https://www.allaboutai.com/fr-fr/glossaire-ai/normalisation-par-lots/#:~:text=La%20normalisation%20par%20lots%20est,un%20%C3%A9cart%20type%20de%20un.">Qu’est-ce que la Normalisation Par Lots?</a></p></li>
+<li><p><a class="reference external" href="https://inside-machinelearning.com/le-dropout-cest-quoi-deep-learning-explication-rapide/">Le Dropout c’est quoi ? Deep Learning Explication Rapide</a></p></li>
+</ul>
+<p><strong>Bibliographie</strong></p>
+<ul class="simple">
+<li><p>Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R., 2014. Dropout: a simple way to prevent neural networks from overfitting. <em>The journal of machine learning research</em>, <em>15</em>(1), pp.1929-1958.</p></li>
+<li><p>Bjorck, N., Gomes, C.P., Selman, B. and Weinberger, K.Q., 2018. Understanding batch normalization. <em>Advances in neural information processing systems</em>, <em>31</em>.</p></li>
+<li><p>Balestriero, R. and Baraniuk, R.G., 2022. Batch normalization explained. <em>arXiv preprint arXiv:2209.14778</em>.</p></li>
+<li><p>Garbin, C., Zhu, X. and Marques, O., 2020. Dropout vs. batch normalization: an empirical study of their impact to deep learning. <em>Multimedia tools and applications</em>, <em>79</em>(19), pp.12777-12815.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link link-dark p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Notions de Base de l’Apprentissage Profond</a><ul>
+<li><a class="reference internal" href="#concepts-fondamentaux">Concepts Fondamentaux</a><ul>
+<li><a class="reference internal" href="#donnees-structurees-et-non-structurees">1. Données Structurées et non Structurées</a></li>
+<li><a class="reference internal" href="#apprentissage-supervise-et-non-supervise">2. Apprentissage Supervisé et non Supervisé</a></li>
+<li><a class="reference internal" href="#surapprentissage-et-sous-apprentissage">3. Surapprentissage et Sous-apprentissage</a><ul>
+<li><a class="reference internal" href="#le-surapprentissage-overfitting-en-machine-learning"><strong>1. Le surapprentissage (Overfitting) en machine learning</strong></a></li>
+<li><a class="reference internal" href="#le-sous-apprentissage-underfitting-en-machine-learning"><strong>2. Le sous-apprentissage (Underfitting) en machine learning</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metriques-d-evaluation-et-fonctions-de-perte">4. Métriques d’Évaluation et Fonctions de Perte</a><ul>
+<li><a class="reference internal" href="#metriques-pour-les-taches-de-regression"><strong>Métriques pour les tâches de régression</strong></a></li>
+<li><a class="reference internal" href="#metriques-pour-les-taches-de-classification"><strong>Métriques pour les tâches de classification</strong></a></li>
+<li><a class="reference internal" href="#matrice-de-confusion"><strong>Matrice de confusion</strong></a></li>
+<li><a class="reference internal" href="#precision-et-rappel"><strong>Précision et rappel</strong></a></li>
+<li><a class="reference internal" href="#f1-score"><strong>F1-score</strong></a></li>
+<li><a class="reference internal" href="#entropie-binaire-mesurer-l-incertitude"><strong>Entropie binaire : mesurer l’incertitude</strong></a></li>
+<li><a class="reference internal" href="#cross-entropy-comparer-predictions-et-verite"><strong>Cross-entropy : comparer prédictions et vérité</strong></a></li>
+<li><a class="reference internal" href="#pourquoi-utiliser-la-cross-entropy"><strong>Pourquoi utiliser la cross-entropy ?</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#perceptron">5. Perceptron</a></li>
+<li><a class="reference internal" href="#gradient-descent">6. Gradient Descent</a><ul>
+<li><a class="reference internal" href="#batch-gradient-descent"><strong>Batch Gradient Descent</strong></a></li>
+<li><a class="reference internal" href="#stochastic-gradient-descent-sgd"><strong>Stochastic Gradient Descent (SGD)</strong></a></li>
+<li><a class="reference internal" href="#mini-batch-gradient-descent"><strong>Mini-Batch Gradient Descent</strong></a></li>
+<li><a class="reference internal" href="#caracteristiques-principales"><strong>Caractéristiques principales :</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#algorithmes-doptimisation">7. Algorithmes d’Optimisation</a><ul>
+<li><a class="reference internal" href="#gradient-descent-avec-momentum"><strong>Gradient Descent avec Momentum</strong></a></li>
+<li><a class="reference internal" href="#avantages-du-gradient-descent-avec-momentum"><strong>Avantages du Gradient Descent avec Momentum</strong></a></li>
+<li><a class="reference internal" href="#inconvenients-du-gradient-descent-avec-momentum"><strong>Inconvénients du Gradient Descent avec Momentum</strong></a></li>
+<li><a class="reference internal" href="#rmsprop-root-mean-square-propagation"><strong>RMSProp (Root Mean Square Propagation)</strong></a></li>
+<li><a class="reference internal" href="#avantages-de-rmsprop"><strong>Avantages de RMSProp</strong></a></li>
+<li><a class="reference internal" href="#inconvenients-de-rmsprop"><strong>Inconvénients de RMSProp</strong></a></li>
+<li><a class="reference internal" href="#adam-adaptive-moment-estimation"><strong>Adam (Adaptive Moment Estimation)</strong></a></li>
+<li><a class="reference internal" href="#avantages-d-adam"><strong>Avantages d’Adam</strong></a></li>
+<li><a class="reference internal" href="#inconvenients-d-adam"><strong>Inconvénients d’Adam</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#couche-dense">8. Couche Dense</a><ul>
+<li><a class="reference internal" href="#cas-d-utilisation-classification-et-regression"><strong>Cas d’Utilisation : Classification et Régression</strong></a></li>
+<li><a class="reference internal" href="#propagation-avant-forward-propagation"><strong>Propagation Avant (Forward Propagation)</strong></a></li>
+<li><a class="reference internal" href="#retropropagation-backpropagation"><strong>Rétropropagation (Backpropagation)</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#couche-convolutionnelle">9. Couche Convolutionnelle</a><ul>
+<li><a class="reference internal" href="#loperation-de-convolution"><strong>L’opération de convolution</strong></a></li>
+<li><a class="reference internal" href="#calcul-de-la-convolution"><strong>Calcul de la Convolution</strong></a></li>
+<li><a class="reference internal" href="#changements-de-dimension-d-image"><strong>Changements de Dimension d’Image</strong></a></li>
+<li><a class="reference internal" href="#hierarchies-de-caracteristiques"><strong>Hiérarchies de Caractéristiques</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fonctions-dactivation">10. Fonctions d’Activation</a><ul>
+<li><a class="reference internal" href="#relu-rectified-linear-unit"><strong>ReLU (Rectified Linear Unit)</strong></a></li>
+<li><a class="reference internal" href="#fonction-leaky-relu"><strong>Fonction Leaky ReLU</strong></a></li>
+<li><a class="reference internal" href="#fonction-sigmoide"><strong>Fonction Sigmoïde</strong></a></li>
+<li><a class="reference internal" href="#fonction-tanh"><strong>Fonction Tanh</strong></a></li>
+<li><a class="reference internal" href="#avantages-de-la-fonction-d-activation-tanh"><strong>Avantages de la fonction d’activation Tanh</strong></a></li>
+<li><a class="reference internal" href="#fonction-softmax"><strong>Fonction Softmax</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dropout-et-normalisation-par-lots">11. Dropout et Normalisation par Lots</a><ul>
+<li><a class="reference internal" href="#dropout"><strong>Dropout</strong></a></li>
+<li><a class="reference internal" href="#resultats"><strong>Résultats :</strong></a></li>
+<li><a class="reference internal" href="#normalisation-par-lots-batch-normalization"><strong>Normalisation par Lots (Batch Normalization)</strong></a></li>
+<li><a class="reference internal" href="#avantages"><strong>Avantages :</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="notion.html" class="d-flex px-5 align-items-end" rel="prev" aria-label="Previous page: Notions de Base en IA">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Notions de Base en IA</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="../03_modeles_apprentissage/mdl_appr.html" class="d-flex px-5 align-items-end" rel="next" aria-label="Next page: Modèles d’Apprentissage">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">Modèles d’Apprentissage</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="https://github.com/danirus/sphinx-nefertiti/issues" class="list-item">Issues</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://docs.google.com/document/d/1X9dO4tD5R5DBlG_WFETr6D9i2sSP5pHR8RI8enTSceU/edit?tab=t.0#heading=h.bg3x17yqchk" class="list-item">Documentation</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://github.com/Yousraarroui/TestSphinx.git" class="list-item">Repository</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">IAn</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>ARROUI Yousra</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.7.5</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/colorsets.js?v=93c30d22"></script>
+    <script src="../../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../../_static/sphinx-nefertiti.min.js?v=de1d41e1"></script>
+    <script src="../../_static/bootstrap.bundle.min.js?v=ff4e7878"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </body>
+</html>

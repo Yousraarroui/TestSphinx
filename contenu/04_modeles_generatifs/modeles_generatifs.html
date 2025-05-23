@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="86400000" />
+    <meta name="docsearch:name" content="IAn" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1" />
+    <meta name="docsearch:version" content="0.1" />
+    
+      <title>Modèles Génératifs &mdash; IAn 0.1 documentation</title>
+    
+    <link rel="canonical" href="contenu/04_modeles_generatifs/modeles_generatifs" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-nefertiti-default.min.css?v=84f2ec69" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css?v=ce93212b" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/red-hat-mono/stylesheet.css?v=4eee5046" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-dark.css?v=589f9147" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-light.css?v=1620426e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../../genindex.html" />
+        <link rel="search" title="Search" href="../../search.html" />
+        <link rel="top" title="IAn 0.1 documentation" href="#" />
+        <link rel="up" title="Modèles Génératifs" href="mdl_gen.html" />
+        <link rel="next" title="Listes des outils d’IA génératifs" href="../../big-list-ia.html" />
+        <link rel="prev" title="Modèles Génératifs" href="mdl_gen.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl neutral nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-xl-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2 pe-lg-4"
+          ><span class="brand-text">IAn</span></a>
+        
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-text">IAn</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/Yousraarroui/TestSphinx.git" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/Yousraarroui/TestSphinx.git">
+                      TestSphinx
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+                <!-- colorssets-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle color set">
+    <i class="bi bi-palette"></i>
+    <span id="snftt-color-text" class="d-xl-none ms-2">Change color set</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+    <li>
+      <h6 class="dropdown-header">Change color set</h6>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+        <span class="blue">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Blue</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="indigo" href="#" aria-pressed="false">
+        <span class="indigo">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Indigo</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+        <span class="purple">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Purple</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+        <span class="pink">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Pink</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+        <span class="red">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Red</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+        <span class="orange">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Orange</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+        <span class="yellow">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Yellow</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+        <span class="green">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Green</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+        <span class="teal">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Teal</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="default" href="#" aria-pressed="false">
+        <span class="cyan">
+          <i class="bi bi-circle-fill"></i>
+        </span>
+        <span class="ms-3">Cyan</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    
+    <li><hr class="dropdown-divider" /></li>
+    <li>
+      <h6 class="dropdown-header">Neutral header</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center active current" data-snftt-colorset-neutral="on" href="#" aria-pressed="false">
+        <i class="bi bi-noise-reduction"></i>
+        <span class="ms-3">Neutral</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+  <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+  <hr class="d-lg-none text-white-50">
+</li>
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-block">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../indexcontenu.html">Contenu Théorique</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_introduction/intro.html">Introduction à l’IA Générative</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01_introduction/introduction.html">Introduction à l’Apprentissage Automatique et à l’Apprentissage Profond dans l’IA générative</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02_notions_basiques/notion.html">Notions de Base en IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_notions_basiques/notion_de_base_de_l%27apprentissage_profond.html">Notions de Base de l’Apprentissage Profond</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03_modeles_apprentissage/mdl_appr.html">Modèles d’Apprentissage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../03_modeles_apprentissage/architectures_cnn.html">Architectures CNN Populaires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_modeles_apprentissage/modeles_nlp.html">Modèles généraux de NLP</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="mdl_gen.html">Modèles Génératifs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Modèles Génératifs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../big-list-ia.html">Listes des outils d’IA génératifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/texte/texte.html">Générateurs de texte par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/claude.html">Claude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/bloom.html">BLOOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/t5.html">T5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/chat-gpt.html">ChatGPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/llama.html">Llama</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/texte/nous-hermes-2-mistral-7b-dpo.html">Nous-Hermes 2 Mistral 7B DPO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/image/image.html">Générateurs d’images par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/stable-diffusion.html">Stable Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/dall-e.html">DALL-E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/adobe-firefly.html">Adobe Firefly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/image/midjourney.html">Midjourney</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/video/video.html">Générateurs de vidéo par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/sora.html">Sora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/video/vidu.html">Vidu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../catalogue/son/son.html">Générateurs de sons par IA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/audioldm.html">AudioLDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/bark.html">Bark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/coversong.html">CoverSong / So-VITS-SVC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/dancediffusion.html">Dance Diffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/gansynth.html">GANSynth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jen1.html">JEN-1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/jukebox.html">Jukebox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/melgan.html">MelGAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/musiclm.html">MusicLM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/riffusion.html">Riffusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../catalogue/son/wavenet.html">WaveNet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../index.html">Start</a></li>
+      <li class="breadcrumb-item"><a href="../../indexcontenu.html">Contenu Théorique</a></li>
+      <li class="breadcrumb-item"><a href="mdl_gen.html">Modèles Génératifs</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Modèles Génératifs</li>
+  </ol>
+</nav>
+    <section class="tex2jax_ignore mathjax_ignore" id="modeles-generatifs">
+<h1>Modèles Génératifs<a class="headerlink" href="#modeles-generatifs" title="Link to this heading">¶</a></h1>
+<ol class="arabic">
+<li><p class="rubric" id="autoencodeur-et-vae">Autoencodeur et VAE</p>
+<p class="rubric" id="autoencodeur-classique"><strong>Autoencodeur Classique</strong></p>
+</li>
+</ol>
+<p>Les <strong>autoencodeurs</strong> sont des réseaux de neurones conçus pour apprendre à représenter efficacement des données, généralement dans un espace de plus faible dimension. Leur objectif principal est de compresser une entrée en une représentation compacte, appelée <strong>représentation latente</strong> ou <strong>vecteur latent</strong>, puis de la reconstruire le plus fidèlement possible. Cette capacité en fait des outils précieux dans le contexte de l’intelligence artificielle générative, bien qu’ils aient aussi des applications en réduction de dimension, en débruitage ou encore en détection d’anomalies.</p>
+<p>L’architecture d’un autoencodeur repose sur deux composants principaux : un <strong>encodeur</strong> et un <strong>décodeur</strong>.</p>
+<section id="encodeur">
+<h2><strong>Encodeur</strong><a class="headerlink" href="#encodeur" title="Link to this heading">¶</a></h2>
+<p>L’<strong>encodeur</strong> est un sous-réseau qui transforme les données d’entrée (par exemple, une image) en un vecteur de dimension beaucoup plus réduite. Cette compression se fait à travers une série de couches linéaires (ou convolutifs, selon le type de données), entrecoupées de fonctions d’activation non linéaires comme ReLU ou sigmoid. L’information est progressivement distillée jusqu’à atteindre un goulot d’étranglement, qui contient uniquement ce que le réseau considère comme essentiel à la reconstruction. Ce vecteur latent capture donc les principales caractéristiques de la donnée d’origine, mais dans un espace compact et abstrait.</p>
+</section>
+<section id="decodeur">
+<h2><strong>Décodeur</strong><a class="headerlink" href="#decodeur" title="Link to this heading">¶</a></h2>
+<p>À partir de cette représentation comprimée, le <strong>décodeur</strong> tente de reconstruire les données d’entrée initiales. Il s’agit d’un réseau symétrique à l’encodeur, qui effectue des transformations inverses pour retrouver la forme et les dimensions originales. Le système est entraîné à minimiser l’écart entre l’entrée et la sortie reconstruite. Selon la nature des données, on utilise des fonctions de perte comme l’erreur quadratique moyenne (pour des valeurs continues) ou la cross-entropy binaire (pour des données normalisées entre 0 et 1, comme les images binaires). L’apprentissage du modèle se fait de manière non supervisée, sans besoin d’annotations, ce qui permet de l’utiliser facilement sur de grands ensembles de données brutes.</p>
+<p>![][image46]</p>
+<p>Image extraite de : <a class="reference external" href="https://lilianweng.github.io/posts/2018-08-12-vae/">https://lilianweng.github.io/posts/2018-08-12-vae/</a></p>
+<p>Les autoencodeurs permettent donc de <strong>découvrir la structure sous-jacente</strong> des données, d’une manière non linéaire et plus flexible que des méthodes classiques comme l’ACP (analyse en composantes principales). Ils sont notamment utiles pour <strong>prétraiter des données</strong> avant un apprentissage supervisé, ou pour détecter des anomalies : si une donnée ne peut pas être bien reconstruite, c’est peut-être parce qu’elle est atypique par rapport à ce que le modèle a appris. En IA générative, les autoencodeurs ont été utilisés pour <strong>reconstruire et modifier des images ou du texte</strong>, mais avec des limitations importantes.</p>
+<p>En effet, l’un des principaux défauts des autoencodeurs classiques est que l’<strong>espace latent appris</strong> n’est <strong>pas structuré</strong>. Il n’est <strong>pas possible d’échantillonner</strong> aléatoirement ce vecteur latent pour produire de nouvelles données réalistes, car les points générés dans cet espace n’ont pas forcément de sens pour le décodeur. De plus, le modèle est purement déterministe : une même entrée donne toujours la même sortie, ce qui limite la diversité des données générées.</p>
+<p>Ces limites ont conduit à la création d’architectures plus avancées, comme les <strong>Variational Autoencoders (VAE)</strong>, qui imposent une structure probabiliste sur l’espace latent.</p>
+</section>
+<section id="autoencodeur-variationnel-vae">
+<h2><strong>Autoencodeur Variationnel (VAE)</strong><a class="headerlink" href="#autoencodeur-variationnel-vae" title="Link to this heading">¶</a></h2>
+<p>Les <strong>Variational Autoencoders</strong>, ou VAE, sont une extension probabiliste des autoencodeurs classiques. Ils ont été conçus pour surmonter l’un des principaux défauts des autoencodeurs standards : l’absence de structure exploitable dans l’espace latent. Alors que les autoencodeurs apprennent à encoder chaque donnée en un point précis de cet espace, les VAE apprennent à <strong>représenter</strong> chaque donnée comme une <strong>distribution</strong>, ce qui rend possible l’<strong>échantillonnage aléatoire</strong> et <strong>contrôlé de nouvelles données</strong> — une capacité cruciale en génération.</p>
+<section id="architecture">
+<h3><strong>Architecture</strong><a class="headerlink" href="#architecture" title="Link to this heading">¶</a></h3>
+<p>L’architecture d’un VAE ressemble à celle d’un autoencodeur classique, avec un encodeur et un décodeur, mais leur fonctionnement est légèrement différent. L’encodeur ne produit pas directement un vecteur latent, mais apprend à estimer les paramètres d’une distribution gaussienne multivariée : un vecteur de moyennes (μ) et un vecteur d’écarts-types (σ). Ces deux vecteurs définissent une densité de probabilité dans l’espace latent. Pour chaque donnée d’entrée, on échantillonne ensuite un point dans cette distribution — c’est ce point échantillonné qui est transmis au décodeur.</p>
+</section>
+<section id="astuce-de-reparametrisation">
+<h3><strong>Astuce de Reparamétrisation</strong><a class="headerlink" href="#astuce-de-reparametrisation" title="Link to this heading">¶</a></h3>
+<p>Comme cette étape d’échantillonnage introduit une opération non différentiable, une astuce appelée <strong>astuce de reparamétrisation</strong> (reparametrization trick) est utilisée pour permettre la rétropropagation : au lieu d’échantillonner directement z ~ N(μ, σ²), on échantillonne ε ~ N(0, 1) et on calcule z = μ + σ * ε. Cela permet de <strong>maintenir un flux de gradient à travers le réseau</strong>.</p>
+<p>Le <strong>décodeur</strong>, de son côté, prend ce vecteur latent z et tente de reconstruire l’entrée d’origine. L’entraînement du VAE repose sur une fonction de perte composée de deux termes : une erreur de reconstruction (comme pour l’autoencodeur classique), et un terme de régularisation mesurant la distance entre la distribution apprise (N(μ, σ²)) et une distribution normale standard (N(0, I)). Ce second terme, appelé <strong>divergence de Kullback-Leibler (KL divergence)</strong>, force les représentations latentes à rester proches d’une distribution bien connue, ce qui garantit la structure et la continuité de l’espace latent.</p>
+<p>Grâce à cette contrainte, les VAE offrent un <strong>espace latent plus régulier</strong> et plus interprétable. Il devient possible d’interpoler entre deux données en naviguant de manière fluide entre leurs représentations latentes, ou de <strong>générer de nouvelles instances</strong> en échantillonnant simplement un vecteur latent aléatoire suivant la loi normale standard. Cette capacité à générer de la diversité tout en maintenant la cohérence des données produites en fait un outil clé dans le domaine de l’IA générative.</p>
+<p>![][image47]</p>
+<p>Image extraite de : <a class="reference external" href="https://lilianweng.github.io/posts/2018-08-12-vae/">https://lilianweng.github.io/posts/2018-08-12-vae/</a></p>
+<p>Cependant, les VAE présentent aussi certaines limites. Les images générées, par exemple, peuvent <strong>manquer de netteté</strong> ou de précision par rapport à d’autres modèles génératifs plus récents comme les GANs. Cela s’explique en partie par le compromis entre fidélité de reconstruction et régularisation probabiliste, imposé par la fonction de perte.</p>
+<p>Malgré cela, les VAE restent une approche fondamentale pour la génération de données, notamment dans les contextes où la structuration de l’espace latent est essentielle, comme en génération de texte conditionnelle, en bioinformatique ou dans certains systèmes de recommandation.</p>
+<section id="liens-externes-youtube-medium-etc">
+<h4><strong>Liens Externes (Youtube, Medium, etc):</strong><a class="headerlink" href="#liens-externes-youtube-medium-etc" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/hZ4a4NgM3u0?si=w84DhM8nqXmRhKp5">Autoencoders | Deep Learning Animated</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ahJdTbAA_kk">AE1/ Réseaux autoencodeurs (AE)</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/qJeaCHQ1k2w?si=IhJHyczx6Kbc1WMd">Variational Autoencoders | Generative AI Animated</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/fcvYpzHmhvA?si=IyDGPHgFoi-fDPz9">Variational Autoencoders - EXPLAINED!</a></p></li>
+</ul>
+</section>
+<section id="bibliographie">
+<h4><strong>Bibliographie</strong><a class="headerlink" href="#bibliographie" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Michelucci, U., 2022. An introduction to autoencoders. <em>arXiv preprint arXiv:2201.03898</em>.</p></li>
+<li><p>Pinheiro Cinelli, L., Araújo Marins, M., Barros da Silva, E.A. and Lima Netto, S., 2021. Variational autoencoder. In <em>Variational methods for machine learning with applications to deep networks</em> (pp. 111-149). Cham: Springer International Publishing.</p></li>
+</ul>
+<ol class="arabic" start="2">
+<li><p class="rubric" id="reseaux-antagonistes-generatifs-gan">Réseaux Antagonistes Génératifs (GAN)</p>
+</li>
+</ol>
+<p>Les <strong>Réseaux Antagonistes Génératifs (Generative Adversarial Networks, GANs)</strong>, proposés par Ian Goodfellow en 2014, constituent l’un des apports les plus marquants de l’intelligence artificielle moderne, en particulier dans le domaine de la génération de données. L’idée centrale des GANs est simple mais puissante : faire s’opposer deux réseaux de neurones dans un jeu à somme nulle, l’un générant des données, l’autre les évaluant.</p>
+</section>
+</section>
+<section id="architecture-et-fonctionnement">
+<h3><strong>Architecture et fonctionnement</strong><a class="headerlink" href="#architecture-et-fonctionnement" title="Link to this heading">¶</a></h3>
+<p>Un GAN se compose de <strong>deux réseaux de neurones</strong> qui sont entraînés simultanément, mais dans des rôles opposés :</p>
+<ul>
+<li><p><strong>Le générateur (G)</strong><br />
+Le générateur a pour mission de créer des données artificielles qui ressemblent aux données réelles. Il prend en entrée un vecteur aléatoire zzz, généralement échantillonné depuis une distribution normale <em><strong>N(0,1)</strong></em>, et le transforme à travers une série de couches pour produire un échantillon synthétique <em>G(z)</em> – par exemple, une image de visage, un chiffre manuscrit ou un spectrogramme audio.<br />
+Ce réseau apprend progressivement à transformer le bruit en exemples réalistes. Il n’a jamais accès aux vraies données ; il apprend uniquement à tromper le discriminateur.</p></li>
+<li><p><strong>Le discriminateur (D)</strong><br />
+Le discriminateur agit comme un <strong>juge</strong>. Il reçoit en entrée soit une vraie donnée issue du dataset, soit une donnée synthétique produite par le générateur. Son objectif est de <strong>classer correctement</strong> l’entrée : vraie (label 1) ou fausse (label 0).<br />
+Le discriminateur est donc un classificateur binaire, souvent construit comme un réseau de neurones convolutionnel dans les applications d’image.</p>
+<p>![][image48]</p>
+</li>
+</ul>
+<p>Image extraite de : <a class="reference external" href="https://developers.google.com/machine-learning/gan/gan_structure">https://developers.google.com/machine-learning/gan/gan_structure</a></p>
+</section>
+<section id="le-principe-dopposition">
+<h3><strong>Le principe d’opposition</strong><a class="headerlink" href="#le-principe-dopposition" title="Link to this heading">¶</a></h3>
+<p>Les deux réseaux sont connectés dans une <strong>boucle adversariale</strong>. Leur entraînement repose sur un <strong>jeu compétitif</strong> :</p>
+<ul class="simple">
+<li><p>Le générateur essaie de <strong>tromper</strong> le discriminateur en produisant des échantillons si crédibles que celui-ci les classe comme réels.</p></li>
+<li><p>Le discriminateur essaie de <strong>distinguer</strong> correctement les vrais échantillons des faux.</p></li>
+</ul>
+<p>Cela se traduit par une fonction de perte commune, mais à objectif opposé :</p>
+<ul class="simple">
+<li><p>Le <strong>discriminateur</strong> maximise la probabilité de donner le bon label à chaque entrée.</p></li>
+<li><p>Le <strong>générateur</strong> essaie de minimiser la capacité du discriminateur à faire cette distinction.</p></li>
+</ul>
+<p>Formellement, la perte globale s’écrit comme une minimax :</p>
+<p>![][image49]</p>
+</section>
+<section id="entrainement">
+<h3><strong>Entraînement</strong><a class="headerlink" href="#entrainement" title="Link to this heading">¶</a></h3>
+<p>L’entraînement se fait en alternant :</p>
+<ol class="arabic simple">
+<li><p>Une mise à jour des poids du discriminateur DDD, en utilisant à la fois des vraies données et des données synthétiques générées par GGG.</p></li>
+<li><p>Une mise à jour des poids du générateur GGG, en cherchant à faire en sorte que DDD classe ses sorties comme vraies.</p></li>
+</ol>
+<p>Ce <strong>duel</strong> entre les deux réseaux force le générateur à s’améliorer continuellement. Si le discriminateur devient trop fort, le générateur n’apprend rien. Si le générateur devient trop bon, le discriminateur est “trompé” tout le temps. L’équilibre entre les deux est donc crucial mais difficile à atteindre.</p>
+</section>
+<section id="applications">
+<h3><strong>Applications</strong><a class="headerlink" href="#applications" title="Link to this heading">¶</a></h3>
+<p>Les GANs ont révolutionné de nombreux domaines :</p>
+<ul class="simple">
+<li><p>Génération d’images réalistes (visages, objets, paysages)</p></li>
+<li><p>Colorisation automatique d’images en noir et blanc</p></li>
+<li><p>Super-résolution (upscaling d’images)</p></li>
+<li><p>Transfert de style (changer le style d’une image)</p></li>
+<li><p>Création d’avatars, deepfakes, ou art génératif</p></li>
+</ul>
+</section>
+<section id="forces-et-faiblesses">
+<h3><strong>Forces et faiblesses</strong><a class="headerlink" href="#forces-et-faiblesses" title="Link to this heading">¶</a></h3>
+<p>Les GANs produisent souvent des résultats <strong>visuellement très convaincants</strong>, bien plus nets que ceux issus d’autoencodeurs classiques. Ils peuvent apprendre une distribution complexe sans jamais la modéliser explicitement.</p>
+<p>Cependant, ils souffrent aussi de <strong>plusieurs problèmes majeurs</strong> :</p>
+<ul class="simple">
+<li><p><strong>Instabilité d’entraînement</strong> : il est fréquent que l’un des deux réseaux prenne trop d’avance sur l’autre, ce qui bloque l’apprentissage.</p></li>
+<li><p><strong>Mode collapse</strong> : le générateur apprend à produire toujours les mêmes échantillons ou un nombre limité de variantes.</p></li>
+<li><p><strong>Absence de représentation latente exploitable</strong> : contrairement aux autoencodeurs ou VAE, les GANs ne fournissent pas naturellement une structure compréhensible de l’espace latent.</p></li>
+</ul>
+<p>De nombreuses variantes ont été proposées pour pallier ces défauts, comme les <strong>Wasserstein GANs</strong>, <strong>DCGAN</strong>, <strong>StyleGAN</strong>, ou encore les <strong>Conditional GANs</strong> qui permettent de contrôler ce qui est généré à partir de labels ou de données d’entrée (par exemple, générer un “chien” plutôt qu’un “chat”).</p>
+<section id="id1">
+<h4><strong>Liens Externes (Youtube, Medium, etc):</strong><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/gan/gan_structure">Overview of GAN Structure</a></p></li>
+<li><p><a class="reference external" href="https://www.intelligence-artificielle-school.com/ecole/technologies/quest-ce-que-les-generative-adversarial-networks/">Qu’est-ce que les Generative Adversarial Networks (GAN) ?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/QZpabZj1WOA?si=10XGfh5-KIoijNAK">Introduction aux GANs</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/Sw9r8CL98N0?si=LlV974i3E-Jiu74a">Generative Adversarial Networks (GANs) - Computerphile</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f">GANs from Scratch 1: A deep introduction. With code in PyTorch and TensorFlow</a></p></li>
+<li><p><a class="reference external" href="https://yannicksergeobam.medium.com/g%C3%A9nerer-les-images-%C3%A0-laide-des-gans-avec-tensorflow-6c761311929d">Génerer les images à l’aide des GANs avec Tensorflow</a></p></li>
+</ul>
+</section>
+<section id="id2">
+<h4><strong>Bibliographie</strong><a class="headerlink" href="#id2" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A. and Bengio, Y., 2020. Generative adversarial networks. <em>Communications of the ACM</em>, <em>63</em>(11), pp.139-144.</p></li>
+<li><p>Creswell, A., White, T., Dumoulin, V., Arulkumaran, K., Sengupta, B. and Bharath, A.A., 2018. Generative adversarial networks: An overview. <em>IEEE signal processing magazine</em>, <em>35</em>(1), pp.53-65.</p></li>
+</ul>
+<ol class="arabic" start="3">
+<li><p class="rubric" id="modeles-de-diffusion">Modèles de Diffusion</p>
+</li>
+</ol>
+<p>Les <strong>modèles de diffusion</strong> sont aujourd’hui au cœur de la génération d’images de haute qualité, popularisés par des systèmes comme <strong>DALL·E 2</strong>, <strong>Stable Diffusion</strong> ou <strong>MidJourney</strong>. Leur approche diffère fondamentalement de celle des GANs ou des autoencodeurs, puisqu’ils génèrent des données en inversant un processus de bruitage progressif.</p>
+</section>
+</section>
+<section id="intuition-generale">
+<h3><strong>Intuition générale</strong><a class="headerlink" href="#intuition-generale" title="Link to this heading">¶</a></h3>
+<p>L’idée derrière les modèles de diffusion repose sur <strong>deux phases symétriques</strong> :</p>
+<ol class="arabic simple">
+<li><p><strong>Diffusion (forward process)</strong><br />
+On part d’une image réelle, à laquelle on ajoute progressivement du <strong>bruit gaussien</strong>, étape par étape, jusqu’à obtenir une image totalement bruitée qui ressemble à du <strong>pur bruit blanc</strong>.<br />
+Ce processus est <strong>stochastique</strong> et se déroule généralement sur plusieurs centaines voire milliers d’étapes.</p></li>
+<li><p><strong>Dénoising (reverse process)</strong><br />
+Le modèle est entraîné à <strong>inverser</strong> ce processus : en partant du bruit pur, il apprend à <strong>supprimer le bruit étape par étape</strong>, pour finalement reconstruire une image nette et réaliste.<br />
+Ce processus est <strong>appris</strong> à l’aide d’un réseau neuronal, souvent un <strong>U-Net</strong>, qui prédit le bruit à chaque étape.</p></li>
+</ol>
+<p>Ainsi, la génération se fait <strong>par raffinements successifs</strong> : on ne génère pas une image d’un coup, mais on la fait émerger progressivement du bruit.</p>
+</section>
+<section id="architecture-typique">
+<h3><strong>Architecture typique</strong><a class="headerlink" href="#architecture-typique" title="Link to this heading">¶</a></h3>
+<p>La plupart des modèles de diffusion reposent sur une architecture <strong>U-Net</strong> modifiée, adaptée au traitement d’images bruitées. Elle est combinée à deux éléments essentiels:</p>
+<ul class="simple">
+<li><p><strong>Un encodeur temporel</strong><br />
+À chaque étape de débruitage, le modèle doit savoir à quel moment du processus il se trouve. Cette information temporelle est encodée et injectée dans le réseau sous forme de vecteurs de position (ou embeddings).</p></li>
+<li><p><strong>Des mécanismes d’attention</strong><br />
+Inspirés des Transformers, ils permettent au réseau de mieux capturer les relations spatiales complexes dans l’image, améliorant considérablement la qualité visuelle.</p></li>
+</ul>
+<p>![][image50]</p>
+<p>Architecture Basique d’un réseau U-Net</p>
+<p>Image extraite de : <a class="reference external" href="https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/">https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/</a></p>
+<p>Certains modèles, comme <strong>Stable Diffusion</strong>, ajoutent aussi un <strong>encodeur de texte (CLIP, T5, BERT…)</strong> pour guider la génération à partir d’une instruction textuelle. On parle alors de <strong>modèle de diffusion conditionnel</strong>.</p>
+</section>
+<section id="fonction-de-perte">
+<h3><strong>Fonction de perte</strong><a class="headerlink" href="#fonction-de-perte" title="Link to this heading">¶</a></h3>
+<p>Le modèle est <strong>entraîné à prédire le bruit</strong> ajouté à une image à un moment donné de la diffusion. Concrètement, à une étape <em>t</em>, on donne au réseau une image bruitée <em>xt</em>​, et on lui demande de retrouver le bruit ϵ\epsilonϵ qui a été ajouté à l’image propre initiale <em>x0</em>.</p>
+<p>La <strong>fonction de perte typique</strong> est donc une <strong>erreur quadratique moyenne (MSE)</strong> entre le bruit prédit et le vrai bruit :</p>
+<p>![][image51]</p>
+<p>Certaines variantes (comme <strong>DDPM++</strong>) utilisent d’autres formulations, notamment la prédiction directe de l’image débruitée <em>x0</em>​, ou encore une <strong>perte perceptuelle</strong>.</p>
+</section>
+<section id="pourquoi-ca-fonctionne">
+<h3><strong>Pourquoi ça fonctionne ?</strong><a class="headerlink" href="#pourquoi-ca-fonctionne" title="Link to this heading">¶</a></h3>
+<p>Les modèles de diffusion génèrent des images <strong>progressivement</strong>, en inversant un processus bien défini, ce qui permet :</p>
+<ul class="simple">
+<li><p>un <strong>contrôle précis</strong> sur la qualité du résultat à chaque étape,</p></li>
+<li><p>une <strong>diversité élevée</strong> : chaque échantillon de bruit initial donne potentiellement une image différente,</p></li>
+<li><p>une <strong>bonne stabilité d’entraînement</strong> : contrairement aux GANs, il n’y a pas d’affrontement entre deux réseaux.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3><strong>Applications</strong><a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>Ils sont aujourd’hui utilisés pour :</p>
+<ul class="simple">
+<li><p>Génération d’images réalistes (visages, objets, paysages, art)</p></li>
+<li><p>Inpainting (complétion d’images)</p></li>
+<li><p>Super-résolution</p></li>
+<li><p>Text-to-image (image à partir d’une description)</p></li>
+<li><p>Synthèse vocale ou audio</p></li>
+</ul>
+<p>Certains frameworks comme <strong>Stable Diffusion</strong> permettent même une génération <strong>interactive</strong> ou contrôlée, grâce à des techniques comme <strong>ControlNet</strong> ou <strong>img2img</strong>.</p>
+</section>
+<section id="forces-et-limites">
+<h3><strong>Forces et limites</strong><a class="headerlink" href="#forces-et-limites" title="Link to this heading">¶</a></h3>
+<p>Les modèles de diffusion offrent une <strong>qualité exceptionnelle</strong>, rivalisant avec les meilleurs GANs, tout en étant <strong>plus stables à entraîner</strong>. De plus, leur capacité à <strong>conditionner sur du texte, une esquisse, ou une autre image</strong> ouvre un grand éventail d’applications créatives.</p>
+<p>Cependant, ils présentent aussi des défis :</p>
+<ul class="simple">
+<li><p><strong>Temps d’inférence élevé</strong> : générer une image demande plusieurs centaines de passes (même si des techniques récentes comme DDIM réduisent ce nombre).</p></li>
+<li><p><strong>Coût computationnel important</strong> à l’entraînement et à l’inférence.</p></li>
+<li><p><strong>Complexité technique</strong> plus élevée, notamment pour les utilisateurs non familiers avec les processus stochastiques.</p></li>
+</ul>
+</section>
+<section id="dalle-2">
+<h3><strong>DALL·E 2</strong><a class="headerlink" href="#dalle-2" title="Link to this heading">¶</a></h3>
+<p>Développé par OpenAI, <strong>DALL·E 2</strong> est un système de génération d’images à partir de descriptions textuelles. Il repose sur une combinaison originale de plusieurs modèles puissants :</p>
+<ul class="simple">
+<li><p>Il utilise d’abord <strong>CLIP</strong> (un modèle de vision et langage) pour <strong>comprendre le texte</strong> et le transformer en une représentation latente visuelle.</p></li>
+<li><p>Cette représentation est ensuite utilisée pour <strong>conditionner un modèle de diffusion</strong>, qui va générer une image correspondant à ce texte.</p></li>
+</ul>
+<p>La particularité de DALL·E 2 est de ne pas directement générer des pixels. Il <strong>travaille dans un espace latent</strong> plus compact et structuré, ce qui permet une génération plus rapide et plus contrôlée. À partir de cette image latente, un <strong>décodeur</strong> (souvent un autoencodeur ou un VQGAN) reconstruit l’image finale.</p>
+<p>DALL·E 2 permet aussi des manipulations fines comme :</p>
+<ul class="simple">
+<li><p><strong>Inpainting</strong> : remplir une zone vide dans une image</p></li>
+<li><p><strong>Editing</strong> : modifier certains éléments à partir d’un nouveau texte</p></li>
+</ul>
+<p>Il a été un des premiers modèles à populariser l’idée de création visuelle guidée par langage, avec un niveau de cohérence sémantique très avancé.</p>
+</section>
+<section id="stable-diffusion">
+<h3><strong>Stable Diffusion</strong><a class="headerlink" href="#stable-diffusion" title="Link to this heading">¶</a></h3>
+<p><strong>Stable Diffusion</strong>, développé par <strong>Stability AI</strong>, a marqué un tournant en rendant les modèles de diffusion <strong>accessibles et modifiables</strong> par le grand public.</p>
+<p>Contrairement à DALL·E 2, Stable Diffusion :</p>
+<ul class="simple">
+<li><p>Utilise un <strong>Latent Diffusion Model (LDM)</strong> : au lieu de générer directement des images haute résolution, il travaille dans un espace <strong>compressé</strong> (latent) via un <strong>autoencodeur</strong>. Cela rend le processus <strong>plus léger et rapide</strong>.</p></li>
+<li><p>Peut être <strong>guidé par du texte</strong>, grâce à l’utilisation de <strong>CLIP ou T5</strong> comme encodeur de texte.</p></li>
+<li><p>Est <strong>open-source</strong>, ce qui a permis de nombreuses contributions : génération d’images stylisées, contrôle par esquisses (ControlNet), variation par bruit initial, etc.</p></li>
+</ul>
+<p>L’architecture centrale reste un <strong>U-Net modifié</strong> avec des blocs de <strong>self-attention</strong> et une injection d’embeddings temporels et textuels.</p>
+<p>Grâce à sa flexibilité, Stable Diffusion est aujourd’hui au cœur de nombreux outils créatifs open-source, allant de la génération artistique à la conception de personnages ou de scènes complexes.</p>
+</section>
+<section id="midjourney">
+<h3><strong>MidJourney</strong><a class="headerlink" href="#midjourney" title="Link to this heading">¶</a></h3>
+<p>Contrairement aux deux précédents, <strong>MidJourney</strong> n’a pas publié tous les détails techniques de son modèle. Il est cependant largement admis que MidJourney repose également sur un <strong>modèle de diffusion</strong>, guidé par texte.</p>
+<p>Les spécificités de MidJourney résident surtout dans :</p>
+<ul class="simple">
+<li><p><strong>L’aspect artistique</strong> : les images générées sont souvent très stylisées, avec des rendus proches de la peinture, du concept art ou de l’illustration numérique.</p></li>
+<li><p><strong>L’interface utilisateur</strong> : MidJourney est accessible via une interface très intuitive sur Discord, où l’utilisateur interagit avec un bot pour générer des images à partir de prompts textuels.</p></li>
+<li><p><strong>L’optimisation créative</strong> : le système semble fortement biaisé vers des résultats visuellement impressionnants, au prix parfois d’une fidélité moindre aux instructions précises.</p></li>
+</ul>
+<p>MidJourney se distingue ainsi par une orientation très forte vers <strong>l’esthétique et l’inspiration artistique</strong>, le rendant très populaire auprès des designers, illustrateurs et créateurs de contenu.</p>
+<section id="id4">
+<h4><strong>Liens Externes (Youtube, Medium, etc):</strong><a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/fbLgFrlTnGU?si=RXN4SnaXvdjR8Zly">What are DiffusionModels?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/x2GRE-RzmD8?si=zBgLebzvcLw7CCpW">Diffusion Models for AI Image Generation</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/1pgiu--4W3I?si=U6hMsWYP_bo4Db1I">The Breakthrough Behind Modern AI Image Generators | Diffusion Models Part 1</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/lvMGTteb3EI?si=s6O3q-UXfsdsizi2">L’algorithme derrière Midjourney : Comprendre les modèles de diffusion</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/1CIpzeNxIhU?si=RrvhyGJ-vxVnzFQ3">How AI Image Generators Work (Stable Diffusion / Dall-E) - Computerphile</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/tdelUss-5hY?si=gurxOei2nj4q1Hs0">Comment ces IA inventent-elles des images ?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/QdRP9pO89MY?si=Ii8HBTj3W5O3gZg9">Stable Diffusion explained (in less than 10 minutes)</a></p></li>
+<li><p><a class="reference external" href="https://www.ibm.com/fr-fr/think/topics/diffusion-models">Qu’est-ce qu’un modèle de diffusion ?</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;kemalpiro/step-by-step-visual-introduction-to-diffusion-models-235942d2f15c">Step by Step Visual Introduction to Diffusion Models</a></p></li>
+</ul>
+</section>
+<section id="id5">
+<h4><strong>Bibliographie</strong><a class="headerlink" href="#id5" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Yang, L., Zhang, Z., Song, Y., Hong, S., Xu, R., Zhao, Y., Zhang, W., Cui, B. and Yang, M.H., 2023. Diffusion models: A comprehensive survey of methods and applications. <em>ACM Computing Surveys</em>, <em>56</em>(4), pp.1-39.</p></li>
+<li><p>Bhullar, R., 2024. Creative Artificial Intelligence: Exploring the Qualities of Popular AI Art Tools to Determine Effectiveness.</p></li>
+</ul>
+<ol class="arabic" start="4">
+<li><p class="rubric" id="transformeurs">Transformeurs</p>
+</li>
+</ol>
+<p>Les <strong>Transformers</strong> ont révolutionné le domaine de l’intelligence artificielle, notamment dans le traitement du langage naturel (NLP), la génération de texte, l’analyse de séquences, et même la génération d’images. Introduits par Vaswani et al. dans l’article <em>“Attention is All You Need”</em> (2017), ils sont aujourd’hui à la base des modèles les plus puissants comme GPT, BERT, T5 ou encore des modèles multimodaux comme Flamingo ou Gemini.</p>
+</section>
+</section>
+<section id="structure-generale">
+<h3><strong>Structure générale</strong><a class="headerlink" href="#structure-generale" title="Link to this heading">¶</a></h3>
+<p>Un transformeur est constitué d’un <strong>empilement de blocs</strong> identiques composés principalement de deux sous-composants essentiels :</p>
+<ol class="arabic simple">
+<li><p><strong>Le mécanisme d’attention (Self-Attention)</strong></p></li>
+<li><p><strong>Un réseau de neurones feed-forward (MLP)</strong></p></li>
+</ol>
+<p>Chaque bloc est également entouré de mécanismes d’<strong>ajout résiduel</strong> (residual connections) et de <strong>normalisation de couche</strong> (layer normalization), pour assurer une bonne circulation du gradient lors de l’apprentissage.</p>
+</section>
+<section id="mecanisme-dattention">
+<h3><strong>1. Mécanisme d’Attention</strong><a class="headerlink" href="#mecanisme-dattention" title="Link to this heading">¶</a></h3>
+<p>Le cœur du transformeur est le <strong>self-attention</strong>, qui permet à chaque mot (ou jeton) de <strong>“regarder”</strong> les autres mots de la séquence pour ajuster sa propre représentation. Cela permet de capturer les dépendances longues entre les éléments d’une séquence, ce qui était difficile avec les RNN ou LSTM.</p>
+<p>Le mécanisme repose sur trois vecteurs par jeton : <strong>Query (Q)</strong>, <strong>Key (K)</strong> et <strong>Value (V)</strong>. On calcule des scores d’attention via une fonction de similarité entre les Q et K, puis on utilise ces scores pour pondérer les V.</p>
+<p>Formule typique :</p>
+<p>![][image52]</p>
+<p>Cette opération est <strong>parallélisable</strong> et bien plus efficace que les RNN.</p>
+</section>
+<section id="multi-head-attention">
+<h3><strong>2. Multi-Head Attention</strong><a class="headerlink" href="#multi-head-attention" title="Link to this heading">¶</a></h3>
+<p>Plutôt qu’une seule attention, le modèle en apprend plusieurs en parallèle, appelées <strong>têtes d’attention</strong>. Cela permet au modèle de capturer différents types de relations entre jetons. Ces têtes sont ensuite concaténées et projetées vers l’espace d’origine.</p>
+</section>
+<section id="reseau-feed-forward">
+<h3><strong>3. Réseau Feed-Forward</strong><a class="headerlink" href="#reseau-feed-forward" title="Link to this heading">¶</a></h3>
+<p>Chaque couche contient aussi un <strong>MLP à deux couches</strong> avec une activation non-linéaire (souvent ReLU ou GELU). Il agit indépendamment sur chaque position de la séquence.</p>
+</section>
+<section id="encodage-de-position">
+<h3><strong>4. Encodage de position</strong><a class="headerlink" href="#encodage-de-position" title="Link to this heading">¶</a></h3>
+<p>Comme les transformeurs ne sont pas séquentiels (contrairement aux RNN), ils n’ont aucune notion de l’ordre des jetons. On ajoute donc un <strong>vecteur de position</strong> (sinusoïdal ou appris) à chaque entrée pour injecter l’information d’ordre.</p>
+</section>
+<section id="architecture-complete">
+<h3><strong>Architecture complète</strong><a class="headerlink" href="#architecture-complete" title="Link to this heading">¶</a></h3>
+<p>On distingue généralement deux variantes :</p>
+<ul class="simple">
+<li><p><strong>Encodeur uniquement</strong> (ex : BERT) — utile pour les tâches de classification, recherche d’information, etc.</p></li>
+<li><p><strong>Décodeur uniquement</strong> (ex : GPT) — utilisé pour la génération de texte.</p></li>
+<li><p><strong>Encodeur-Décodeur</strong> (ex : T5, BART) — utilisé pour la traduction, le résumé, la génération conditionnée.</p></li>
+</ul>
+</section>
+<section id="avantages-des-transformeurs">
+<h3><strong>Avantages des transformeurs</strong><a class="headerlink" href="#avantages-des-transformeurs" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Traitement parallèle des séquences</strong> (plus rapide que les RNN)</p></li>
+<li><p><strong>Meilleure capacité de généralisation à long terme</strong></p></li>
+<li><p><strong>Modularité</strong> : possibilité de les adapter à divers formats de données (texte, image, son)</p>
+<p class="rubric" id="variantes-populaires-de-transformers"><strong>Variantes populaires de Transformers</strong></p>
+</li>
+</ul>
+<p>Voici maintenant quelques-uns des modèles les plus influents et utilisés, chacun basé sur l’architecture des transformeurs.</p>
+</section>
+<section id="bert-bidirectional-encoder-representations-from-transformers">
+<h3><strong>BERT (Bidirectional Encoder Representations from Transformers)</strong><a class="headerlink" href="#bert-bidirectional-encoder-representations-from-transformers" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Ne contient que <strong>l’encodeur</strong> de l’architecture transformer.</p></li>
+<li><p>Lit la séquence <strong>dans les deux sens</strong> (gauche et droite) pour créer un contexte riche.</p></li>
+<li><p>Pré-entraîné avec deux tâches : <strong>Masked Language Modeling</strong> (prédire des mots masqués) et <strong>Next Sentence Prediction</strong>.</p></li>
+<li><p>Très utilisé pour des tâches de classification, question/réponse, etc.</p></li>
+</ul>
+</section>
+<section id="gpt-generative-pre-trained-transformer">
+<h3><strong>GPT (Generative Pre-trained Transformer)</strong><a class="headerlink" href="#gpt-generative-pre-trained-transformer" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>N’utilise que le <strong>décodeur</strong> d’un transformeur, entraîné de manière <strong>auto-régressive</strong> (prédire le mot suivant).</p></li>
+<li><p>Très performant pour la <strong>génération de texte</strong> fluide et cohérente.</p></li>
+<li><p>GPT-3 et GPT-4 ont montré des capacités émergentes impressionnantes dans des tâches variées (résolution de problèmes, rédaction, programmation…).</p></li>
+</ul>
+</section>
+<section id="t5-text-to-text-transfer-transformer">
+<h3><strong>T5 (Text-To-Text Transfer Transformer)</strong><a class="headerlink" href="#t5-text-to-text-transfer-transformer" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Utilise une <strong>architecture encodeur-décodeur</strong> complète.</p></li>
+<li><p>Toutes les tâches sont formulées comme un problème de conversion de texte : par exemple, “traduire anglais en français : Hello” ⟶ “Bonjour”.</p></li>
+<li><p>Très flexible et puissant pour le NLP multitâche.</p></li>
+</ul>
+</section>
+<section id="bart-bidirectional-and-auto-regressive-transformers">
+<h3><strong>BART (Bidirectional and Auto-Regressive Transformers)</strong><a class="headerlink" href="#bart-bidirectional-and-auto-regressive-transformers" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Combine <strong>un encodeur bidirectionnel (type BERT)</strong> avec un <strong>décodeur auto-régressif (type GPT)</strong>.</p></li>
+<li><p>Excellente performance pour la <strong>génération de texte conditionnée</strong>, le <strong>résumé automatique</strong>, et les <strong>tâches de reconstruction de séquences</strong>.</p></li>
+</ul>
+</section>
+<section id="vision-transformer-vit">
+<h3><strong>Vision Transformer (ViT)</strong><a class="headerlink" href="#vision-transformer-vit" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Applique le principe des transformeurs à des <strong>images</strong> : l’image est découpée en <strong>patchs</strong>, qui sont ensuite linéarisés et traités comme des jetons.</p></li>
+<li><p>A montré que les transformeurs peuvent rivaliser avec les CNN pour les tâches de vision (classification, détection…).</p></li>
+</ul>
+<section id="id6">
+<h4><strong>Liens Externes (Youtube, Medium, etc):</strong><a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.datacamp.com/tutorial/how-transformers-work">How Transformers Work: A Detailed Exploration of Transformer Architecture</a></p></li>
+<li><p><a class="reference external" href="https://www.ibm.com/fr-fr/think/topics/transformer-model">Qu’est-ce qu’un modèle de transformeur ?</a></p></li>
+<li><p><a class="reference external" href="https://blent.ai/blog/a/transformers-deep-learning">Les Transformers, incontournables du Deep Learning</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;amanatulla1606/transformer-architecture-explained-2c49e2257b4c">Transformer Architecture explained</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/wjZofJX0v4M?si=kyDnEDpcHSWuvg17">Transformers (how LLMs work) explained visually | DL5</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/ZXiruGOCn9s?si=QoRwpflLXztVEzIK">What are Transformers (Machine Learning Model)?</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/SZorAJ4I-sA?si=2rKDatjYU7AgoF_7">Transformers, explained: Understand the model behind GPT, BERT, and T5</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/bSvTVREwSNw?si=3rt7c1Acg4SaH5tG">How ChatGPT Works Technically | ChatGPT Architecture</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/-4Oso9-9KTQ?si=0EJX1XbXrwrmtwCn">ChatGPT Explained Completely.</a></p></li>
+</ul>
+</section>
+<section id="id7">
+<h4><strong>Bibliographie</strong><a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, Ł. and Polosukhin, I., 2017. Attention is all you need. <em>Advances in neural information processing systems</em>, <em>30</em>.</p></li>
+<li><p>Yenduri, G., Ramalingam, M., Selvi, G.C., Supriya, Y., Srivastava, G., Maddikunta, P.K.R., Raj, G.D., Jhaveri, R.H., Prabadevi, B., Wang, W. and Vasilakos, A.V., 2024. Gpt (generative pre-trained transformer)–a comprehensive review on enabling technologies, potential applications, emerging challenges, and future directions. <em>IEEE Access</em>.</p></li>
+<li><p>Lewis, M., Liu, Y., Goyal, N., Ghazvininejad, M., Mohamed, A., Levy, O., Stoyanov, V. and Zettlemoyer, L., 2019. Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. <em>arXiv preprint arXiv:1910.13461</em>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link link-dark p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Modèles Génératifs</a><ul>
+<li><a class="reference internal" href="#encodeur"><strong>Encodeur</strong></a></li>
+<li><a class="reference internal" href="#decodeur"><strong>Décodeur</strong></a></li>
+<li><a class="reference internal" href="#autoencodeur-variationnel-vae"><strong>Autoencodeur Variationnel (VAE)</strong></a><ul>
+<li><a class="reference internal" href="#architecture"><strong>Architecture</strong></a></li>
+<li><a class="reference internal" href="#astuce-de-reparametrisation"><strong>Astuce de Reparamétrisation</strong></a><ul>
+<li><a class="reference internal" href="#liens-externes-youtube-medium-etc"><strong>Liens Externes (Youtube, Medium, etc):</strong></a></li>
+<li><a class="reference internal" href="#bibliographie"><strong>Bibliographie</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#architecture-et-fonctionnement"><strong>Architecture et fonctionnement</strong></a></li>
+<li><a class="reference internal" href="#le-principe-dopposition"><strong>Le principe d’opposition</strong></a></li>
+<li><a class="reference internal" href="#entrainement"><strong>Entraînement</strong></a></li>
+<li><a class="reference internal" href="#applications"><strong>Applications</strong></a></li>
+<li><a class="reference internal" href="#forces-et-faiblesses"><strong>Forces et faiblesses</strong></a><ul>
+<li><a class="reference internal" href="#id1"><strong>Liens Externes (Youtube, Medium, etc):</strong></a></li>
+<li><a class="reference internal" href="#id2"><strong>Bibliographie</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#intuition-generale"><strong>Intuition générale</strong></a></li>
+<li><a class="reference internal" href="#architecture-typique"><strong>Architecture typique</strong></a></li>
+<li><a class="reference internal" href="#fonction-de-perte"><strong>Fonction de perte</strong></a></li>
+<li><a class="reference internal" href="#pourquoi-ca-fonctionne"><strong>Pourquoi ça fonctionne ?</strong></a></li>
+<li><a class="reference internal" href="#id3"><strong>Applications</strong></a></li>
+<li><a class="reference internal" href="#forces-et-limites"><strong>Forces et limites</strong></a></li>
+<li><a class="reference internal" href="#dalle-2"><strong>DALL·E 2</strong></a></li>
+<li><a class="reference internal" href="#stable-diffusion"><strong>Stable Diffusion</strong></a></li>
+<li><a class="reference internal" href="#midjourney"><strong>MidJourney</strong></a><ul>
+<li><a class="reference internal" href="#id4"><strong>Liens Externes (Youtube, Medium, etc):</strong></a></li>
+<li><a class="reference internal" href="#id5"><strong>Bibliographie</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#structure-generale"><strong>Structure générale</strong></a></li>
+<li><a class="reference internal" href="#mecanisme-dattention"><strong>1. Mécanisme d’Attention</strong></a></li>
+<li><a class="reference internal" href="#multi-head-attention"><strong>2. Multi-Head Attention</strong></a></li>
+<li><a class="reference internal" href="#reseau-feed-forward"><strong>3. Réseau Feed-Forward</strong></a></li>
+<li><a class="reference internal" href="#encodage-de-position"><strong>4. Encodage de position</strong></a></li>
+<li><a class="reference internal" href="#architecture-complete"><strong>Architecture complète</strong></a></li>
+<li><a class="reference internal" href="#avantages-des-transformeurs"><strong>Avantages des transformeurs</strong></a></li>
+<li><a class="reference internal" href="#bert-bidirectional-encoder-representations-from-transformers"><strong>BERT (Bidirectional Encoder Representations from Transformers)</strong></a></li>
+<li><a class="reference internal" href="#gpt-generative-pre-trained-transformer"><strong>GPT (Generative Pre-trained Transformer)</strong></a></li>
+<li><a class="reference internal" href="#t5-text-to-text-transfer-transformer"><strong>T5 (Text-To-Text Transfer Transformer)</strong></a></li>
+<li><a class="reference internal" href="#bart-bidirectional-and-auto-regressive-transformers"><strong>BART (Bidirectional and Auto-Regressive Transformers)</strong></a></li>
+<li><a class="reference internal" href="#vision-transformer-vit"><strong>Vision Transformer (ViT)</strong></a><ul>
+<li><a class="reference internal" href="#id6"><strong>Liens Externes (Youtube, Medium, etc):</strong></a></li>
+<li><a class="reference internal" href="#id7"><strong>Bibliographie</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="mdl_gen.html" class="d-flex px-5 align-items-end" rel="prev" aria-label="Previous page: Modèles Génératifs">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Modèles Génératifs</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="../../big-list-ia.html" class="d-flex px-5 align-items-end" rel="next" aria-label="Next page: Listes des outils d’IA génératifs">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">Listes des outils d’IA génératifs</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="https://github.com/danirus/sphinx-nefertiti/issues" class="list-item">Issues</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://docs.google.com/document/d/1X9dO4tD5R5DBlG_WFETr6D9i2sSP5pHR8RI8enTSceU/edit?tab=t.0#heading=h.bg3x17yqchk" class="list-item">Documentation</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="https://github.com/Yousraarroui/TestSphinx.git" class="list-item">Repository</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">IAn</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>ARROUI Yousra</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.7.5</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/colorsets.js?v=93c30d22"></script>
+    <script src="../../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../../_static/sphinx-nefertiti.min.js?v=de1d41e1"></script>
+    <script src="../../_static/bootstrap.bundle.min.js?v=ff4e7878"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+  </body>
+</html>
